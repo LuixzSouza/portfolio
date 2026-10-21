@@ -17,6 +17,7 @@ import { LiveProjectButton } from "@/components/ds/LiveProjectButton";
 import { type Projeto } from "@/data/projects";
 import { projetos, caseStudySlugs } from "@/data/projects";
 import { listProjects } from "@/lib/api";
+import { withLocalProjects } from "@/lib/mergeProjects";
 import { useCmsList } from "@/hooks/useCmsList";
 import { slugify } from "@/lib/slug";
 import { useLocalizedHref } from "@/lib/useLocale";
@@ -42,14 +43,17 @@ export function ProjectDetail() {
   const items = useCmsList(
     listProjects,
     (data) =>
-      data.map((p) => {
-        const local = projetos.find(
-          (lp) => slugify(lp.nome) === p.slug || lp.nome === p.nome,
-        );
-        return local
-          ? { ...p, resumo: local.resumo, conteudo: local.conteudo, galeria: local.galeria }
-          : p;
-      }) as unknown as Projeto[],
+      withLocalProjects(
+        data.map((p) => {
+          const local = projetos.find(
+            (lp) => slugify(lp.nome) === p.slug || lp.nome === p.nome,
+          );
+          return local
+            ? { ...p, resumo: local.resumo, conteudo: local.conteudo, galeria: local.galeria }
+            : p;
+        }) as unknown as Projeto[],
+        projetos,
+      ),
     projetos,
   );
   // Lightbox da galeria (índice da imagem aberta) + cursor "Visualizar" do hero.

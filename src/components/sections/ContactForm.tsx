@@ -11,6 +11,8 @@ import { ArrowButton } from "@/components/ds/ArrowButton";
 import { ArrowUpRight } from "lucide-react";
 import { ContactMascot, type ContactField } from "./ContactMascot";
 import { useTranslations } from "@/content/useTranslations";
+import { useLanguage } from "@/components/ds/LanguageProvider";
+import { cvHref } from "@/lib/cv";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -19,6 +21,7 @@ const FIELD_CLASS =
 
 export function ContactForm() {
   const t = useTranslations();
+  const { lang } = useLanguage();
   const [form, setForm] = useState({ nome: "", email: "", mensagem: "" });
   const [status, setStatus] = useState<Status>("idle");
   const [focused, setFocused] = useState<ContactField>(null);
@@ -46,7 +49,7 @@ export function ContactForm() {
       href: "https://www.linkedin.com/in/luiz-antonio-souza-5000a226b/",
     },
     { key: "github", label: t.contact.channelGithub, value: "LuixzSouza", href: "https://github.com/LuixzSouza" },
-    { key: "cv", label: t.contact.channelCv, value: t.contact.cv, href: "/certificates/Curriculo_Luiz_2025.pdf" },
+    { key: "cv", label: t.contact.channelCv, value: t.contact.cv, href: cvHref(lang) },
   ];
 
   const channelCaption: Record<string, string> = {

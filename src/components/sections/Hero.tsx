@@ -12,6 +12,8 @@ import { ArrowButton } from "@/components/ds/ArrowButton";
 import { AnimatedLink } from "@/components/ds/AnimatedLink";
 import { TypingText } from "@/components/ds/TypingText";
 import { useTranslations } from "@/content/useTranslations";
+import { useLanguage } from "@/components/ds/LanguageProvider";
+import { cvHref } from "@/lib/cv";
 
 // Variáveis da animação em cascata dos textos
 const textRevealVariants: Variants = {
@@ -26,6 +28,7 @@ const textRevealVariants: Variants = {
 
 export function Hero() {
   const t = useTranslations();
+  const { lang } = useLanguage();
 
   // Conteúdo nasce visível no SSR; a animação de entrada só dispara após montar
   // (evita ficar preso invisível se o JS demorar/falhar na hidratação).
@@ -124,7 +127,7 @@ export function Hero() {
             <motion.div variants={textRevealVariants} className="mt-10 flex flex-wrap items-center gap-5">
               <MagneticButton href="/work">{t.hero.ctaSecondary}</MagneticButton>
               <ArrowButton
-                href="/certificates/Curriculo_Luiz_2025.pdf"
+                href={cvHref(lang)}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="outline"

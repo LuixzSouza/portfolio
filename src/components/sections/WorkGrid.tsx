@@ -15,6 +15,7 @@ import { Eyebrow } from "@/components/ds/Eyebrow";
 import { Reveal } from "@/components/ds/Reveal";
 import { projetos, type Projeto } from "@/data/projects";
 import { listProjects } from "@/lib/api";
+import { withLocalProjects } from "@/lib/mergeProjects";
 import { useGithubRepos } from "@/hooks/useGithubRepos";
 import { slugify } from "@/lib/slug";
 import { screenshotUrl } from "@/lib/screenshot";
@@ -53,7 +54,11 @@ export function WorkGrid() {
   const [query, setQuery] = useState("");
   const [visible, setVisible] = useState(PAGE);
   // Fallback estático (dados de @/data); substituído pela API quando ela responder.
-  const items = useCmsList(listProjects, (data) => data as unknown as Projeto[], projetos);
+  const items = useCmsList(
+    listProjects,
+    (data) => withLocalProjects(data as unknown as Projeto[], projetos),
+    projetos,
+  );
   const githubRepos = useGithubRepos();
   const { x, y, follow } = useCursorFollow();
   const [hovering, setHovering] = useState(false);

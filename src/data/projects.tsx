@@ -100,8 +100,8 @@ const rawProjects = [
         status: "active",
         complexidade: "advanced",
         destaque: true,
-        tecnologias: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "E-commerce", "Pagamentos", "SEO", "Responsive Design"],
-        tecnologiasPrincipais: ["Next.js", "React", "TypeScript"],
+        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "Mercado Pago", "Melhor Envio", "Zod", "React Hook Form", "Tailwind CSS", "SEO"],
+        tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
         tamanhoEquipe: 1,
         links: {
             github: "https://github.com/LuixzSouza",
@@ -176,8 +176,8 @@ const rawProjects = [
         status: "active",
         complexidade: "advanced",
         destaque: true,
-        tecnologias: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "E-commerce", "SEO", "Responsive Design"],
-        tecnologiasPrincipais: ["Next.js", "React", "TypeScript"],
+        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "Mercado Pago", "Zustand", "Zod", "Tailwind CSS", "Correios API", "SEO"],
+        tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
         tamanhoEquipe: 1,
         links: {
             github: "https://github.com/LuixzSouza",
@@ -243,6 +243,250 @@ const rawProjects = [
             ]
         },
         tags: ["e-commerce", "café", "loja virtual", "next.js", "react"]
+    },
+    {
+        id: "sistema-up",
+        nome: "Sistema UP",
+        imagem: "/mockup/sistema-up.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "expert",
+        destaque: true,
+        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Zustand", "Zod", "Tailwind CSS", "PWA", "Service Worker", "Web Push", "Leaflet", "TanStack Table"],
+        tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
+        duracao: "3 meses",
+        tamanhoEquipe: 1,
+        links: {
+            verProjeto: "https://upinconfidentes.com.br"
+        },
+        descricao: {
+            pt: "Plataforma completa de uma sorveteria: landing com SEO, cardápio digital com pedido e acompanhamento em tempo real, e frente de caixa (PDV) que continua vendendo sem internet.",
+            en: "Full platform for an ice-cream shop: SEO landing page, digital menu with real-time order tracking, and a point-of-sale that keeps selling offline."
+        },
+        data: { pt: "2026", en: "2026" },
+        resumo: {
+            pt: "Três produtos, um banco só: site público, cardápio/pedidos do cliente e o sistema de caixa da equipe — offline-first.",
+            en: "Three products, one database: public site, customer menu/ordering and the staff POS — offline-first."
+        },
+        conteudo: {
+            pt: [
+                "A Sorveteria UP, em Inconfidentes/MG, anotava pedidos no papel e no WhatsApp. O objetivo era unificar tudo: o cliente pede pelo celular, o pedido cai no caixa, a equipe acompanha a produção e o dono enxerga vendas e estoque.",
+                "Construí três produtos sobre um único banco (Supabase/PostgreSQL): a landing pública com SEO, o cardápio digital mobile-first com página por produto e acompanhamento do pedido em tempo real por link, e o Sistema UP — PDV da equipe com venda no balcão, clientes, histórico, estoque e fechamento de caixa.",
+                "O requisito mais duro foi a internet do interior: o caixa não pode parar quando o provedor cai. Um Service Worker pré-carrega as telas do caixa, as vendas vão para uma fila local e sincronizam sozinhas quando a rede volta, e as senhas saem de um bloco reservado enquanto havia conexão.",
+                "Há ainda modo demonstração sem banco (o app inteiro roda em memória), notificações push, mapa de entrega com Leaflet e exportação para Excel. Está em produção, com mais de 450 commits."
+            ],
+            en: [
+                "UP, an ice-cream shop in Inconfidentes/MG, took orders on paper and WhatsApp. The goal was to unify everything: customers order from their phone, the order lands at the register, staff follow production and the owner sees sales and stock.",
+                "I built three products on a single database (Supabase/PostgreSQL): the public SEO landing page, a mobile-first digital menu with per-product pages and real-time order tracking via link, and Sistema UP — the staff POS with counter sales, customers, history, stock and cash closing.",
+                "The hardest requirement was rural internet: the register can't stop when the provider goes down. A Service Worker pre-caches the POS screens, sales go to a local queue and sync automatically when the connection returns, and order numbers come from a block reserved while online.",
+                "There is also a database-free demo mode (the whole app runs in memory), push notifications, a Leaflet delivery map and Excel export. It's in production, with 450+ commits."
+            ]
+        },
+        objetivos: {
+            pt: [
+                "Tirar os pedidos do papel e do WhatsApp para um fluxo único",
+                "Dar ao cliente pedido e acompanhamento em tempo real pelo celular",
+                "Garantir que o caixa venda mesmo sem internet"
+            ],
+            en: [
+                "Move orders from paper and WhatsApp into a single flow",
+                "Give customers real-time ordering and tracking on their phone",
+                "Make sure the register sells even without internet"
+            ]
+        },
+        desafios: {
+            pt: [
+                "Arquitetura offline-first: fila local de vendas com sincronização posterior",
+                "Tempo real entre cardápio do cliente e caixa da equipe",
+                "Três produtos com permissões diferentes sobre o mesmo banco (RLS)"
+            ],
+            en: [
+                "Offline-first architecture: local sales queue with later sync",
+                "Real time between the customer menu and the staff register",
+                "Three products with different permissions over one database (RLS)"
+            ]
+        },
+        aprendizados: {
+            pt: [
+                "Offline não é um detalhe: muda a modelagem (ids, senhas e conflitos) desde o início.",
+                "Um modo demonstração em memória acelera o desenvolvimento e as apresentações ao cliente.",
+                "Desenhar a tela a partir da operação real (balcão, uma mão, fila) vale mais que qualquer template."
+            ],
+            en: [
+                "Offline isn't a detail: it changes the data model (ids, numbering, conflicts) from day one.",
+                "An in-memory demo mode speeds up development and client presentations.",
+                "Designing screens from the real operation (counter, one hand, queue) beats any template."
+            ]
+        },
+        tags: ["pdv", "pwa", "offline", "supabase", "next.js", "tempo real"]
+    },
+    {
+        id: "thai-cross",
+        nome: "Thai Cross — Gestão de Academia",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "advanced",
+        destaque: true,
+        tecnologias: ["Next.js", "TypeScript", "Prisma", "MySQL", "NextAuth", "Tailwind CSS", "Vitest", "GitHub Actions", "PM2", "Zod"],
+        tecnologiasPrincipais: ["Next.js", "Prisma", "MySQL"],
+        duracao: "2 meses",
+        tamanhoEquipe: 1,
+        links: {},
+        descricao: {
+            pt: "Sistema de gestão para uma academia de Muaythai e Cross Training: alunos, presença, mensalidades e inadimplência, com papéis de acesso e deploy automatizado.",
+            en: "Management system for a Muay Thai and Cross Training gym: students, attendance, monthly fees and overdue tracking, with role-based access and automated deploys."
+        },
+        data: { pt: "2026", en: "2026" },
+        resumo: {
+            pt: "Dois módulos, um sistema só — feito para a rotina real da academia, com a chamada marcada em pé, no celular.",
+            en: "Two modules, one system — built around the gym's real routine, with attendance taken standing up, on a phone."
+        },
+        conteudo: {
+            pt: [
+                "Uma academia de Muaythai que também administra uma equipe de Cross Training controlava alunos e cobranças em planilhas. Construí um sistema sob medida com painel (caixa do mês, atrasos, presença do dia, quem parou de aparecer), alunos, presença, mensalidades e configurações.",
+                "O modelo separa Aluno de Matrícula: quem treina as duas modalidades tem um cadastro e duas matrículas, cada uma com valor e vencimento próprios. Inadimplência não é um status gravado, e sim calculada (pendente e vencida) — assim nunca fica desatualizada na virada do dia. Cada mensalidade guarda o próprio valor, então reajustes não reescrevem o histórico.",
+                "Acesso por papel (admin, professor de Muaythai, professora de Cross), cada um com a identidade visual da sua casa. Testes com Vitest nas quatro camadas e deploy contínuo por GitHub Actions para um VPS com PM2."
+            ],
+            en: [
+                "A Muay Thai gym that also runs a Cross Training team managed students and payments in spreadsheets. I built a tailored system with a dashboard (monthly revenue, overdue, today's attendance, who stopped showing up), students, attendance, monthly fees and settings.",
+                "The model separates Student from Enrollment: someone training both modalities has one record and two enrollments, each with its own price and due date. Overdue isn't a stored status but computed (pending and past due), so it never goes stale overnight. Each fee stores its own amount, so price changes don't rewrite history.",
+                "Role-based access (admin, Muay Thai coach, Cross coach), each with its own branding. Tested with Vitest across four layers and continuously deployed via GitHub Actions to a VPS running PM2."
+            ]
+        },
+        desafios: {
+            pt: [
+                "Modelagem de dados que suporte aluno em duas modalidades",
+                "Geração idempotente de mensalidades e cobrança via WhatsApp",
+                "Controle de acesso derivado sempre do papel, nunca da pessoa"
+            ],
+            en: [
+                "A data model supporting one student across two modalities",
+                "Idempotent monthly fee generation and WhatsApp billing",
+                "Access control always derived from role, never from the person"
+            ]
+        },
+        aprendizados: {
+            pt: [
+                "Estado derivado é mais confiável que estado gravado quando depende do tempo.",
+                "CI/CD com testes desde o início dá segurança para entregar toda semana.",
+                "Sistema sob medida ganha de genérico quando parte de como o cliente trabalha."
+            ],
+            en: [
+                "Derived state beats stored state when it depends on time.",
+                "CI/CD with tests from the start makes weekly delivery safe.",
+                "Tailored beats generic when it starts from how the client actually works."
+            ]
+        },
+        tags: ["gestão", "academia", "prisma", "mysql", "next.js", "ci/cd"]
+    },
+    {
+        id: "turn-io",
+        nome: "Turn.io — Webflow → Next.js",
+        imagem: "/mockup/turn-io.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "expert",
+        destaque: true,
+        tecnologias: ["Next.js", "TypeScript", "GSAP", "Rive", "PurgeCSS", "Lightning CSS", "esbuild", "Playwright", "Lighthouse", "axe", "Vercel"],
+        tecnologiasPrincipais: ["Next.js", "TypeScript", "Playwright"],
+        tamanhoEquipe: 1,
+        links: {
+            verProjeto: "https://turn-io.vercel.app"
+        },
+        descricao: {
+            pt: "Migração do site da Turn.io (healthtech de WhatsApp) do Webflow para código: visual idêntico, PageSpeed mobile de 35 para 98.",
+            en: "Migration of Turn.io's website (WhatsApp healthtech) from Webflow to code: pixel-identical, mobile PageSpeed from 35 to 98."
+        },
+        data: { pt: "2026", en: "2026" },
+        resumo: {
+            pt: "Pipeline que converte o site publicado no Webflow em páginas Next.js estáticas, com QA visual e de performance automatizado.",
+            en: "A pipeline that converts the published Webflow site into static Next.js pages, with automated visual and performance QA."
+        },
+        conteudo: {
+            pt: [
+                "O site da Turn.io rodava no Webflow com PageSpeed mobile de 35 e vários erros de console. A proposta era sair da plataforma mantendo o site idêntico — layout, conteúdo, imagens e animações — e ganhar controle total de código, performance e hospedagem.",
+                "Em vez de reescrever à mão, criei um pipeline que converte o HTML publicado em páginas Next.js: HTML estático sem React no navegador, CSS reduzido e embutido por página, imagens no tamanho exibido e scripts carregados só na primeira interação. Coleções do CMS viram templates.",
+                "A qualidade é garantida por ferramentas: comparação visual original × local em 1440 e 375 px com Playwright, Lighthouse, axe para acessibilidade e uma auditoria que varre links quebrados e rolagem horizontal.",
+                "Resultado: PageSpeed mobile de 35 para 98 na home (média 95 em 15 páginas), desktop 98–100, SEO e boas práticas 100 e zero erros de console. Entreguei também um relatório em PDF para a diretoria."
+            ],
+            en: [
+                "Turn.io's website ran on Webflow with a mobile PageSpeed of 35 and several console errors. The goal was to leave the platform while keeping the site identical — layout, content, images and animations — and gain full control over code, performance and hosting.",
+                "Instead of rewriting by hand, I built a pipeline that converts the published HTML into Next.js pages: static HTML with no React in the browser, per-page purged and inlined CSS, images at display size and scripts loaded on first interaction. CMS collections become templates.",
+                "Quality is enforced by tooling: original vs. local visual diffs at 1440 and 375 px with Playwright, Lighthouse, axe for accessibility and an audit that scans for broken links and horizontal scroll.",
+                "Result: mobile PageSpeed from 35 to 98 on the home page (95 average across 15 pages), desktop 98–100, SEO and best practices 100 and zero console errors. I also delivered a PDF report for the leadership."
+            ]
+        },
+        aprendizados: {
+            pt: [
+                "Automatizar a conversão é mais seguro e repetível do que reescrever página a página.",
+                "QA visual automatizado transforma 'idêntico ao original' em algo verificável.",
+                "A maior parte do ganho de performance vem de enviar menos: CSS, JS e bytes de imagem."
+            ],
+            en: [
+                "Automating the conversion is safer and more repeatable than rewriting page by page.",
+                "Automated visual QA turns 'identical to the original' into something verifiable.",
+                "Most performance gains come from shipping less: CSS, JS and image bytes."
+            ]
+        },
+        tags: ["performance", "webflow", "migração", "next.js", "core web vitals"]
+    },
+    {
+        id: "estetica-ana-clara",
+        nome: "Estética Ana Clara",
+        imagem: "/mockup/estetica-ana-clara.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "advanced",
+        destaque: true,
+        tecnologias: ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Auth.js", "Tailwind CSS", "FullCalendar", "Resend", "Cloudinary", "Zod"],
+        tecnologiasPrincipais: ["Next.js", "Prisma", "PostgreSQL"],
+        tamanhoEquipe: 1,
+        links: {
+            verProjeto: "https://esteticaanaclara.com.br"
+        },
+        descricao: {
+            pt: "Site e painel de gestão de uma clínica de estética: landing com SEO local e blog, agenda de atendimentos, clientes e financeiro.",
+            en: "Website and management dashboard for an aesthetics clinic: local-SEO landing page and blog, appointment calendar, clients and finances."
+        },
+        data: { pt: "2025 — 2026", en: "2025 — 2026" },
+        resumo: {
+            pt: "Do site que traz a cliente ao painel que organiza a agenda e o caixa da clínica.",
+            en: "From the site that brings in clients to the dashboard that runs the clinic's schedule and finances."
+        },
+        conteudo: {
+            pt: [
+                "Uma esteticista e massoterapeuta de Inconfidentes/MG precisava ser encontrada no Google e parar de controlar a agenda no caderno. Desenvolvi o site público (serviços, sobre, blog e contato via WhatsApp) com SEO local, e um painel administrativo protegido por login.",
+                "No painel: agenda com FullCalendar, cadastro de clientes, controle financeiro com relatórios em PDF, upload de imagens via Cloudinary e e-mails transacionais com Resend. Dados em PostgreSQL com Prisma e autenticação com Auth.js."
+            ],
+            en: [
+                "An esthetician and massage therapist in Inconfidentes/MG needed to be found on Google and stop managing her schedule on paper. I built the public site (services, about, blog and WhatsApp contact) with local SEO, plus a login-protected admin dashboard.",
+                "The dashboard includes a FullCalendar schedule, client records, financial control with PDF reports, image uploads via Cloudinary and transactional e-mail with Resend. Data lives in PostgreSQL with Prisma, authentication with Auth.js."
+            ]
+        },
+        tags: ["clínica", "agenda", "painel", "prisma", "seo local"]
+    },
+    {
+        id: "prefeitura-inconfidentes",
+        nome: "Portal da Prefeitura de Inconfidentes",
+        categoria: "real-projects",
+        status: "archived",
+        complexidade: "advanced",
+        destaque: false,
+        tecnologias: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "NextAuth", "Tailwind CSS", "Zod", "React Hook Form"],
+        tecnologiasPrincipais: ["Next.js", "Prisma", "PostgreSQL"],
+        duracao: "3 meses",
+        tamanhoEquipe: 1,
+        links: {},
+        descricao: {
+            pt: "Portal oficial do município com painel administrativo (CMS) para a equipe publicar notícias e conteúdo sem código. Desenvolvido no estágio (jun–ago/2025).",
+            en: "Official city portal with an admin panel (CMS) so staff can publish news and content without code. Built during my internship (Jun–Aug 2025)."
+        },
+        data: { pt: "2025", en: "2025" },
+        resumo: {
+            pt: "Site público informativo para o cidadão + CMS completo para a prefeitura.",
+            en: "Public information site for citizens + a full CMS for city hall."
+        },
+        tags: ["governo", "cms", "full-stack", "prisma", "next.js"]
     },
     {
         id: "formula-idiomas",
