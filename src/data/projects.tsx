@@ -93,158 +93,6 @@ function completeProject(project: unknown): Projeto {
 
 const rawProjects = [
     {
-        id: "silver-ocean",
-        nome: "Silver Ocean",
-        imagem: "/mockup/silver-ocean.webp",
-        categoria: "real-projects",
-        status: "active",
-        complexidade: "advanced",
-        destaque: true,
-        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "Mercado Pago", "Melhor Envio", "Zod", "React Hook Form", "Tailwind CSS", "SEO"],
-        tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
-        tamanhoEquipe: 1,
-        links: {
-            github: "https://github.com/LuixzSouza",
-            verProjeto: "https://silverocean925.com.br"
-        },
-        descricao: {
-            pt: "E-commerce completo de joias em prata 925: catálogo por categorias, carrinho, contas de cliente, rastreio de pedidos e checkout com Pix e cartões.",
-            en: "Full silver 925 jewelry e-commerce: category catalog, cart, customer accounts, order tracking and checkout with Pix and cards."
-        },
-        data: { pt: "2026", en: "2026" },
-        resumo: {
-            pt: "Loja virtual de joias em prata 925 com design elegante, jornada de compra completa e foco em conversão.",
-            en: "Silver 925 jewelry online store with elegant design, a complete purchase journey and a focus on conversion."
-        },
-        conteudo: {
-            pt: [
-                "A Silver Ocean é uma marca de joias em prata 925 que precisava de uma loja própria à altura do produto — elegante, rápida e confiável. O desafio era cobrir toda a jornada de compra, do catálogo ao pagamento, sem abrir mão de uma estética minimalista e premium.",
-                "Construí um e-commerce completo: navegação por categorias (anéis, colares, brincos, pulseiras, linha masculina e personalizados), carrinho, contas de cliente com lista de favoritos e rastreamento de pedidos. O checkout aceita Pix e os principais cartões, com parcelamento.",
-                "No técnico, priorizei performance e SEO: imagens em WebP, carregamento otimizado e estrutura pensada para ranquear no Google. A interface é totalmente responsiva e usa animações sutis para dar sofisticação sem pesar.",
-                "O resultado é uma loja que transmite confiança — reforçada por garantia vitalícia, troca facilitada e prova social (mais de 850 avaliações com média 4.9). Hoje está no ar atendendo clientes em todo o Brasil."
-            ],
-            en: [
-                "Silver Ocean is a silver 925 jewelry brand that needed a store worthy of the product — elegant, fast and trustworthy. The challenge was to cover the entire purchase journey, from catalog to payment, without giving up a minimalist, premium aesthetic.",
-                "I built a complete e-commerce: category navigation (rings, necklaces, earrings, bracelets, men's line and personalized pieces), cart, customer accounts with a wishlist and order tracking. Checkout accepts Pix and the main credit cards, with installments.",
-                "On the technical side, I prioritized performance and SEO: WebP images, optimized loading and a structure built to rank on Google. The interface is fully responsive and uses subtle animations for sophistication without weight.",
-                "The result is a store that conveys trust — reinforced by a lifetime warranty, easy returns and social proof (850+ reviews averaging 4.9). It is live today, serving customers across Brazil."
-            ]
-        },
-        objetivos: {
-            pt: [
-                "Entregar uma experiência de compra premium, do catálogo ao checkout",
-                "Suportar pagamento com Pix e cartões com parcelamento",
-                "Garantir performance e SEO para ranquear e converter"
-            ],
-            en: [
-                "Deliver a premium shopping experience, from catalog to checkout",
-                "Support payment via Pix and credit cards with installments",
-                "Ensure performance and SEO to rank and convert"
-            ]
-        },
-        desafios: {
-            pt: [
-                "Estruturar carrinho, contas de cliente e rastreio de pedidos",
-                "Integrar gateway de pagamento (Pix + cartões) de forma segura",
-                "Manter a loja rápida mesmo com muitas imagens de produto (WebP)"
-            ],
-            en: [
-                "Structure cart, customer accounts and order tracking",
-                "Securely integrate the payment gateway (Pix + cards)",
-                "Keep the store fast even with many product images (WebP)"
-            ]
-        },
-        aprendizados: {
-            pt: [
-                "Integrar pagamentos reais (Pix + cartões) exige cuidado com estados de erro e confirmação assíncrona.",
-                "Em e-commerce, performance é conversão: cada imagem otimizada conta.",
-                "Uma navegação por categorias bem pensada reduz a fricção até o checkout."
-            ],
-            en: [
-                "Integrating real payments (Pix + cards) requires care with error states and asynchronous confirmation.",
-                "In e-commerce, performance is conversion: every optimized image counts.",
-                "Well-thought-out category navigation reduces friction all the way to checkout."
-            ]
-        },
-        tags: ["e-commerce", "joias", "loja virtual", "next.js", "react"]
-    },
-    {
-        id: "berilo-cafe",
-        nome: "Berilo Café",
-        imagem: "/mockup/berilo-cafe.webp",
-        categoria: "real-projects",
-        status: "active",
-        complexidade: "advanced",
-        destaque: true,
-        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "Mercado Pago", "Zustand", "Zod", "Tailwind CSS", "Correios API", "SEO"],
-        tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
-        tamanhoEquipe: 1,
-        links: {
-            github: "https://github.com/LuixzSouza",
-            verProjeto: "https://berilocafe.com.br"
-        },
-        descricao: {
-            pt: "E-commerce de cafés especiais de uma torrefação artesanal de Minas Gerais: catálogo de cafés, contas de cliente, página institucional e FAQ.",
-            en: "Specialty coffee e-commerce for an artisanal roastery from Minas Gerais: coffee catalog, customer accounts, brand story and FAQ."
-        },
-        data: { pt: "2026", en: "2026" },
-        resumo: {
-            pt: "Loja de cafés especiais com narrativa de marca, catálogo de produtos e experiência de compra limpa e responsiva.",
-            en: "Specialty coffee store with brand storytelling, a product catalog and a clean, responsive buying experience."
-        },
-        conteudo: {
-            pt: [
-                "O Berilo é uma torrefação artesanal do Campo das Vertentes, em Minas Gerais, que queria levar seus cafés especiais para todo o Brasil. Mais do que vender, o site precisava contar a história do produto — origem rastreável e torra em micro-lotes — para sustentar o posicionamento premium.",
-                "Desenvolvi uma loja com forte narrativa de marca: home editorial, catálogo de cafés ('Nossos Cafés'), página 'Sobre Nós' com a história da torrefação, contato dedicado e um FAQ que antecipa as principais dúvidas. Há também autenticação de clientes.",
-                "A prioridade técnica foi equilibrar storytelling com a usabilidade de um e-commerce, mantendo tudo rápido (imagens em WebP) e responsivo, com SEO desde a base.",
-                "O projeto entrega uma experiência limpa e sofisticada, reforçada por prova social (4.9 no Google) e garantia de devolução incondicional — a confiança necessária para a compra online de um produto sensorial como café."
-            ],
-            en: [
-                "Berilo is an artisanal roastery from the Campo das Vertentes region in Minas Gerais that wanted to take its specialty coffees to all of Brazil. More than selling, the site had to tell the product's story — traceable origin and micro-batch roasting — to support the premium positioning.",
-                "I built a store with strong brand storytelling: an editorial home, a coffee catalog ('Nossos Cafés'), an 'About Us' page with the roastery's history, a dedicated contact page and a FAQ that anticipates the main questions. It also includes customer authentication.",
-                "The technical priority was to balance storytelling with e-commerce usability, keeping everything fast (WebP images) and responsive, with SEO from the ground up.",
-                "The project delivers a clean, sophisticated experience, reinforced by social proof (4.9 on Google) and an unconditional return guarantee — the trust needed to buy a sensory product like coffee online."
-            ]
-        },
-        objetivos: {
-            pt: [
-                "Contar a história da marca e da origem dos grãos (Campo das Vertentes)",
-                "Apresentar o catálogo de cafés e levar o cliente à compra",
-                "Transmitir confiança com prova social, FAQ e garantia"
-            ],
-            en: [
-                "Tell the brand and bean-origin story (Campo das Vertentes)",
-                "Showcase the coffee catalog and guide the customer to purchase",
-                "Build trust with social proof, FAQ and a guarantee"
-            ]
-        },
-        desafios: {
-            pt: [
-                "Equilibrar narrativa editorial com a usabilidade de uma loja",
-                "Implementar autenticação de clientes",
-                "Otimizar imagens (WebP) e SEO para performance"
-            ],
-            en: [
-                "Balance editorial storytelling with store usability",
-                "Implement customer authentication",
-                "Optimize images (WebP) and SEO for performance"
-            ]
-        },
-        aprendizados: {
-            pt: [
-                "Storytelling e usabilidade não competem — uma home editorial pode converter tanto quanto uma loja 'seca'.",
-                "Conteúdo bem estruturado (FAQ, 'Sobre Nós') reduz dúvidas e objeções de compra.",
-                "Otimização de imagens e SEO desde o início evita retrabalho depois."
-            ],
-            en: [
-                "Storytelling and usability don't compete — an editorial home can convert as well as a plain store.",
-                "Well-structured content (FAQ, 'About Us') reduces doubts and purchase objections.",
-                "Optimizing images and SEO from the start avoids rework later."
-            ]
-        },
-        tags: ["e-commerce", "café", "loja virtual", "next.js", "react"]
-    },
-    {
         id: "sistema-up",
         nome: "Sistema UP",
         imagem: "/mockup/sistema-up.webp",
@@ -321,8 +169,90 @@ const rawProjects = [
         tags: ["pdv", "pwa", "offline", "supabase", "next.js", "tempo real"]
     },
     {
+        id: "silver-ocean",
+        nome: "Silver Ocean",
+        imagem: "/mockup/silver-ocean.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "advanced",
+        destaque: true,
+        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "Mercado Pago", "Melhor Envio", "Zod", "React Hook Form", "Tailwind CSS", "SEO"],
+        tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
+        tamanhoEquipe: 1,
+        links: {
+            github: "https://github.com/LuixzSouza",
+            verProjeto: "https://silverocean925.com.br"
+        },
+        descricao: {
+            pt: "E-commerce completo de joias em prata 925: catálogo por categorias, carrinho, contas de cliente, rastreio de pedidos e checkout com Pix e cartões.",
+            en: "Full silver 925 jewelry e-commerce: category catalog, cart, customer accounts, order tracking and checkout with Pix and cards."
+        },
+        data: { pt: "2026", en: "2026" },
+        resumo: {
+            pt: "Loja virtual de joias em prata 925 com design elegante, jornada de compra completa e foco em conversão.",
+            en: "Silver 925 jewelry online store with elegant design, a complete purchase journey and a focus on conversion."
+        },
+        conteudo: {
+            pt: [
+                "A Silver Ocean é uma marca de joias em prata 925 que precisava de uma loja própria à altura do produto — elegante, rápida e confiável. O desafio era cobrir toda a jornada de compra, do catálogo ao pagamento, sem abrir mão de uma estética minimalista e premium.",
+                "Construí um e-commerce completo: navegação por categorias (anéis, colares, brincos, pulseiras, linha masculina e personalizados), carrinho, contas de cliente com lista de favoritos e rastreamento de pedidos. O checkout aceita Pix e os principais cartões, com parcelamento.",
+                "No técnico, priorizei performance e SEO: imagens em WebP, carregamento otimizado e estrutura pensada para ranquear no Google. A interface é totalmente responsiva e usa animações sutis para dar sofisticação sem pesar.",
+                "O resultado é uma loja que transmite confiança — reforçada por garantia vitalícia, troca facilitada e prova social (mais de 850 avaliações com média 4.9). Hoje está no ar atendendo clientes em todo o Brasil."
+            ],
+            en: [
+                "Silver Ocean is a silver 925 jewelry brand that needed a store worthy of the product — elegant, fast and trustworthy. The challenge was to cover the entire purchase journey, from catalog to payment, without giving up a minimalist, premium aesthetic.",
+                "I built a complete e-commerce: category navigation (rings, necklaces, earrings, bracelets, men's line and personalized pieces), cart, customer accounts with a wishlist and order tracking. Checkout accepts Pix and the main credit cards, with installments.",
+                "On the technical side, I prioritized performance and SEO: WebP images, optimized loading and a structure built to rank on Google. The interface is fully responsive and uses subtle animations for sophistication without weight.",
+                "The result is a store that conveys trust — reinforced by a lifetime warranty, easy returns and social proof (850+ reviews averaging 4.9). It is live today, serving customers across Brazil."
+            ]
+        },
+        objetivos: {
+            pt: [
+                "Entregar uma experiência de compra premium, do catálogo ao checkout",
+                "Suportar pagamento com Pix e cartões com parcelamento",
+                "Garantir performance e SEO para ranquear e converter"
+            ],
+            en: [
+                "Deliver a premium shopping experience, from catalog to checkout",
+                "Support payment via Pix and credit cards with installments",
+                "Ensure performance and SEO to rank and convert"
+            ]
+        },
+        desafios: {
+            pt: [
+                "Estruturar carrinho, contas de cliente e rastreio de pedidos",
+                "Integrar gateway de pagamento (Pix + cartões) de forma segura",
+                "Manter a loja rápida mesmo com muitas imagens de produto (WebP)"
+            ],
+            en: [
+                "Structure cart, customer accounts and order tracking",
+                "Securely integrate the payment gateway (Pix + cards)",
+                "Keep the store fast even with many product images (WebP)"
+            ]
+        },
+        aprendizados: {
+            pt: [
+                "Integrar pagamentos reais (Pix + cartões) exige cuidado com estados de erro e confirmação assíncrona.",
+                "Em e-commerce, performance é conversão: cada imagem otimizada conta.",
+                "Uma navegação por categorias bem pensada reduz a fricção até o checkout."
+            ],
+            en: [
+                "Integrating real payments (Pix + cards) requires care with error states and asynchronous confirmation.",
+                "In e-commerce, performance is conversion: every optimized image counts.",
+                "Well-thought-out category navigation reduces friction all the way to checkout."
+            ]
+        },
+        tags: ["e-commerce", "joias", "loja virtual", "next.js", "react"]
+    },
+    {
         id: "thai-cross",
         nome: "Thai Cross — Gestão de Academia",
+        imagem: "/mockup/thai-cross.webp",
+        galeria: [
+            { src: "/mockup/thai-cross-chamada.webp", legenda: { pt: "Chamada do dia, feita no celular", en: "Daily attendance, taken on a phone" } },
+            { src: "/mockup/thai-cross-mensalidades.webp", legenda: { pt: "Mensalidades e cobrança", en: "Monthly fees and billing" } },
+            { src: "/mockup/thai-cross-alunos-lista.webp", legenda: { pt: "Alunos com busca e matrículas", en: "Students with search and enrollments" } }
+        ],
         categoria: "real-projects",
         status: "active",
         complexidade: "advanced",
@@ -431,6 +361,82 @@ const rawProjects = [
         tags: ["performance", "webflow", "migração", "next.js", "core web vitals"]
     },
     {
+        id: "berilo-cafe",
+        nome: "Berilo Café",
+        imagem: "/mockup/berilo-cafe.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "advanced",
+        destaque: true,
+        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "Mercado Pago", "Zustand", "Zod", "Tailwind CSS", "Correios API", "SEO"],
+        tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
+        tamanhoEquipe: 1,
+        links: {
+            github: "https://github.com/LuixzSouza",
+            verProjeto: "https://berilocafe.com.br"
+        },
+        descricao: {
+            pt: "E-commerce de cafés especiais de uma torrefação artesanal de Minas Gerais: catálogo de cafés, contas de cliente, página institucional e FAQ.",
+            en: "Specialty coffee e-commerce for an artisanal roastery from Minas Gerais: coffee catalog, customer accounts, brand story and FAQ."
+        },
+        data: { pt: "2026", en: "2026" },
+        resumo: {
+            pt: "Loja de cafés especiais com narrativa de marca, catálogo de produtos e experiência de compra limpa e responsiva.",
+            en: "Specialty coffee store with brand storytelling, a product catalog and a clean, responsive buying experience."
+        },
+        conteudo: {
+            pt: [
+                "O Berilo é uma torrefação artesanal do Campo das Vertentes, em Minas Gerais, que queria levar seus cafés especiais para todo o Brasil. Mais do que vender, o site precisava contar a história do produto — origem rastreável e torra em micro-lotes — para sustentar o posicionamento premium.",
+                "Desenvolvi uma loja com forte narrativa de marca: home editorial, catálogo de cafés ('Nossos Cafés'), página 'Sobre Nós' com a história da torrefação, contato dedicado e um FAQ que antecipa as principais dúvidas. Há também autenticação de clientes.",
+                "A prioridade técnica foi equilibrar storytelling com a usabilidade de um e-commerce, mantendo tudo rápido (imagens em WebP) e responsivo, com SEO desde a base.",
+                "O projeto entrega uma experiência limpa e sofisticada, reforçada por prova social (4.9 no Google) e garantia de devolução incondicional — a confiança necessária para a compra online de um produto sensorial como café."
+            ],
+            en: [
+                "Berilo is an artisanal roastery from the Campo das Vertentes region in Minas Gerais that wanted to take its specialty coffees to all of Brazil. More than selling, the site had to tell the product's story — traceable origin and micro-batch roasting — to support the premium positioning.",
+                "I built a store with strong brand storytelling: an editorial home, a coffee catalog ('Nossos Cafés'), an 'About Us' page with the roastery's history, a dedicated contact page and a FAQ that anticipates the main questions. It also includes customer authentication.",
+                "The technical priority was to balance storytelling with e-commerce usability, keeping everything fast (WebP images) and responsive, with SEO from the ground up.",
+                "The project delivers a clean, sophisticated experience, reinforced by social proof (4.9 on Google) and an unconditional return guarantee — the trust needed to buy a sensory product like coffee online."
+            ]
+        },
+        objetivos: {
+            pt: [
+                "Contar a história da marca e da origem dos grãos (Campo das Vertentes)",
+                "Apresentar o catálogo de cafés e levar o cliente à compra",
+                "Transmitir confiança com prova social, FAQ e garantia"
+            ],
+            en: [
+                "Tell the brand and bean-origin story (Campo das Vertentes)",
+                "Showcase the coffee catalog and guide the customer to purchase",
+                "Build trust with social proof, FAQ and a guarantee"
+            ]
+        },
+        desafios: {
+            pt: [
+                "Equilibrar narrativa editorial com a usabilidade de uma loja",
+                "Implementar autenticação de clientes",
+                "Otimizar imagens (WebP) e SEO para performance"
+            ],
+            en: [
+                "Balance editorial storytelling with store usability",
+                "Implement customer authentication",
+                "Optimize images (WebP) and SEO for performance"
+            ]
+        },
+        aprendizados: {
+            pt: [
+                "Storytelling e usabilidade não competem — uma home editorial pode converter tanto quanto uma loja 'seca'.",
+                "Conteúdo bem estruturado (FAQ, 'Sobre Nós') reduz dúvidas e objeções de compra.",
+                "Otimização de imagens e SEO desde o início evita retrabalho depois."
+            ],
+            en: [
+                "Storytelling and usability don't compete — an editorial home can convert as well as a plain store.",
+                "Well-structured content (FAQ, 'About Us') reduces doubts and purchase objections.",
+                "Optimizing images and SEO from the start avoids rework later."
+            ]
+        },
+        tags: ["e-commerce", "café", "loja virtual", "next.js", "react"]
+    },
+    {
         id: "estetica-ana-clara",
         nome: "Estética Ana Clara",
         imagem: "/mockup/estetica-ana-clara.webp",
@@ -487,6 +493,134 @@ const rawProjects = [
             en: "Public information site for citizens + a full CMS for city hall."
         },
         tags: ["governo", "cms", "full-stack", "prisma", "next.js"]
+    },
+    {
+        id: "zapscribe",
+        nome: "Zapscribe",
+        categoria: "tools",
+        status: "active",
+        complexidade: "advanced",
+        tecnologias: ["Python", "faster-whisper", "SQLite", "IA local", "Text-to-Speech"],
+        tecnologiasPrincipais: ["Python", "faster-whisper", "SQLite"],
+        links: { github: "https://github.com/LuixzSouza/zapscribe" },
+        descricao: {
+            pt: "Transcreve áudios do WhatsApp 100% no computador (sem enviar nada à internet) e monta o prompt para a IA. Fila, histórico, clientes e texto→áudio.",
+            en: "Transcribes WhatsApp audio 100% locally (nothing leaves the machine) and builds the prompt for the AI. Queue, history, clients and text-to-speech."
+        },
+        data: { pt: "2026", en: "2026" },
+        tags: ["ia", "whisper", "python", "produtividade"]
+    },
+    {
+        id: "garimpo",
+        nome: "Garimpo — Oportunidades de Revenda",
+        categoria: "tools",
+        status: "active",
+        complexidade: "advanced",
+        tecnologias: ["Python", "Web Scraping", "CLI", "Banco de dados", "Automação"],
+        tecnologiasPrincipais: ["Python", "Web Scraping", "Automação"],
+        links: {},
+        descricao: {
+            pt: "Varre promoções de ~16 lojas, cruza o mesmo código de barras entre elas e mostra só o que dá lucro de verdade na revenda, com painel no navegador.",
+            en: "Scans deals from ~16 stores, matches the same barcode across them and shows only what is actually profitable to resell, with a browser dashboard."
+        },
+        data: { pt: "2026", en: "2026" },
+        tags: ["python", "scraping", "automação", "dados"]
+    },
+    {
+        id: "agilify",
+        nome: "Agilify — Landing SaaS",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "intermediate",
+        tecnologias: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion", "React Hook Form", "Zod", "Resend", "next-intl"],
+        tecnologiasPrincipais: ["Next.js", "shadcn/ui", "Resend"],
+        links: {},
+        descricao: {
+            pt: "Landing e funil de captura de uma plataforma de emissão fiscal: todo CTA abre um modal de lead que notifica por e-mail (Resend) e leva ao WhatsApp com a origem do clique.",
+            en: "Landing page and lead funnel for a tax-invoicing SaaS: every CTA opens a lead modal that notifies via e-mail (Resend) and hands off to WhatsApp with the click source."
+        },
+        data: { pt: "2026", en: "2026" },
+        tags: ["landing page", "saas", "conversão", "next.js"]
+    },
+    {
+        id: "prevencao-pep",
+        nome: "App Prevenção de PEP",
+        categoria: "mobile",
+        status: "active",
+        complexidade: "intermediate",
+        tecnologias: ["React Native", "Expo", "TypeScript", "Zustand", "React Navigation"],
+        tecnologiasPrincipais: ["React Native", "Expo", "Zustand"],
+        links: { github: "https://github.com/LuixzSouza/prevencao-pep-app" },
+        descricao: {
+            pt: "Aplicativo mobile de apoio clínico para estratificar o risco de pancreatite pós-CPRE e orientar a prevenção.",
+            en: "Clinical-support mobile app to stratify the risk of post-ERCP pancreatitis and guide prevention."
+        },
+        data: { pt: "2026", en: "2026" },
+        tags: ["mobile", "saúde", "react native", "expo"]
+    },
+    {
+        id: "h4rdgame-manager",
+        nome: "H4RD G4ME Manager",
+        categoria: "applications",
+        status: "in-development",
+        complexidade: "advanced",
+        tecnologias: ["Next.js", "TypeScript", "NextAuth", "Radix UI", "Tailwind CSS", "API Clash of Clans"],
+        tecnologiasPrincipais: ["Next.js", "NextAuth", "Radix UI"],
+        links: { github: "https://github.com/LuixzSouza/clash-of-clans-dashboard" },
+        descricao: {
+            pt: "Painel de gestão de um clã de Clash of Clans: sincronização com a API oficial, hierarquia de cargos, detector de inatividade e tesouraria com eventos.",
+            en: "Management dashboard for a Clash of Clans clan: sync with the official API, role hierarchy, inactivity detection and an events treasury."
+        },
+        data: { pt: "2025 — 2026", en: "2025 — 2026" },
+        tags: ["dashboard", "api", "next.js", "games"]
+    },
+    {
+        id: "sistema-atendimento",
+        nome: "Sistema de Atendimento Inteligente",
+        categoria: "applications",
+        status: "prototype",
+        complexidade: "intermediate",
+        tecnologias: ["Next.js", "TypeScript", "Supabase", "shadcn/ui", "React Hook Form", "Zod"],
+        tecnologiasPrincipais: ["Next.js", "Supabase", "shadcn/ui"],
+        links: {},
+        descricao: {
+            pt: "MVP que organiza o atendimento ao cliente: FAQs com palavras-chave, sugestão automática de respostas, histórico e métricas, com Supabase Auth.",
+            en: "MVP that organizes customer support: keyword FAQs, automatic reply suggestions, history and metrics, with Supabase Auth."
+        },
+        data: { pt: "2026", en: "2026" },
+        tags: ["atendimento", "supabase", "mvp"]
+    },
+    {
+        id: "aromas-noma",
+        nome: "Aromas Noma",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "intermediate",
+        tecnologias: ["Next.js", "React", "PHP", "MySQL", "Recharts", "Framer Motion"],
+        tecnologiasPrincipais: ["Next.js", "PHP", "MySQL"],
+        links: {},
+        descricao: {
+            pt: "ERP minimalista mobile-first + vitrine digital para uma marca de velas aromáticas: estoque, fluxo de caixa e relatórios pelo celular, com API PHP na Hostinger.",
+            en: "Mobile-first minimalist ERP + digital storefront for a scented-candle brand: stock, cash flow and reports from a phone, with a PHP API on Hostinger."
+        },
+        data: { pt: "2026", en: "2026" },
+        tags: ["erp", "vitrine", "php", "mobile-first"]
+    },
+    {
+        id: "eduardo-souza-portfolio",
+        nome: "Portfólio Eduardo Souza",
+        categoria: "websites",
+        status: "active",
+        complexidade: "intermediate",
+        tecnologias: ["Next.js", "GSAP", "Lenis", "next-intl"],
+        tecnologiasPrincipais: ["Next.js", "GSAP", "Lenis"],
+        links: { github: "https://github.com/LuixzSouza/eduardo-design-portfolio" },
+        descricao: {
+            pt: "Portfólio de um designer com 10+ anos de carreira, com animações de scroll em GSAP e rolagem suave — desenvolvido a partir do design dele.",
+            en: "Portfolio for a designer with 10+ years of experience, with GSAP scroll animations and smooth scrolling — built from his design."
+        },
+        data: { pt: "2025", en: "2025" },
+        tags: ["portfólio", "gsap", "animação", "next.js"]
     },
     {
         id: "formula-idiomas",

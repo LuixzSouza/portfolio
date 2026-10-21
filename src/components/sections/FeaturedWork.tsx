@@ -17,10 +17,12 @@ import { projetos, type Projeto } from "@/data/projects";
 import { shuffle } from "@/lib/shuffle";
 import { screenshotUrl } from "@/lib/screenshot";
 import { useTranslations } from "@/content/useTranslations";
+import { useLocalizedHref } from "@/lib/useLocale";
+import { slugify } from "@/lib/slug";
 
-// Só projetos com site no ar entram nos destaques (o hover mostra o site real).
-const POOL = projetos.filter((p) => p.links.verProjeto);
-const COUNT = 4;
+// Destaques entram sempre; os demais só com site no ar (o hover mostra o site real).
+const POOL = projetos.filter((p) => p.destaque || p.links.verProjeto);
+const COUNT = 6;
 // Projetos curados (destaque) vêm SEMPRE primeiro — o recrutador vê o melhor
 // trabalho, não um sorteio que pode trazer um projeto fraco. As vagas restantes
 // (se houver) são preenchidas aleatoriamente, para dar variedade.
@@ -29,6 +31,7 @@ const REST = POOL.filter((p) => !p.destaque);
 
 export function FeaturedWork() {
   const t = useTranslations();
+  const loc = useLocalizedHref();
   const { x, y, follow } = useCursorFollow();
   const [hovering, setHovering] = useState(false);
   // Random só no cliente (evita mismatch de hidratação): o SSR mostra destaques + início do resto.
@@ -56,9 +59,9 @@ export function FeaturedWork() {
           {items.map((p, i) => (
             <Reveal key={p.nome} delay={i * 0.1}>
               <motion.a
-                href={p.links.verProjeto}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(p.links.verProjeto
+                  ? { href: p.links.verProjeto, target: "_blank", rel: "noopener noreferrer" }
+                  : { href: loc(`/project?id=${slugify(p.nome)}`) })}
                 onMouseEnter={() => setHovering(true)}
                 onMouseLeave={() => setHovering(false)}
                 className="group block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
