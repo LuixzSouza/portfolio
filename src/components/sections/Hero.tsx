@@ -180,7 +180,7 @@ export function Hero() {
               className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-surface shadow-2xl transition-shadow duration-500 hover:shadow-foreground/5 lg:max-w-none pointer-events-none"
             >
               <Image
-                src="/image/fotoformal.webp"
+                src="/image/foto-perfil-2026.webp"
                 alt="Luiz Antônio de Souza"
                 fill
                 priority

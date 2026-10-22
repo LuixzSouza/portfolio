@@ -183,7 +183,7 @@ export function SectionFooter({ className = "" }: { className?: string }) {
             className="group relative aspect-square w-[clamp(72px,12vw,168px)] shrink-0 overflow-hidden rounded-full border border-foreground/15 bg-surface"
           >
             <Image
-              src="/image/fotoformal.webp"
+              src="/image/foto-perfil-2026.webp"
               alt="Luiz Souza"
               fill
               sizes="168px"
