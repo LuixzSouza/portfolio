@@ -86,7 +86,7 @@ export function ProjectLightbox({
         onClick={(e) => e.stopPropagation()}
         className="flex max-h-full max-w-5xl flex-col items-center gap-4"
       >
-        <div className="relative h-[70vh] w-[88vw] max-w-5xl overflow-hidden rounded-2xl border border-foreground/10 md:w-[80vw]">
+        <div className="relative aspect-[16/10] w-[92vw] max-w-5xl overflow-hidden rounded-2xl border border-foreground/10 md:aspect-auto md:h-[70vh] md:w-[80vw]">
           <Image
             src={img.src}
             alt={img.legenda ? pickText(img.legenda!, lang) : nome}

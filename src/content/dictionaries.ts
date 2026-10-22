@@ -19,6 +19,8 @@ export interface Dictionary {
     close: string;
     source: string;
     loading: string;
+    openMenu: string;
+    closeMenu: string;
   };
   nav: {
     work: string;
@@ -26,6 +28,8 @@ export interface Dictionary {
     about: string;
     contact: string;
     cta: string;
+    descriptions: { work: string; services: string; about: string; contact: string };
+    madeBy: string;
   };
   hero: {
     badge: string;
@@ -38,6 +42,7 @@ export interface Dictionary {
     hint: string;
   };
   services: {
+    seeAll: string;
     eyebrow: string;
     heading: string;
     text: string;
@@ -163,6 +168,7 @@ export interface Dictionary {
     mascotChannelCv: string;
   };
   project: {
+    caseStudyCta: string;
     back: string;
     notFoundEyebrow: string;
     notFoundTitle: string;
@@ -233,6 +239,8 @@ const pt: Dictionary = {
     close: "Fechar",
     source: "Origem",
     loading: "Carregando",
+    openMenu: "Abrir menu",
+    closeMenu: "Fechar menu",
   },
   nav: {
     work: "Trabalhos",
@@ -240,6 +248,8 @@ const pt: Dictionary = {
     about: "Sobre",
     contact: "Contato",
     cta: "Vamos conversar",
+    descriptions: { work: "Projetos e trabalhos", services: "Sites, sistemas e lojas", about: "História e habilidades", contact: "Vamos conversar" },
+    madeBy: "Desenvolvido com 💜 por",
   },
   hero: {
     badge: "Disponível para vagas",
@@ -253,6 +263,7 @@ const pt: Dictionary = {
     hint: "Passe o mouse",
   },
   services: {
+    seeAll: "Ver todos os serviços",
     eyebrow: "O que eu faço",
     heading: "O que eu construo — e com qual stack.",
     text: "Front-end moderno, back-end e integrações. Da arquitetura ao deploy: código tipado, testado, acessível e pensado para escalar.",
@@ -398,6 +409,7 @@ const pt: Dictionary = {
     mascotChannelCv: "Quer meu currículo? É só baixar.",
   },
   project: {
+    caseStudyCta: "Ver estudo de caso completo",
     back: "Voltar",
     notFoundEyebrow: "Projeto",
     notFoundTitle: "Projeto não encontrado.",
@@ -467,6 +479,8 @@ const en: Dictionary = {
     close: "Close",
     source: "Source",
     loading: "Loading",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
   },
   nav: {
     work: "Work",
@@ -474,6 +488,8 @@ const en: Dictionary = {
     about: "About",
     contact: "Contact",
     cta: "Let's talk",
+    descriptions: { work: "Projects and work", services: "Websites, systems and stores", about: "Story and skills", contact: "Let's talk" },
+    madeBy: "Built with 💜 by",
   },
   hero: {
     badge: "Open to work",
@@ -487,6 +503,7 @@ const en: Dictionary = {
     hint: "Hover me",
   },
   services: {
+    seeAll: "See all services",
     eyebrow: "What I do",
     heading: "What I build — and the stack behind it.",
     text: "Modern front-end, back-end and integrations. From architecture to deploy: typed, tested, accessible code built to scale.",
@@ -632,6 +649,7 @@ const en: Dictionary = {
     mascotChannelCv: "Want my résumé? Just grab it.",
   },
   project: {
+    caseStudyCta: "View full case study",
     back: "Back",
     notFoundEyebrow: "Project",
     notFoundTitle: "Project not found.",
@@ -701,6 +719,8 @@ const es: Dictionary = {
     close: "Cerrar",
     source: "Origen",
     loading: "Cargando",
+    openMenu: "Abrir menú",
+    closeMenu: "Cerrar menú",
   },
   nav: {
     work: "Proyectos",
@@ -708,6 +728,8 @@ const es: Dictionary = {
     about: "Acerca de",
     contact: "Contacto",
     cta: "Hablemos",
+    descriptions: { work: "Proyectos y trabajos", services: "Sitios, sistemas y tiendas", about: "Historia y habilidades", contact: "Hablemos" },
+    madeBy: "Desarrollado con 💜 por",
   },
   hero: {
     badge: "Disponible para empleo",
@@ -721,6 +743,7 @@ const es: Dictionary = {
     hint: "Pasa el ratón",
   },
   services: {
+    seeAll: "Ver todos los servicios",
     eyebrow: "Qué hago",
     heading: "Sin jerga. Solo resultados que se ven.",
     text: "Desde un sitio simple hasta un sistema completo — manejo el diseño, el código y la implementación. Tú me acompañas y obtienes el resultado listo para mostrar.",
@@ -866,6 +889,7 @@ const es: Dictionary = {
     mascotChannelCv: "¿Quieres mi currículum? Solo descárgalo.",
   },
   project: {
+    caseStudyCta: "Ver el caso de estudio completo",
     back: "Volver",
     notFoundEyebrow: "Proyecto",
     notFoundTitle: "Proyecto no encontrado.",
@@ -932,6 +956,8 @@ const fr: Dictionary = {
     close: "Fermer",
     source: "Source",
     loading: "Chargement",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
   },
   nav: {
     work: "Projets",
@@ -939,6 +965,8 @@ const fr: Dictionary = {
     about: "À propos",
     contact: "Contact",
     cta: "Parlons ensemble",
+    descriptions: { work: "Projets et réalisations", services: "Sites, systèmes et boutiques", about: "Parcours et compétences", contact: "Parlons-en" },
+    madeBy: "Développé avec 💜 par",
   },
   hero: {
     badge: "Ouvert aux opportunités",
@@ -952,6 +980,7 @@ const fr: Dictionary = {
     hint: "Survolez-moi",
   },
   services: {
+    seeAll: "Voir tous les services",
     eyebrow: "Ce que je fais",
     heading: "Pas de jargon. Juste des résultats visibles.",
     text: "D'un simple site à un système complet — je gère le design, le code et le déploiement. Tu me suis et obtiens le résultat prêt pour le monde.",
@@ -1097,6 +1126,7 @@ const fr: Dictionary = {
     mascotChannelCv: "Voulez-vous mon CV ? Téléchargez-le simplement.",
   },
   project: {
+    caseStudyCta: "Voir l'étude de cas complète",
     back: "Retour",
     notFoundEyebrow: "Projet",
     notFoundTitle: "Projet non trouvé.",
@@ -1163,6 +1193,8 @@ const de: Dictionary = {
     close: "Schließen",
     source: "Quelle",
     loading: "Wird geladen",
+    openMenu: "Menü öffnen",
+    closeMenu: "Menü schließen",
   },
   nav: {
     work: "Projekte",
@@ -1170,6 +1202,8 @@ const de: Dictionary = {
     about: "Über mich",
     contact: "Kontakt",
     cta: "Lass uns sprechen",
+    descriptions: { work: "Projekte und Arbeiten", services: "Websites, Systeme und Shops", about: "Werdegang und Fähigkeiten", contact: "Lass uns reden" },
+    madeBy: "Entwickelt mit 💜 von",
   },
   hero: {
     badge: "Offen für neue Stellen",
@@ -1183,6 +1217,7 @@ const de: Dictionary = {
     hint: "Hover mich an",
   },
   services: {
+    seeAll: "Alle Leistungen ansehen",
     eyebrow: "Was ich mache",
     heading: "Kein Jargon. Nur Ergebnisse, die du sehen kannst.",
     text: "Von einer einfachen Website bis zu einem vollständigen System — ich kümmere mich um Design, Code und Bereitstellung. Du begleitest mich und erhältst das Ergebnis bereit für die Welt.",
@@ -1328,6 +1363,7 @@ const de: Dictionary = {
     mascotChannelCv: "Willst du meinen Lebenslauf? Laden Sie ihn einfach herunter.",
   },
   project: {
+    caseStudyCta: "Vollständige Fallstudie ansehen",
     back: "Zurück",
     notFoundEyebrow: "Projekt",
     notFoundTitle: "Projekt nicht gefunden.",
@@ -1394,6 +1430,8 @@ const it: Dictionary = {
     close: "Chiudi",
     source: "Origine",
     loading: "Caricamento",
+    openMenu: "Apri menu",
+    closeMenu: "Chiudi menu",
   },
   nav: {
     work: "Progetti",
@@ -1401,6 +1439,8 @@ const it: Dictionary = {
     about: "Chi sono",
     contact: "Contatti",
     cta: "Parliamone",
+    descriptions: { work: "Progetti e lavori", services: "Siti, sistemi e negozi", about: "Storia e competenze", contact: "Parliamone" },
+    madeBy: "Sviluppato con 💜 da",
   },
   hero: {
     badge: "Aperto a nuove opportunità",
@@ -1414,6 +1454,7 @@ const it: Dictionary = {
     hint: "Passa il mouse",
   },
   services: {
+    seeAll: "Vedi tutti i servizi",
     eyebrow: "Cosa faccio",
     heading: "Niente parolacce. Solo risultati che vedi.",
     text: "Da un semplice sito a un sistema completo — curo il design, il codice e il rilascio. Tu mi accompagni e ottieni il risultato pronto per il mondo.",
@@ -1559,6 +1600,7 @@ const it: Dictionary = {
     mascotChannelCv: "Vuoi il mio CV? Scaricalo semplicemente.",
   },
   project: {
+    caseStudyCta: "Vedi il case study completo",
     back: "Indietro",
     notFoundEyebrow: "Progetto",
     notFoundTitle: "Progetto non trovato.",
@@ -1625,6 +1667,8 @@ const zh: Dictionary = {
     close: "关闭",
     source: "来源",
     loading: "加载中",
+    openMenu: "打开菜单",
+    closeMenu: "关闭菜单",
   },
   nav: {
     work: "作品",
@@ -1632,6 +1676,8 @@ const zh: Dictionary = {
     about: "关于",
     contact: "联系",
     cta: "让我们谈谈",
+    descriptions: { work: "项目与作品", services: "网站、系统与商店", about: "经历与技能", contact: "聊一聊" },
+    madeBy: "用 💜 打造 —",
   },
   hero: {
     badge: "正在求职",
@@ -1645,6 +1691,7 @@ const zh: Dictionary = {
     hint: "悬停查看",
   },
   services: {
+    seeAll: "查看全部服务",
     eyebrow: "我的服务",
     heading: "没有术语。只有能看到的结果。",
     text: "从简单网站到完整系统——我负责设计、代码和部署。您全程跟进，获得可呈现的成品。",
@@ -1790,6 +1837,7 @@ const zh: Dictionary = {
     mascotChannelCv: "想要我的简历吗？只需下载。",
   },
   project: {
+    caseStudyCta: "查看完整案例研究",
     back: "返回",
     notFoundEyebrow: "项目",
     notFoundTitle: "未找到项目。",
@@ -1856,6 +1904,8 @@ const ja: Dictionary = {
     close: "閉じる",
     source: "ソース",
     loading: "読み込み中",
+    openMenu: "メニューを開く",
+    closeMenu: "メニューを閉じる",
   },
   nav: {
     work: "ポートフォリオ",
@@ -1863,6 +1913,8 @@ const ja: Dictionary = {
     about: "について",
     contact: "お問い合わせ",
     cta: "話そう",
+    descriptions: { work: "プロジェクトと実績", services: "サイト・システム・ストア", about: "経歴とスキル", contact: "お話ししましょう" },
+    madeBy: "💜 を込めて制作 —",
   },
   hero: {
     badge: "求職中",
@@ -1876,6 +1928,7 @@ const ja: Dictionary = {
     hint: "ホバーしてください",
   },
   services: {
+    seeAll: "すべてのサービスを見る",
     eyebrow: "何をするのか",
     heading: "難しい言葉なし。見える結果だけ。",
     text: "シンプルなウェブサイトから完全なシステムまで——デザイン、コード、デプロイメントを担当します。あなたは同行して、公開準備完了の成果物を受け取ります。",
@@ -2021,6 +2074,7 @@ const ja: Dictionary = {
     mascotChannelCv: "履歴書が欲しいですか？ダウンロードしてください。",
   },
   project: {
+    caseStudyCta: "ケーススタディを全文見る",
     back: "戻る",
     notFoundEyebrow: "プロジェクト",
     notFoundTitle: "プロジェクトが見つかりません。",
@@ -2087,6 +2141,8 @@ const ru: Dictionary = {
     close: "Закрыть",
     source: "Источник",
     loading: "Загрузка",
+    openMenu: "Открыть меню",
+    closeMenu: "Закрыть меню",
   },
   nav: {
     work: "Работы",
@@ -2094,6 +2150,8 @@ const ru: Dictionary = {
     about: "Обо мне",
     contact: "Контакт",
     cta: "Давайте поговорим",
+    descriptions: { work: "Проекты и работы", services: "Сайты, системы и магазины", about: "История и навыки", contact: "Давайте обсудим" },
+    madeBy: "Сделано с 💜 —",
   },
   hero: {
     badge: "Открыт к предложениям",
@@ -2107,6 +2165,7 @@ const ru: Dictionary = {
     hint: "Наведите мышку",
   },
   services: {
+    seeAll: "Все услуги",
     eyebrow: "Что я делаю",
     heading: "Без жаргона. Только видимые результаты.",
     text: "От простого веб-сайта до полной системы — я занимаюсь дизайном, кодом и развертыванием. Вы следите, и получаете готовый результат.",
@@ -2252,6 +2311,7 @@ const ru: Dictionary = {
     mascotChannelCv: "Хочешь мое резюме? Просто скачай.",
   },
   project: {
+    caseStudyCta: "Смотреть полный кейс",
     back: "Назад",
     notFoundEyebrow: "Проект",
     notFoundTitle: "Проект не найден.",
@@ -2318,6 +2378,8 @@ const ar: Dictionary = {
     close: "إغلاق",
     source: "المصدر",
     loading: "جار التحميل",
+    openMenu: "فتح القائمة",
+    closeMenu: "إغلاق القائمة",
   },
   nav: {
     work: "الأعمال",
@@ -2325,6 +2387,8 @@ const ar: Dictionary = {
     about: "حول",
     contact: "اتصل",
     cta: "دعنا نتحدث",
+    descriptions: { work: "المشاريع والأعمال", services: "مواقع وأنظمة ومتاجر", about: "المسيرة والمهارات", contact: "لنتحدث" },
+    madeBy: "صُنع بـ 💜 بواسطة",
   },
   hero: {
     badge: "متاح للعمل",
@@ -2338,6 +2402,7 @@ const ar: Dictionary = {
     hint: "مرر الفأرة فوقي",
   },
   services: {
+    seeAll: "عرض جميع الخدمات",
     eyebrow: "ما الذي أفعله",
     heading: "لا مصطلحات معقدة. النتائج التي تراها فقط.",
     text: "من موقع ويب بسيط إلى نظام كامل — أتولى التصميم والكود والنشر. أنت تتابع وتحصل على النتيجة جاهزة للعالم.",
@@ -2483,6 +2548,7 @@ const ar: Dictionary = {
     mascotChannelCv: "هل تريد سيرتي الذاتية؟ فقط حمله.",
   },
   project: {
+    caseStudyCta: "عرض دراسة الحالة كاملة",
     back: "رجوع",
     notFoundEyebrow: "المشروع",
     notFoundTitle: "المشروع غير موجود.",
@@ -2549,6 +2615,8 @@ const hi: Dictionary = {
     close: "बंद करें",
     source: "स्रोत",
     loading: "लोड हो रहा है",
+    openMenu: "मेनू खोलें",
+    closeMenu: "मेनू बंद करें",
   },
   nav: {
     work: "काम",
@@ -2556,6 +2624,8 @@ const hi: Dictionary = {
     about: "परिचय",
     contact: "संपर्क",
     cta: "चलिए बात करते हैं",
+    descriptions: { work: "प्रोजेक्ट और काम", services: "वेबसाइट, सिस्टम और स्टोर", about: "कहानी और कौशल", contact: "बात करते हैं" },
+    madeBy: "💜 के साथ बनाया —",
   },
   hero: {
     badge: "नौकरी के लिए उपलब्ध",
@@ -2569,6 +2639,7 @@ const hi: Dictionary = {
     hint: "होवर करें",
   },
   services: {
+    seeAll: "सभी सेवाएं देखें",
     eyebrow: "मैं क्या करता हूं",
     heading: "कोई जटिल शब्दावली नहीं। केवल दिखने वाले नतीजे।",
     text: "एक साधारण वेबसाइट से लेकर पूरी प्रणाली तक — मैं डिजाइन, कोड और तैनाती को संभालता हूं। आप साथ चलते हैं और तैयार परिणाम पाते हैं।",
@@ -2714,6 +2785,7 @@ const hi: Dictionary = {
     mascotChannelCv: "क्या आप मेरा रिज्यूमे चाहते हैं? बस डाउनलोड करें।",
   },
   project: {
+    caseStudyCta: "पूरी केस स्टडी देखें",
     back: "पीछे",
     notFoundEyebrow: "परियोजना",
     notFoundTitle: "परियोजना नहीं मिली।",
@@ -2780,6 +2852,8 @@ const ko: Dictionary = {
     close: "닫기",
     source: "출처",
     loading: "로딩 중",
+    openMenu: "메뉴 열기",
+    closeMenu: "메뉴 닫기",
   },
   nav: {
     work: "작업",
@@ -2787,6 +2861,8 @@ const ko: Dictionary = {
     about: "정보",
     contact: "연락처",
     cta: "대화해보세요",
+    descriptions: { work: "프로젝트와 작업", services: "웹사이트, 시스템, 스토어", about: "경력과 기술", contact: "이야기해요" },
+    madeBy: "💜 으로 만든 —",
   },
   hero: {
     badge: "구직 중",
@@ -2800,6 +2876,7 @@ const ko: Dictionary = {
     hint: "마우스 올리세요",
   },
   services: {
+    seeAll: "모든 서비스 보기",
     eyebrow: "제공하는 것",
     heading: "전문 용어 없음. 보이는 결과만.",
     text: "간단한 웹사이트부터 완전한 시스템까지 — 디자인, 코드, 배포를 담당합니다. 함께 진행하고 완성된 결과를 받습니다.",
@@ -2945,6 +3022,7 @@ const ko: Dictionary = {
     mascotChannelCv: "제 이력서를 원하세요? 다운로드하세요.",
   },
   project: {
+    caseStudyCta: "전체 사례 연구 보기",
     back: "뒤로",
     notFoundEyebrow: "프로젝트",
     notFoundTitle: "프로젝트를 찾을 수 없습니다.",
@@ -3011,6 +3089,8 @@ const id: Dictionary = {
     close: "Tutup",
     source: "Sumber",
     loading: "Memuat",
+    openMenu: "Buka menu",
+    closeMenu: "Tutup menu",
   },
   nav: {
     work: "Pekerjaan",
@@ -3018,6 +3098,8 @@ const id: Dictionary = {
     about: "Tentang",
     contact: "Kontak",
     cta: "Mari berbicara",
+    descriptions: { work: "Proyek dan karya", services: "Situs, sistem, dan toko", about: "Kisah dan keahlian", contact: "Mari bicara" },
+    madeBy: "Dibuat dengan 💜 oleh",
   },
   hero: {
     badge: "Terbuka untuk pekerjaan",
@@ -3031,6 +3113,7 @@ const id: Dictionary = {
     hint: "Arahkan kursor ke saya",
   },
   services: {
+    seeAll: "Lihat semua layanan",
     eyebrow: "Yang saya lakukan",
     heading: "Tidak ada jargon. Hanya hasil yang terlihat.",
     text: "Dari situs web sederhana hingga sistem lengkap — saya menangani desain, kode, dan penyebaran. Anda mengikuti dan mendapatkan hasil siap untuk dunia.",
@@ -3176,6 +3259,7 @@ const id: Dictionary = {
     mascotChannelCv: "Ingin resume saya? Cukup unduh.",
   },
   project: {
+    caseStudyCta: "Lihat studi kasus lengkap",
     back: "Kembali",
     notFoundEyebrow: "Proyek",
     notFoundTitle: "Proyek tidak ditemukan.",

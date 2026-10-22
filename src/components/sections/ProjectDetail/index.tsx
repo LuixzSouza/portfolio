@@ -394,7 +394,7 @@ export function ProjectDetail() {
                   href={loc(`/work/case/${project.id}`)}
                   className="group mt-12 inline-flex items-center gap-3 self-start rounded-full border border-foreground/20 py-3 pl-6 pr-3 text-base font-medium text-foreground transition-colors duration-500 hover:border-foreground/50 hover:bg-foreground/[0.04] md:mt-16"
                 >
-                  {pickText({ pt: "Ver estudo de caso completo", en: "View full case study" }, lang)}
+                  {t.project.caseStudyCta}
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground text-background transition-transform duration-500 group-hover:rotate-45">
                     <ArrowRight className="h-4 w-4 -rotate-45" strokeWidth={2} />
                   </span>

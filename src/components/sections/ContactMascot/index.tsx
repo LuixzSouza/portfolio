@@ -97,7 +97,7 @@ export function ContactMascot(props: ContactMascotProps) {
               <motion.g style={useMesh ? { x: faceX, y: brain.physics.faceY, filter: "url(#meshWarp)" } : { x: faceX, y: brain.physics.faceY }}>
 
                 {/* Elastic Cheeks animadas no phoneme simulation */}
-                <motion.g style={{ x: cheekDeformX, scaleY: talkScale }} animate={{ opacity: blushOn ? 1 : 0 }} transition={morph}>
+                <motion.g style={{ x: cheekDeformX, scaleY: talkScale }} initial={false} animate={{ opacity: blushOn ? 1 : 0 }} transition={morph}>
                   <ellipse cx="32" cy="74" rx="7.5" ry="4.5" className="fill-background/30" />
                   <ellipse cx="88" cy="74" rx="7.5" ry="4.5" className="fill-background/30" />
                 </motion.g>
@@ -106,7 +106,7 @@ export function ContactMascot(props: ContactMascotProps) {
                   <ellipse cx="44" cy="56" rx="12" ry="14" className="fill-background" />
                   <ellipse cx="76" cy="56" rx="12" ry="14" className="fill-background" />
 
-                  <motion.g animate={{ opacity: isSleeping ? 0 : 1 }}>
+                  <motion.g initial={false} animate={{ opacity: isSleeping ? 0 : 1 }}>
                     <motion.circle r="6" className="fill-foreground" style={{ cx: pupilLcx, cy: pupilCy }} />
                     <motion.circle r="6" className="fill-foreground" style={{ cx: pupilRcx, cy: pupilCy }} />
                     {/* Eye wetness: highlight especular minúsculo. */}
@@ -115,13 +115,15 @@ export function ContactMascot(props: ContactMascotProps) {
                   </motion.g>
                 </motion.g>
 
-                <motion.path animate={{ d: browLD }} transition={morph} className="fill-none stroke-background" strokeWidth="4" strokeLinecap="round" />
-                <motion.path animate={{ d: browRD }} transition={morphR} className="fill-none stroke-background" strokeWidth="4" strokeLinecap="round" />
+                <motion.path d={browLD} initial={false} animate={{ d: browLD }} transition={morph} className="fill-none stroke-background" strokeWidth="4" strokeLinecap="round" />
+                <motion.path d={browRD} initial={false} animate={{ d: browRD }} transition={morphR} className="fill-none stroke-background" strokeWidth="4" strokeLinecap="round" />
 
                 {/* Mouth Phoneme Simulation com Força G */}
                 <motion.g style={{ scaleY: talkScale, transformOrigin: "60px 82px" }}>
                   <motion.path
                     style={{ skewX: mouthSkew, scaleY: mouthStretch, transformOrigin: "60px 82px" }}
+                    d={mouthD}
+                    initial={false}
                     animate={{ d: mouthD }}
                     transition={morph}
                     className="fill-none stroke-background"

@@ -10,8 +10,6 @@ import { Reveal } from "@/components/ds/Reveal";
 import { ArrowButton } from "@/components/ds/ArrowButton";
 import { ServicesInteractive, type Service } from "./ServicesInteractive";
 import { useTranslations } from "@/content/useTranslations";
-import { useLanguage } from "@/components/ds/LanguageProvider";
-import { pickText } from "@/lib/i18n";
 
 const SERVICE_META = [
   { n: "01", slug: "sites", image: "/services/sites.webp" },
@@ -35,7 +33,6 @@ const STACK = [
 
 export function Services() {
   const t = useTranslations();
-  const { lang } = useLanguage();
   const services: Service[] = SERVICE_META.map((meta, i) => ({
     ...meta,
     ...t.services.items[i],
@@ -53,7 +50,7 @@ export function Services() {
             {t.services.text}
           </Text>
           <ArrowButton href="/services" variant="outline" className="mt-2 self-start">
-            {pickText({ pt: "Ver todos os serviços", en: "See all services" }, lang)}
+            {t.services.seeAll}
           </ArrowButton>
         </Reveal>
 
