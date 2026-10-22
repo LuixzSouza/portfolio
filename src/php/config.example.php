@@ -16,7 +16,7 @@ return [
     'smtp_user' => 'COLOQUE_O_USUARIO_SMTP',
     'smtp_pass' => 'COLOQUE_A_SENHA_SMTP',
     'smtp_port' => 465,
-    'mail_to'   => 'ola@luixzsouza.com.br',
+    'mail_to'   => 'luiz.antoniodesouza004@gmail.com',
 
     // --- Banco de dados (CMS) ---
     'db_host'    => 'localhost',          // na Hostinger costuma ser 'localhost'

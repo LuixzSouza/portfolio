@@ -28,7 +28,7 @@ const SOCIAL = [
   { label: "CodeWars", href: "https://www.codewars.com/users/LuixzSouza" },
 ];
 
-const EMAIL = "ola@luixzsouza.com.br";
+const EMAIL = "luiz.antoniodesouza004@gmail.com";
 
 export function SectionFooter({ className = "" }: { className?: string }) {
   const t = useTranslations();

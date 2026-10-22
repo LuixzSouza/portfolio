@@ -40,7 +40,7 @@ export function ContactForm() {
   };
 
   const channels = [
-    { key: "email", label: t.contact.channelEmail, value: "ola@luixzsouza.com.br", href: "mailto:ola@luixzsouza.com.br" },
+    { key: "email", label: t.contact.channelEmail, value: "luiz.antoniodesouza004@gmail.com", href: "mailto:luiz.antoniodesouza004@gmail.com" },
     { key: "whats", label: t.contact.channelWhats, value: "+55 (35) 99735-4797", href: "https://wa.me/5535997354797" },
     {
       key: "linkedin",

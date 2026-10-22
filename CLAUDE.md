@@ -11,7 +11,7 @@ Recriação do portfólio pessoal de **Luiz Antônio de Souza** (dev Front-End).
 - GitHub: https://github.com/LuixzSouza
 - LinkedIn: https://www.linkedin.com/in/luiz-antonio-souza-5000a226b/
 - CodeWars: https://www.codewars.com/users/LuixzSouza
-- E-mail de contato: ola@luixzsouza.com.br ou luiz.antoniodesouza004@gmail.com
+- E-mail de contato: luiz.antoniodesouza004@gmail.com (ola@luixzsouza.com.br foi aposentado)
 
 > Idioma de trabalho: **responder em português (PT-BR)**. Termos técnicos em inglês são bem-vindos.
 

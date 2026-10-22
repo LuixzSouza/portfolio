@@ -1,248 +1,222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Résumé — Luiz Antônio de Souza</title>
-<!--
-  HOW TO EXPORT THE PDF:
-  1. Open this file in Chrome/Edge.
-  2. Ctrl+P (Print).
-  3. Destination: "Save as PDF".
-  4. Margins: "Default". Enable "Background graphics".
-  5. Save as e.g. public/certificates/Resume_Luiz_2025_EN.pdf
-
-  FIELDS TO REVIEW/FILL are marked with  <!-- TODO -->  .
--->
+<meta charset="utf-8">
+<title>Luiz Antônio de Souza — Resume</title>
 <style>
+  @page { size: A4; margin: 0; }
   :root {
-    --ink: #14110f;
-    --muted: #5b554f;
-    --line: #e2ddd6;
-    --accent: #14110f;
-    --bg: #ffffff;
+    --ink: #16181d;
+    --soft: #4a505c;
+    --mute: #7a808c;
+    --line: #e3e5ea;
+    --accent: #1d5c4f;
+    --accent-bg: #eef5f2;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background: #fff; }
   body {
-    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-    color: var(--ink);
-    background: #f4f1ec;
-    line-height: 1.5;
-    font-size: 10.5pt;
-  }
-  .page {
     width: 210mm;
-    min-height: 297mm;
-    margin: 16px auto;
-    padding: 18mm 18mm 16mm;
-    background: var(--bg);
-    box-shadow: 0 10px 40px rgba(0,0,0,.12);
+    padding: 11mm 14mm 8mm;
+    font-family: "Segoe UI", "Segoe UI Variable Text", Arial, sans-serif;
+    font-size: 8.7pt; line-height: 1.4; color: var(--ink);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
-  h1, h2, h3 { font-family: "Georgia", "Times New Roman", serif; font-weight: 600; letter-spacing: -.01em; }
+  a { color: inherit; text-decoration: none; }
 
-  header { border-bottom: 2px solid var(--ink); padding-bottom: 14px; margin-bottom: 18px; }
-  .name { font-size: 30pt; line-height: 1; }
-  .name .light { font-style: italic; font-weight: 400; color: var(--muted); }
-  .role { margin-top: 6px; font-size: 11pt; text-transform: uppercase; letter-spacing: .18em; color: var(--muted); }
-  .contact { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 9.5pt; color: var(--muted); }
-  .contact a { color: var(--ink); text-decoration: none; }
+  /* ---------- Cabeçalho ---------- */
+  header { display: flex; gap: 5mm; align-items: center; padding-bottom: 5mm; border-bottom: 1.6px solid var(--ink); }
+  .photo { width: 24mm; height: 24mm; border-radius: 50%; object-fit: cover; object-position: 50% 30%; flex: none; }
+  .id { flex: 1; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 24pt; letter-spacing: -0.3px; line-height: 1.05; }
+  .role { margin-top: 1.6mm; font-size: 10.5pt; font-weight: 600; color: var(--accent); }
+  .stack { margin-top: 0.6mm; color: var(--soft); font-size: 8.8pt; }
+  .contacts { list-style: none; text-align: right; font-size: 8.2pt; color: var(--soft); line-height: 1.6; }
+  .contacts b { color: var(--ink); font-weight: 600; }
 
-  .grid { display: grid; grid-template-columns: 1fr 64mm; gap: 20px; }
-  section { margin-bottom: 16px; }
-  .sec-title { font-size: 9pt; text-transform: uppercase; letter-spacing: .2em; color: var(--muted);
-    border-bottom: 1px solid var(--line); padding-bottom: 5px; margin-bottom: 10px; }
+  /* ---------- Resumo ---------- */
+  .summary { margin: 3.6mm 0 0; font-size: 9.2pt; line-height: 1.5; }
+  .summary strong { font-weight: 600; }
 
-  .summary { font-size: 10.5pt; color: #2a2622; }
-
-  .item { margin-bottom: 13px; break-inside: avoid; }
-  .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-  .item-title { font-family: Georgia, serif; font-size: 11.5pt; font-weight: 600; }
-  .item-meta { font-size: 9pt; color: var(--muted); white-space: nowrap; }
-  .item-sub { font-size: 9.5pt; color: var(--muted); margin-bottom: 4px; }
-  .item ul { margin: 5px 0 0 16px; }
-  .item li { margin-bottom: 2px; font-size: 10pt; }
-  .stack { margin-top: 5px; font-size: 8.7pt; color: var(--muted); }
-  .stack b { color: var(--ink); font-weight: 600; }
-
-  .side .sec-title { margin-top: 0; }
-  .skill-group { margin-bottom: 11px; }
-  .skill-group h4 { font-family: Georgia, serif; font-size: 10pt; margin-bottom: 5px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .tag { font-size: 8.4pt; border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; color: #3a352f; }
-  .cert { margin-bottom: 8px; }
-  .cert .c { font-weight: 600; font-size: 9.6pt; }
-  .cert .i { font-size: 8.6pt; color: var(--muted); }
-  .lang-row { display: flex; justify-content: space-between; font-size: 9.6pt; margin-bottom: 3px; }
-  .lang-row .lv { color: var(--muted); }
-
-  @media print {
-    body { background: #fff; font-size: 10pt; }
-    .page { margin: 0; box-shadow: none; width: auto; min-height: auto; padding: 12mm 14mm; }
-    a { color: var(--ink) !important; }
+  /* ---------- Grade ---------- */
+  .grid { display: grid; grid-template-columns: 1fr 60mm; gap: 6mm; margin-top: 4.5mm; }
+  h2 {
+    font-size: 7.6pt; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
+    color: var(--accent); padding-bottom: 1.2mm; margin-bottom: 2.4mm; border-bottom: 1px solid var(--line);
   }
+  section + section { margin-top: 4.4mm; }
+
+  /* Experiência */
+  .job + .job { margin-top: 3.6mm; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
+  .job-title { font-size: 10pt; font-weight: 600; }
+  .date { font-size: 8pt; color: var(--mute); white-space: nowrap; }
+  .org { color: var(--soft); font-size: 8.4pt; margin-top: 0.2mm; }
+  .lead { margin-top: 1.4mm; color: var(--soft); }
+  /* Marcadores nativos (sem position) para a ordem do texto no PDF seguir a leitura — importante para ATS */
+  ul.items { list-style: disc; margin-top: 1.4mm; padding-left: 3.6mm; }
+  ul.items li + li { margin-top: 0.8mm; }
+  ul.items li::marker { color: var(--accent); }
+  .client { font-weight: 600; }
+  .tech { color: var(--mute); font-size: 7.9pt; }
+
+  /* Projetos */
+  .proj + .proj { margin-top: 2.2mm; }
+  .proj-head { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
+  .proj-name { font-weight: 600; font-size: 9.3pt; }
+  .proj p { color: var(--soft); margin-top: 0.4mm; }
+
+  /* Coluna lateral */
+  aside section + section { margin-top: 3.6mm; }
+  aside .group + .group { margin-top: 2mm; }
+  .label { font-size: 7.4pt; font-weight: 700; color: var(--ink); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 0.8mm; }
+  .tags { display: flex; flex-wrap: wrap; gap: 1mm; }
+  .tags span { background: var(--accent-bg); color: #164a3f; border-radius: 1mm; padding: 0.35mm 1.5mm; font-size: 7.7pt; }
+  .tags.plain span { background: #f2f3f5; color: var(--soft); }
+  .entry + .entry { margin-top: 1.5mm; }
+  .entry .t { font-weight: 600; font-size: 8.6pt; line-height: 1.3; }
+  .entry .s { color: var(--soft); font-size: 8pt; }
+  .entry .d { color: var(--mute); font-size: 7.8pt; }
+  .lang { display: flex; justify-content: space-between; font-size: 8.5pt; }
+  .lang + .lang { margin-top: 0.8mm; }
+  .lang span { color: var(--mute); font-size: 8pt; }
+
+  footer { margin-top: 5mm; padding-top: 2mm; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 7.6pt; color: var(--mute); }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <header>
-    <div class="name">Luiz Antônio <span class="light">de Souza</span></div>
-    <div class="role">Full-Stack Developer · Front-End</div>
-    <div class="contact">
-      <a href="mailto:ola@luixzsouza.com.br">ola@luixzsouza.com.br</a>
-      <a href="https://luixzsouza.com.br">luixzsouza.com.br</a>
-      <a href="https://github.com/LuixzSouza">github.com/LuixzSouza</a>
-      <a href="https://www.linkedin.com/in/luiz-antonio-souza-5000a226b/">linkedin.com/in/luiz-antonio-souza</a>
-      <span>Minas Gerais, Brazil</span>
-      <!-- TODO: phone, if you want to include it -->
-    </div>
-  </header>
-
-  <div class="grid">
-    <main>
-      <section>
-        <div class="sec-title">Summary</div>
-        <p class="summary">
-          Full-stack developer with a front-end focus and 3+ years shipping web products to
-          production for real clients — e-commerce stores, an offline-first POS, management
-          systems and high-performance websites. I work with <b>Next.js, React and
-          TypeScript</b> on the front end and <b>Supabase/PostgreSQL, Prisma/MySQL, Node.js
-          and PHP</b> on the back, from design to CI/CD deploys. I care about performance
-          (Core Web Vitals), accessibility, technical SEO and testing. Currently pursuing a
-          Bachelor's in Information Systems.
-        </p>
-      </section>
-
-      <section>
-        <div class="sec-title">Experience &amp; Projects</div>
-
-        <div class="item">
-          <div class="item-head">
-            <span class="item-title">Web Developer — Projects &amp; Freelance</span>
-            <span class="item-meta">2022 — Present</span>
-          </div>
-          <div class="item-sub">Self-employed · Minas Gerais, Brazil</div>
-          <ul>
-            <li><b>Sistema UP</b> (upinconfidentes.com.br) — landing page, digital menu with real-time orders
-              and a staff POS on a single database; <b>offline-first</b> register (Service Worker + sync queue),
-              push notifications and delivery map. 450+ commits, in production.</li>
-            <li><b>Turn.io</b> — migrated a healthtech's website from Webflow to Next.js through an automated
-              conversion pipeline: mobile PageSpeed <b>35 → 98</b>, SEO 100, zero console errors, visual QA with
-              Playwright, Lighthouse and axe.</li>
-            <li><b>Thai Cross</b> — gym management (students, attendance, fees, overdue tracking) with role-based
-              access, Prisma + MySQL, Vitest tests and continuous deployment via GitHub Actions.</li>
-            <li><b>Silver Ocean</b> and <b>Berilo Café</b> — production e-commerce stores with Supabase,
-              Mercado Pago checkout (Pix and cards) and integrated shipping/tracking. 850+ reviews, 4.9★.</li>
-            <li><b>Estética Ana Clara</b> — local-SEO website + dashboard with scheduling, clients and finances
-              (Prisma, PostgreSQL, Auth.js).</li>
-          </ul>
-          <div class="stack"><b>Stack:</b> Next.js · React · TypeScript · Supabase · PostgreSQL · Prisma · MySQL · Tailwind · Vitest · GitHub Actions</div>
-        </div>
-
-        <div class="item">
-          <div class="item-head">
-            <span class="item-title">Software Development Intern</span>
-            <span class="item-meta"><!-- TODO: period -->2024 — 2024</span>
-          </div>
-          <div class="item-sub"><!-- TODO: internship company name --> Company (internship)</div>
-          <ul>
-            <li>Built <b>Control Spooler</b>, a desktop app in ElectronJS to manage print
-              queues, automating and simplifying the team's workflow.</li>
-          </ul>
-          <div class="stack"><b>Stack:</b> ElectronJS · JavaScript · Node.js</div>
-        </div>
-
-        <div class="item">
-          <div class="item-head">
-            <span class="item-title">Intern — City of Inconfidentes/MG</span>
-            <span class="item-meta">Jun — Aug 2025</span>
-          </div>
-          <div class="item-sub">Official city portal + admin panel</div>
-          <ul>
-            <li>Full-stack portal with a CMS so staff can publish news and content without code.</li>
-          </ul>
-          <div class="stack"><b>Stack:</b> Next.js 15 · TypeScript · Prisma · PostgreSQL · NextAuth · Tailwind</div>
-        </div>
-      </section>
-
-      <section>
-        <div class="sec-title">Education</div>
-        <div class="item">
-          <div class="item-head">
-            <span class="item-title">Bachelor's in Information Systems</span>
-            <span class="item-meta">2021 — Present</span>
-          </div>
-          <div class="item-sub">UNIVÁS — Universidade do Vale do Sapucaí · Pouso Alegre/MG, Brazil</div>
-        </div>
-      </section>
-    </main>
-
-    <aside class="side">
-      <section>
-        <div class="sec-title">Skills</div>
-
-        <div class="skill-group">
-          <h4>Front-end</h4>
-          <div class="tags">
-            <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span>
-            <span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
-            <span class="tag">Sass</span><span class="tag">Tailwind</span><span class="tag">Styled Components</span>
-            <span class="tag">Framer Motion</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h4>Back-end &amp; Data</h4>
-          <div class="tags">
-            <span class="tag">Node.js</span><span class="tag">PHP</span><span class="tag">MySQL</span>
-            <span class="tag">Supabase</span><span class="tag">PostgreSQL</span><span class="tag">Prisma</span>
-            <span class="tag">REST APIs</span><span class="tag">Java</span>
-            <span class="tag">Vitest</span><span class="tag">Playwright</span><span class="tag">GitHub Actions</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h4>Design &amp; UI</h4>
-          <div class="tags">
-            <span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Prototyping</span>
-            <span class="tag">Responsive Design</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h4>Tools &amp; Infra</h4>
-          <div class="tags">
-            <span class="tag">Git</span><span class="tag">AWS</span><span class="tag">Linux</span>
-            <span class="tag">Netlify</span><span class="tag">Vercel</span><span class="tag">WordPress</span>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="sec-title">Certifications</div>
-        <div class="cert"><div class="c">PHP Specialist</div><div class="i">Rocketseat · 2024</div></div>
-        <div class="cert"><div class="c">AWS Academy Cloud Foundations</div><div class="i">AWS Academy · 2024</div></div>
-        <div class="cert"><div class="c">CodeBoost Front-End</div><div class="i">William Moreira · 2023</div></div>
-        <div class="cert"><div class="c">Website Creation</div><div class="i">Bradesco · 2024</div></div>
-        <div class="cert"><div class="c">Best Visual Art — Game Jam</div><div class="i">Game Jam · 2024</div></div>
-      </section>
-
-      <section>
-        <div class="sec-title">Languages</div>
-        <div class="lang-row"><span>Portuguese</span><span class="lv">Native</span></div>
-        <div class="lang-row"><span>English</span><span class="lv"><!-- TODO: adjust -->Professional / Intermediate</span></div>
-      </section>
-
-      <section>
-        <div class="sec-title">Links</div>
-        <div class="lang-row"><span>Portfolio</span><span class="lv">luixzsouza.com.br</span></div>
-        <div class="lang-row"><span>GitHub</span><span class="lv">/LuixzSouza</span></div>
-        <div class="lang-row"><span>CodeWars</span><span class="lv">/LuixzSouza</span></div>
-      </section>
-    </aside>
+<header>
+  <img class="photo" src="foto.jpg" alt="Photo of Luiz Antônio de Souza">
+  <div class="id">
+    <h1>Luiz Antônio de Souza</h1>
+    <div class="role">Full Stack Developer</div>
+    <div class="stack">Next.js · React · TypeScript · PHP · PostgreSQL / MySQL</div>
   </div>
+  <ul class="contacts">
+    <li><a href="mailto:luiz.antoniodesouza004@gmail.com">luiz.antoniodesouza004@gmail.com</a></li>
+    <li>+55 (35) 9 9735-4797</li>
+    <li>Inconfidentes, MG, Brazil · remote or hybrid</li>
+    <li><a href="https://www.luixzsouza.com.br"><b>luixzsouza.com.br</b></a></li>
+    <li><a href="https://www.linkedin.com/in/luiz-antonio-souza-5000a226b">linkedin.com/in/luiz-antonio-souza-5000a226b</a></li>
+    <li><a href="https://github.com/LuixzSouza">github.com/LuixzSouza</a></li>
+  </ul>
+</header>
 
+<p class="summary">
+  Full Stack Developer with <strong>3 years shipping websites, e-commerce stores and systems to production</strong> for small businesses,
+  owning the whole cycle: requirements with the client, interface, development, deployment and maintenance. I work with
+  <strong>Next.js, React, TypeScript and PHP</strong>, PostgreSQL (Supabase) and MySQL databases, and deploy to Vercel, Hostinger and VPS.
+  Final year of Information Systems at UNIVÁS. I like to understand the business before writing code: what the client needs to sell, organize or automate.
+</p>
+
+<div class="grid">
+  <main>
+    <section>
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-title">Full Stack Developer — Freelance</div>
+          <div class="date">Nov 2023 — present</div>
+        </div>
+        <div class="org">Self-employed · remote · 9 clients</div>
+        <ul class="items">
+          <li><span class="client">Silver Ocean</span> — sterling silver jewelry e-commerce with category catalog, cart, customer accounts, order tracking and checkout with Pix and cards; admin panel to run the store. <span class="tech">Next.js · TypeScript · PHP · Supabase</span></li>
+          <li><span class="client">Sorveteria UP</span> — digital menu, counter POS and cash register system with real-time orders, inventory, store credit and finance; automated tests and CI. <span class="tech">Next.js · Supabase/PostgreSQL · Vitest · Playwright · GitHub Actions</span></li>
+          <li><span class="client">Berilo Cafés</span> — specialty coffee e-commerce with brand storytelling, customer authentication, shipping calculation and SEO. <span class="tech">Next.js · TypeScript · PHP</span></li>
+          <li><span class="client">Thai Cross</span> — management system for a Muay Thai gym, with automated deployment to a VPS.</li>
+          <li><span class="client">Estética Ana Clara</span> and <span class="client">Aromas Noma</span> — landing page and admin panel with scheduling, client intake forms and CRM; digital catalog with an admin system.</li>
+          <li><span class="client">Casa Pronta Construsilva</span>, <span class="client">Fórmula Idiomas</span> and <span class="client">Agilify</span> — company websites and landing pages: forms, a 60-question English placement test with automatic result delivery, lead capture funnel; at Casa Pronta, working with a designer and two developers.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-title">IT Support Intern</div>
+          <div class="date">Jun 2025 — 2026</div>
+        </div>
+        <div class="org">City Hall of Inconfidentes · on-site</div>
+        <ul class="items">
+          <li>Built the city hall's new official portal and its admin panel (front-end and back-end).</li>
+          <li>Technical support for municipal staff: diagnosing and fixing hardware, software and network issues.</li>
+          <li>Maintained the IT infrastructure and supported systems security.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Personal projects</h2>
+      <div class="proj">
+        <div class="proj-head"><div class="proj-name">Life OS</div><div class="tech">Next.js · TypeScript · Prisma · SQLite</div></div>
+        <p>Local "second brain" to organize tasks, finances, studies and clients, with a PDF resume generator and AI features.</p>
+      </div>
+      <div class="proj">
+        <div class="proj-head"><div class="proj-name">luixzsouza.com.br</div><div class="tech">Next.js · TypeScript · Tailwind · Vitest</div></div>
+        <p>Portfolio in 13 languages with its own content panel, a documented design system and project case studies.</p>
+      </div>
+      <div class="proj">
+        <div class="proj-head"><div class="proj-name">Zapscribe</div><div class="tech">Audio transcription</div></div>
+        <p>Tool that transcribes WhatsApp voice messages into text.</p>
+      </div>
+    </section>
+  </main>
+
+  <aside>
+    <section>
+      <h2>Skills</h2>
+      <div class="group">
+        <div class="label">Front-end</div>
+        <div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>JavaScript</span><span>Tailwind CSS</span><span>Sass</span><span>HTML/CSS</span><span>React Native</span></div>
+      </div>
+      <div class="group">
+        <div class="label">Back-end & data</div>
+        <div class="tags"><span>PHP</span><span>Node.js</span><span>Supabase</span><span>PostgreSQL</span><span>MySQL</span><span>Prisma</span><span>SQLite</span></div>
+      </div>
+      <div class="group">
+        <div class="label">DevOps & quality</div>
+        <div class="tags"><span>Git</span><span>GitHub Actions</span><span>Docker</span><span>Vercel</span><span>Hostinger</span><span>VPS</span><span>Vitest</span><span>Playwright</span></div>
+      </div>
+      <div class="group">
+        <div class="label">Design</div>
+        <div class="tags"><span>Figma</span><span>UI/UX</span><span>Design systems</span></div>
+      </div>
+      <div class="group">
+        <div class="label">Also (university)</div>
+        <div class="tags plain"><span>Python</span><span>Java</span><span>C#</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="t">Bachelor of Information Systems</div>
+        <div class="s">UNIVÁS — Universidade do Vale do Sapucaí</div>
+        <div class="d">Feb 2023 — Dec 2026 · 8th semester</div>
+        <div class="s" style="margin-top:0.8mm">Projects: UniVac (vaccination management), CI/CD with GitHub Actions and Docker, BI with dimensional modeling in MySQL.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <div class="entry"><div class="t">AWS Academy Cloud Foundations</div><div class="d">AWS Academy · Apr 2024</div></div>
+      <div class="entry"><div class="t">PHP Course</div><div class="d">Rocketseat · Oct 2024</div></div>
+      <div class="entry"><div class="t">Website with HTML, CSS and JavaScript</div><div class="d">Fundação Bradesco · Oct 2024</div></div>
+      <div class="entry"><div class="t">Front-End Course</div><div class="d">CodeBoost · 2022 — 2023</div></div>
+    </section>
+
+    <section>
+      <h2>Award</h2>
+      <div class="entry"><div class="t">Best Visual Art</div><div class="d">Cubio Game Jam · 2024</div></div>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <div class="lang">Portuguese <span>native</span></div>
+      <div class="lang">English <span>intermediate</span></div>
+    </section>
+  </aside>
 </div>
+
 </body>
 </html>

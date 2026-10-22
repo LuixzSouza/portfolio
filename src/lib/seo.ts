@@ -16,7 +16,7 @@ export const SITE = {
   altLocale: "en_US",
   ogImage: "/MetaTag.webp",
   ogImageAlt: "Luiz Antônio de Souza — Desenvolvedor Front-End",
-  email: "ola@luixzsouza.com.br",
+  email: "luiz.antoniodesouza004@gmail.com",
   social: {
     github: "https://github.com/LuixzSouza",
     linkedin: "https://www.linkedin.com/in/luiz-antonio-souza-5000a226b/",
