@@ -122,7 +122,7 @@ export function Timeline({ items: initial = milestones }: { items?: Milestone[] 
 
               {/* IMAGEM: crossfade + zoom suave a cada marco ativo */}
               {currentImage && (
-                <div className="relative mt-3 aspect-[4/3] w-full overflow-hidden rounded-2xl border border-foreground/10 bg-surface">
+                <div className="relative mt-3 aspect-[3/2] w-full overflow-hidden rounded-2xl border border-foreground/10 bg-surface">
                   <AnimatePresence>
                     <motion.div
                       key={`img-${active}`}
@@ -137,7 +137,7 @@ export function Timeline({ items: initial = milestones }: { items?: Milestone[] 
                         alt={pickText(items[active].title, lang)}
                         fill
                         sizes="(min-width: 1024px) 33vw, 100vw"
-                        className="object-cover"
+                        className="object-contain"
                       />
                     </motion.div>
                   </AnimatePresence>
@@ -216,13 +216,13 @@ export function Timeline({ items: initial = milestones }: { items?: Milestone[] 
 
                       {/* Imagem do marco também no mobile (a coluna esquerda é só desktop) */}
                       {m.image && (
-                        <div className="relative mt-2 aspect-[16/10] w-full overflow-hidden rounded-xl border border-foreground/10 bg-surface lg:hidden">
+                        <div className="relative mt-2 aspect-[3/2] w-full overflow-hidden rounded-xl border border-foreground/10 bg-surface lg:hidden">
                           <Image
                             src={m.image}
                             alt={pickText(m.title, lang)}
                             fill
                             sizes="100vw"
-                            className="object-cover"
+                            className="object-contain"
                           />
                         </div>
                       )}
