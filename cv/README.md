@@ -6,22 +6,24 @@ Materiais de candidatura gerados fora do site (não entram no build do Next).
 
 | Arquivo | O que é |
 |---|---|
-| `curriculo-luiz-souza.html` | **Currículo (PT-BR)** — pronto para virar PDF |
-| `curriculo-luiz-souza-en.html` | **Résumé (EN)** — para vagas internacionais |
-| `readmes/Silver-Ocean-README.md` | README do projeto Silver Ocean (joias) |
-| `readmes/Berilo-Cafe-README.md` | README do projeto Berilo Café |
+| `curriculo-luiz-souza.html` / `.pdf` | **Currículo base 2026 (PT-BR)**, cópia de `Área de Trabalho/Currículo 2026/_fonte/curriculo-base.html` |
+| `curriculo-luiz-souza-en.html` / `.pdf` | **Résumé (EN)**, tradução fiel da base, mesmo layout |
+| `foto.jpg` | Foto usada pelos dois HTMLs |
+| `readmes/Silver-Ocean-README.md` | README do projeto Silver Ocean (stack conferida no repositório) |
+| `readmes/Berilo-Cafe-README.md` | README do projeto Berilo Café (stack conferida no repositório) |
 
-## Como gerar o PDF do currículo
+O botão "Baixar currículo" do site serve `public/cv/curriculo-luiz-souza.pdf` (PT) e
+`public/cv/curriculo-luiz-souza-en.pdf` (demais idiomas); ver `src/lib/cv.ts`.
 
-1. Abra o `.html` no Chrome/Edge.
-2. **Ctrl+P** → Destino **"Salvar como PDF"**.
-3. Margens **Padrão** + marque **"Gráficos de plano de fundo"**.
-4. Salve:
-   - PT → por cima de `public/certificates/Curriculo_Luiz_2025.pdf` (mantém o botão "Baixar CV" do site funcionando).
-   - EN → ex.: `public/certificates/Resume_Luiz_2025_EN.pdf`.
+## Atualizar o currículo
 
-## Pendências (campos `<!-- TODO -->`)
+1. Edite a base na Área de Trabalho (`Currículo 2026/_fonte/curriculo-base.html`) e gere o PDF de lá.
+2. Copie o HTML e o PDF para cá (`curriculo-luiz-souza.*`) e o PDF para `public/cv/`.
+3. Aplique as mesmas mudanças no `curriculo-luiz-souza-en.html` e gere o PDF:
+   Chrome/Edge → **Ctrl+P** → "Salvar como PDF", margens **Nenhuma**, **"Gráficos de plano de fundo"** marcado.
+4. Confira: **1 página** e texto selecionável (ATS).
 
-- **Currículos**: telefone, empresa/período do estágio, nível de inglês.
-- **READMEs**: link do repositório, stack real (confirmar), 2–3 decisões técnicas.
-- Considere tornar os repositórios do Silver Ocean e Berilo Café **públicos** no GitHub.
+## Regras
+
+- Nunca citar a Turn.io nem os projetos dela no currículo.
+- E-mail de contato: luiz.antoniodesouza004@gmail.com.

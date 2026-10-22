@@ -299,3 +299,18 @@ public/                # imagens, backgrounds, ícones
   (conteúdo da nova página sobe/aparece) e indicador ativo no header que desliza
   lateralmente (motion layoutId). Marca compartilhada em components/layout/BrandMark.
   SiteHeader fecha o menu mobile no change de pathname (a navegação é interceptada).
+  - [x] (2026-10-21) /services no menu (header + footer); modularização: admin/managers/,
+  admin/EntityManager/ e sections/ProjectDetail/ viraram pastas com barrel.
+  - [x] Imagens de TODOS os projetos: prints reais com Playwright em public/mockup
+  (sites no ar, projetos locais rodando em dev, app Expo em viewport mobile, repos no
+  GitHub) + galerias com legendas PT/EN. Única sem galeria: "SI - Faculdade" (sem site/repo).
+  - [x] E-mail de contato → luiz.antoniodesouza004@gmail.com; CV 2026 (base da Área de
+  Trabalho) em public/cv + versão EN traduzida (1 página).
+  - [x] Segurança: next 15.5.28, sharp 0.35.5, overrides (postcss/nanoid/source-map-js) →
+  `npm audit --omit=dev` = 0. Restam vulns só em ferramentas de dev (vite/vitest): o
+  `npm install` delas esbarra num bug do npm 11 (edgesOut em #loadPeerSet).
+  - [x] i18n: descrições do menu mobile, rótulos abrir/fechar menu e CTAs inline foram
+  para o dicionário (13 idiomas). ContactMascot sem d="undefined" (initial={false}).
+  - [ ] Publicar na Hostinger: o deploy do plugin Hostinger APAGA public_html inteiro
+  (perderia php/config.php e uploads do admin) → preferir FTP/Gerenciador de Arquivos
+  enviando só o conteúdo de out/. No servidor, trocar `mail_to` do php/config.php.
