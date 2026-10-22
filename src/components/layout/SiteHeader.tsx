@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { User, FolderOpen, MessageCircle, ArrowRight } from "lucide-react";
+import { User, FolderOpen, MessageCircle, ArrowRight, Layers } from "lucide-react";
 import { Container } from "@/components/ds/Container";
 import { ArrowButton } from "@/components/ds/ArrowButton";
 import { AnimatedLink } from "@/components/ds/AnimatedLink";
@@ -20,6 +20,12 @@ const NAV = [
     href: "/work",
     icon: FolderOpen,
     description: "Projetos e trabalhos"
+  },
+  {
+    key: "services",
+    href: "/services",
+    icon: Layers,
+    description: "Sites, sistemas e lojas"
   },
   {
     key: "about",

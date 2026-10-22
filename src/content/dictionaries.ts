@@ -22,6 +22,7 @@ export interface Dictionary {
   };
   nav: {
     work: string;
+    services: string;
     about: string;
     contact: string;
     cta: string;
@@ -235,6 +236,7 @@ const pt: Dictionary = {
   },
   nav: {
     work: "Trabalhos",
+    services: "Serviços",
     about: "Sobre",
     contact: "Contato",
     cta: "Vamos conversar",
@@ -468,6 +470,7 @@ const en: Dictionary = {
   },
   nav: {
     work: "Work",
+    services: "Services",
     about: "About",
     contact: "Contact",
     cta: "Let's talk",
@@ -701,6 +704,7 @@ const es: Dictionary = {
   },
   nav: {
     work: "Proyectos",
+    services: "Servicios",
     about: "Acerca de",
     contact: "Contacto",
     cta: "Hablemos",
@@ -931,6 +935,7 @@ const fr: Dictionary = {
   },
   nav: {
     work: "Projets",
+    services: "Services",
     about: "À propos",
     contact: "Contact",
     cta: "Parlons ensemble",
@@ -1161,6 +1166,7 @@ const de: Dictionary = {
   },
   nav: {
     work: "Projekte",
+    services: "Leistungen",
     about: "Über mich",
     contact: "Kontakt",
     cta: "Lass uns sprechen",
@@ -1391,6 +1397,7 @@ const it: Dictionary = {
   },
   nav: {
     work: "Progetti",
+    services: "Servizi",
     about: "Chi sono",
     contact: "Contatti",
     cta: "Parliamone",
@@ -1621,6 +1628,7 @@ const zh: Dictionary = {
   },
   nav: {
     work: "作品",
+    services: "服务",
     about: "关于",
     contact: "联系",
     cta: "让我们谈谈",
@@ -1851,6 +1859,7 @@ const ja: Dictionary = {
   },
   nav: {
     work: "ポートフォリオ",
+    services: "サービス",
     about: "について",
     contact: "お問い合わせ",
     cta: "話そう",
@@ -2081,6 +2090,7 @@ const ru: Dictionary = {
   },
   nav: {
     work: "Работы",
+    services: "Услуги",
     about: "Обо мне",
     contact: "Контакт",
     cta: "Давайте поговорим",
@@ -2311,6 +2321,7 @@ const ar: Dictionary = {
   },
   nav: {
     work: "الأعمال",
+    services: "الخدمات",
     about: "حول",
     contact: "اتصل",
     cta: "دعنا نتحدث",
@@ -2541,6 +2552,7 @@ const hi: Dictionary = {
   },
   nav: {
     work: "काम",
+    services: "सेवाएं",
     about: "परिचय",
     contact: "संपर्क",
     cta: "चलिए बात करते हैं",
@@ -2771,6 +2783,7 @@ const ko: Dictionary = {
   },
   nav: {
     work: "작업",
+    services: "서비스",
     about: "정보",
     contact: "연락처",
     cta: "대화해보세요",
@@ -3001,6 +3014,7 @@ const id: Dictionary = {
   },
   nav: {
     work: "Pekerjaan",
+    services: "Layanan",
     about: "Tentang",
     contact: "Kontak",
     cta: "Mari berbicara",

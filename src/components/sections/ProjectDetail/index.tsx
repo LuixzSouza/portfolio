@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Github, Linkedin, Maximize2, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Github, Linkedin } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { WorkCursor } from "@/components/sections/WorkCursor";
 import { useCursorFollow } from "@/hooks/useCursorFollow";
@@ -26,8 +26,10 @@ import { useLanguage } from "@/components/ds/LanguageProvider";
 import { pickText, pickList } from "@/lib/i18n";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE, localizedPath } from "@/lib/seo";
-
-const EASE = [0.76, 0, 0.24, 1] as const;
+import { EASE } from "./ease";
+import { ProjectGallery } from "./ProjectGallery";
+import { ProjectLightbox } from "./ProjectLightbox";
+import { ProjectNavCard } from "./ProjectNavCard";
 
 export function ProjectDetail() {
   const t = useTranslations();
@@ -457,43 +459,7 @@ export function ProjectDetail() {
             <span className="text-xs font-semibold uppercase tracking-widest text-muted">
               {t.project.galleryLabel}
             </span>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 md:gap-6">
-              {galeria.map((img, i) => (
-                <motion.figure
-                  key={i}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.9, ease: EASE, delay: (i % 2) * 0.08 }}
-                  className="group flex flex-col gap-3"
-                >
-                  <button
-                    type="button"
-                    onClick={() => setLightbox(i)}
-                    aria-label={img.legenda ? pickText(img.legenda, lang) : nome}
-                    className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-foreground/10 bg-surface-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  >
-                    <Image
-                      src={img.src}
-                      alt={img.legenda ? pickText(img.legenda, lang) : nome}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                    />
-                    <span className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/25">
-                      <span className="flex h-12 w-12 scale-75 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100">
-                        <Maximize2 className="h-5 w-5" strokeWidth={1.5} />
-                      </span>
-                    </span>
-                  </button>
-                  {img.legenda && (
-                    <figcaption className="font-roobert text-sm text-muted">
-                      {pickText(img.legenda, lang)}
-                    </figcaption>
-                  )}
-                </motion.figure>
-              ))}
-            </div>
+            <ProjectGallery galeria={galeria} nome={nome} onOpen={setLightbox} />
           </div>
         </Container>
       )}
@@ -529,128 +495,15 @@ export function ProjectDetail() {
       {/* Lightbox da galeria */}
       <AnimatePresence>
         {lightbox !== null && galeria && galeria[lightbox] && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            onClick={() => setLightbox(null)}
-            role="dialog"
-            aria-modal="true"
-            className="fixed inset-0 z-[120] flex flex-col items-center justify-center bg-background/95 p-4 backdrop-blur-xl md:p-10"
-          >
-            {/* Fechar */}
-            <button
-              type="button"
-              onClick={() => setLightbox(null)}
-              aria-label={t.a11y.close}
-              className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-foreground/15 text-foreground transition-colors hover:bg-foreground/10 md:right-8 md:top-8"
-            >
-              <X className="h-5 w-5" />
-            </button>
-
-            {/* Navegação (só se houver mais de uma imagem) */}
-            {galeria.length > 1 && (
-              <>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setLightbox((i) => ((i ?? 0) - 1 + galeria.length) % galeria.length);
-                  }}
-                  aria-label={t.project.prev}
-                  className="absolute left-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/15 text-foreground transition-colors hover:bg-foreground/10 md:left-8"
-                >
-                  <ArrowLeft className="h-5 w-5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setLightbox((i) => ((i ?? 0) + 1) % galeria.length);
-                  }}
-                  aria-label={t.project.next}
-                  className="absolute right-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/15 text-foreground transition-colors hover:bg-foreground/10 md:right-8"
-                >
-                  <ArrowRight className="h-5 w-5" />
-                </button>
-              </>
-            )}
-
-            {/* Imagem + legenda */}
-            <motion.figure
-              key={lightbox}
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.35, ease: EASE }}
-              onClick={(e) => e.stopPropagation()}
-              className="flex max-h-full max-w-5xl flex-col items-center gap-4"
-            >
-              <div className="relative h-[70vh] w-[88vw] max-w-5xl overflow-hidden rounded-2xl border border-foreground/10 md:w-[80vw]">
-                <Image
-                  src={galeria[lightbox].src}
-                  alt={galeria[lightbox].legenda ? pickText(galeria[lightbox].legenda!, lang) : nome}
-                  fill
-                  sizes="90vw"
-                  className="object-contain"
-                />
-              </div>
-              <figcaption className="flex items-center gap-3 font-roobert text-sm text-muted">
-                <span className="font-mono text-foreground">
-                  {String(lightbox + 1).padStart(2, "0")} / {String(galeria.length).padStart(2, "0")}
-                </span>
-                {galeria[lightbox].legenda && (
-                  <>
-                    <span className="text-muted/40">·</span>
-                    {pickText(galeria[lightbox].legenda!, lang)}
-                  </>
-                )}
-              </figcaption>
-            </motion.figure>
-          </motion.div>
+          <ProjectLightbox
+            galeria={galeria}
+            index={lightbox}
+            nome={nome}
+            onChange={setLightbox}
+            onClose={() => setLightbox(null)}
+          />
         )}
       </AnimatePresence>
     </div>
-  );
-}
-
-function ProjectNavCard({
-  project,
-  direction,
-  label,
-}: {
-  project: (typeof projetos)[number];
-  direction: "prev" | "next";
-  label: string;
-}) {
-  const isPrev = direction === "prev";
-  const loc = useLocalizedHref();
-  return (
-    <Link
-      href={loc(`/project?id=${slugify(project.nome)}`)}
-      className={`group flex items-center gap-5 rounded-2xl border border-foreground/10 p-5 transition-colors duration-300 hover:border-foreground/30 hover:bg-foreground/[0.03] ${
-        isPrev ? "" : "sm:flex-row-reverse sm:text-right"
-      }`}
-    >
-      {project.imagem && (
-        <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-lg bg-surface-2">
-          <Image
-            src={project.imagem}
-            alt={project.nome}
-            fill
-            sizes="80px"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-      )}
-      <div className={`flex flex-1 flex-col gap-1 ${isPrev ? "" : "sm:items-end"}`}>
-        <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-muted">
-          {isPrev && <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1" />}
-          {label}
-          {!isPrev && <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />}
-        </span>
-        <span className="font-roobert text-lg font-medium">{project.nome}</span>
-      </div>
-    </Link>
   );
 }

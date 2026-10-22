@@ -1,7 +1,7 @@
 <!--
   README — Silver Ocean
   Já preenchido com o que é verificável no site ao vivo (silverocean925.com.br).
-  Confira os poucos <!-- TODO --> (stack exata, link do repo, decisões técnicas) e apague os comentários.
+  Stack e decisões conferidas no repositório (package.json + README do projeto).
   Coloque este arquivo na RAIZ do repositório como README.md
 -->
 
@@ -12,13 +12,16 @@
 **E-commerce completo de joias em prata 925: catálogo, carrinho, contas de cliente, rastreio de pedidos e checkout com Pix e cartões.**
 
 [![Demo](https://img.shields.io/badge/Loja-ao_vivo-14110f?style=for-the-badge)](https://silverocean925.com.br)
-[![Repo](https://img.shields.io/badge/Código-GitHub-181717?style=for-the-badge&logo=github)](<!-- TODO: URL do repo -->)
+[![Repo](https://img.shields.io/badge/Código-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/LuixzSouza/Silver-Ocean)
 
-<!-- TODO: deixe só as badges da stack REAL que você usou. -->
 ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
+![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white)
 
 </div>
 
@@ -33,15 +36,15 @@ minimalista e responsiva.
 
 > *"Eternizando momentos através de joias com design exclusivo e garantia vitalícia."*
 
-> **Por que construí:** <!-- TODO: 1 linha de contexto — cliente real, marca própria, freela... -->
+> **Por que construí:** projeto para cliente real — uma marca de joias em prata que precisava de loja própria, integrada ao ERP que já usava (Jueri), com painel para operar estoque, pedidos e revenda consignada.
 
 ## 🔗 Acesso rápido
 
 | | |
 |---|---|
 | 🌐 **Loja ao vivo** | https://silverocean925.com.br |
-| 💻 **Repositório** | <!-- TODO: link --> |
-| 🎨 **Design (Figma)** | <!-- TODO: link ou "—" --> |
+| 💻 **Repositório** | https://github.com/LuixzSouza/Silver-Ocean |
+| 🎨 **Design (Figma)** | — |
 
 ## 🧩 Funcionalidades
 
@@ -57,11 +60,11 @@ minimalista e responsiva.
 
 ## 🛠️ Tecnologias
 
-<!-- TODO: AJUSTE para a stack real. O abaixo é um chute baseado no seu perfil — confirme. -->
-**Front-end:** Next.js · React · TypeScript · Tailwind CSS
-**Back-end / Dados:** <!-- TODO: Node.js / PHP / Prisma / MySQL / plataforma de e-commerce... -->
-**Pagamentos:** <!-- TODO: Mercado Pago / Pagar.me / Stripe / gateway Pix... -->
-**Infra / Deploy:** <!-- TODO: Vercel / Netlify / Hostinger... -->
+**Front-end:** Next.js (App Router) · React 19 · TypeScript (strict) · Tailwind CSS · React Hook Form + Zod · Recharts
+**Back-end / Dados:** Supabase (PostgreSQL + Auth com login Google) · endpoints PHP em `public/api` · integração com o ERP Jueri
+**Pagamentos:** Mercado Pago (Pix e cartões) + fluxo de venda assistida via WhatsApp
+**Infra / Deploy:** export estático → GitHub Actions → FTP → Hostinger
+**Testes:** Vitest + Testing Library · Playwright (E2E)
 **Ferramentas:** Figma · Git
 
 ## 📸 Screenshots
@@ -72,19 +75,17 @@ minimalista e responsiva.
 
 ## 🏛️ Decisões técnicas
 
-<!-- O BLOCO QUE MAIS IMPRESSIONA RECRUTADOR. Explique 2–3 escolhas suas e o PORQUÊ.
-     Sugestões com base no que a loja faz (confirme/edite): -->
-- **Gerenciamento de estado do carrinho** — <!-- TODO: como você fez (context/zustand/cookies?) e por quê. -->
-- **Integração de pagamentos (Pix + cartões)** — <!-- TODO: gateway escolhido e como tratou o fluxo de checkout/segurança. -->
-- **Performance & SEO** — imagens em WebP e <!-- TODO: SSR/SSG, metadata... --> para carregar rápido e ranquear.
+- **Hub híbrido ERP + Supabase** — os produtos vêm do ERP legado (Jueri) para manter o estoque sincronizado, enquanto usuários, pedidos, cupons e o módulo de revenda ficam no Supabase. Data mappers (`mapJueriToAppProduct` / `mapSupabaseToAppProduct`) normalizam as duas fontes antes de chegar à UI.
+- **Dois fluxos de compra** — checkout via Mercado Pago (Pix e cartões) e pedido formatado enviado ao WhatsApp do vendedor para venda assistida, que é como boa parte dos clientes da marca prefere comprar.
+- **Performance & SEO** — vitrine 100% estática (`force-static` + `generateStaticParams`) e imagens em WebP. Um botão "Sincronizar site" no painel dispara, via webhook PHP, um rebuild no GitHub Actions (~3 min) que publica o catálogo atualizado na Hostinger.
 
 ## 🚀 Rodando localmente
 
 ```bash
-git clone <!-- TODO: URL do repo -->
+git clone https://github.com/LuixzSouza/Silver-Ocean.git
 cd silver-ocean
 npm install
-cp .env.example .env.local   # <!-- TODO: ajuste/remova se não usar -->
+cp .env.example .env.local   # chaves do Supabase e do Mercado Pago
 npm run dev
 # http://localhost:3000
 ```

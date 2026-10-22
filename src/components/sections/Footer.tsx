@@ -17,6 +17,7 @@ import { localeFromPath, localizeHref } from "@/lib/locales";
 
 const NAV = [
   { key: "work", href: "/work" },
+  { key: "services", href: "/services" },
   { key: "about", href: "/about" },
   { key: "contact", href: "/contact" },
 ] as const;

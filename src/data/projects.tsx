@@ -176,7 +176,7 @@ const rawProjects = [
         status: "active",
         complexidade: "advanced",
         destaque: true,
-        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "Mercado Pago", "Melhor Envio", "Zod", "React Hook Form", "Tailwind CSS", "SEO"],
+        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "PHP", "Mercado Pago", "Melhor Envio", "Zod", "React Hook Form", "Tailwind CSS", "Playwright", "SEO"],
         tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
         tamanhoEquipe: 1,
         links: {
@@ -368,7 +368,7 @@ const rawProjects = [
         status: "active",
         complexidade: "advanced",
         destaque: true,
-        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "Mercado Pago", "Zustand", "Zod", "Tailwind CSS", "Correios API", "SEO"],
+        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "PHP", "Mercado Pago", "Melhor Envio", "Correios API", "Zustand", "Zod", "Tailwind CSS", "SEO"],
         tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
         tamanhoEquipe: 1,
         links: {
