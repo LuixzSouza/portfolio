@@ -4,6 +4,7 @@ import { Services } from '@/components/sections/Services';
 import { FeaturedWork } from '@/components/sections/FeaturedWork';
 import { Timeline } from '@/components/sections/Timeline';
 import { Skills } from '@/components/sections/Skills';
+import { StackShowcase } from '@/components/sections/StackShowcase';
 import { Testimonials } from '@/components/sections/Testimonials';
 
 export function MainSection() {
@@ -15,6 +16,7 @@ export function MainSection() {
       <Testimonials />
       <Timeline />
       <Skills />
+      <StackShowcase />
       <ClimUp />
     </>
   );

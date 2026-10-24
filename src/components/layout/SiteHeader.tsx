@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { User, FolderOpen, MessageCircle, ArrowRight } from "lucide-react";
+import { User, FolderOpen, MessageCircle, ArrowRight, Layers } from "lucide-react";
 import { Container } from "@/components/ds/Container";
 import { ArrowButton } from "@/components/ds/ArrowButton";
 import { AnimatedLink } from "@/components/ds/AnimatedLink";
@@ -18,20 +18,22 @@ const NAV = [
   {
     key: "work",
     href: "/work",
-    icon: FolderOpen,
-    description: "Projetos e trabalhos"
+    icon: FolderOpen
+  },
+  {
+    key: "services",
+    href: "/services",
+    icon: Layers
   },
   {
     key: "about",
     href: "/about",
-    icon: User,
-    description: "História e habilidades"
+    icon: User
   },
   {
     key: "contact",
     href: "/contact",
-    icon: MessageCircle,
-    description: "Vamos conversar"
+    icon: MessageCircle
   },
 ] as const;
 
@@ -42,7 +44,7 @@ function Logo({ onClick, href = "/" }: { onClick?: () => void; href?: string }) 
     <Link
       href={href}
       onClick={onClick}
-      aria-label="Luiz Souza — início"
+      aria-label="Luiz Souza"
       className="group relative inline-flex items-center font-roobert text-base font-semibold uppercase text-foreground transition-transform active:scale-95 md:text-lg"
     >
       {/* Símbolo de abertura: desliza para a esquerda */}
@@ -193,7 +195,7 @@ export function SiteHeader() {
           </div>
           <motion.button
             type="button"
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-label={open ? t.a11y.closeMenu : t.a11y.openMenu}
             aria-expanded={open}
             onClick={() => {
               setOpen((v) => !v);
@@ -417,7 +419,7 @@ export function SiteHeader() {
                         <p className={`text-sm transition-colors duration-300 ${
                           active ? "text-foreground/70" : "text-muted group-hover:text-foreground/70"
                         }`}>
-                          {item.description}
+                          {t.nav.descriptions[item.key]}
                         </p>
                       </div>
 
@@ -507,7 +509,7 @@ export function SiteHeader() {
           className="mt-auto pt-8 text-center"
         >
           <p className="text-xs text-muted/70">
-            Desenvolvido com 💜 por Luiz Souza
+            {t.nav.madeBy} Luiz Souza
           </p>
         </motion.div>
       </Container>

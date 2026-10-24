@@ -17,6 +17,7 @@ import { useSectionContent } from "@/hooks/useSectionContent";
 import { getFacts, getText } from "@/lib/schemas/content";
 import { useTranslations } from "@/content/useTranslations";
 import { useLanguage } from "@/components/ds/LanguageProvider";
+import { cvHref } from "@/lib/cv";
 import { pickText } from "@/lib/i18n";
 
 export function AboutHero() {
@@ -102,7 +103,7 @@ export function AboutHero() {
                   {t.hero.ctaPrimary}
                 </ArrowButton>
                 <ArrowButton
-                  href="/certificates/Curriculo_Luiz_2025.pdf"
+                  href={cvHref(lang)}
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="outline"
@@ -120,7 +121,7 @@ export function AboutHero() {
                   <div className="relative h-full w-full">
                     <Image
                       src="/image/fotosobre.webp"
-                      alt="Retrato de Luiz Souza"
+                      alt="Luiz Antônio de Souza"
                       fill
                       priority
                       sizes="(max-width: 1024px) 90vw, 45vw"

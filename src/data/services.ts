@@ -28,10 +28,10 @@ export const services: ServiceDetailData[] = [
     n: "01",
     image: "/services/sites.webp",
     accent: "#5B8DEF",
-    title: { pt: "Sites & Landing Pages", en: "Websites & Landing Pages", es: "Sitios Web y Páginas de Destino", fr: "Sites Web et Pages d'Atterrissage", de: "Websites und Landingpages", it: "Siti Web e Pagine di Destinazione", zh: "网站和着陆页", ja: "ウェブサイトとランディングページ", ru: "Веб-сайты и целевые страницы", ar: "المواقع والصفحات المقصودة", hi: "वेबसाइटें और लैंडिंग पेज", ko: "웹사이트 및 랜딩 페이지", id: "Situs Web dan Halaman Tujuan" },
+    title: { pt: "Front-end & Interfaces", en: "Front-end & Interfaces", es: "Sitios Web y Páginas de Destino", fr: "Sites Web et Pages d'Atterrissage", de: "Websites und Landingpages", it: "Siti Web e Pagine di Destinazione", zh: "网站和着陆页", ja: "ウェブサイトとランディングページ", ru: "Веб-сайты и целевые страницы", ar: "المواقع والصفحات المقصودة", hi: "वेबसाइटें और लैंडिंग पेज", ko: "웹사이트 및 랜딩 페이지", id: "Situs Web dan Halaman Tujuan" },
     tagline: {
-      pt: "Sua presença digital que transforma visitantes em clientes.",
-      en: "A digital presence that turns visitors into clients.",
+      pt: "Interfaces rápidas, acessíveis e bem construídas — do componente ao deploy.",
+      en: "Fast, accessible, well-built interfaces — from component to deploy.",
       es: "Una presencia digital que convierte visitantes en clientes.",
       fr: "Une présence numérique qui transforme les visiteurs en clients.",
       de: "Eine digitale Präsenz, die Besucher in Kunden verwandelt.",
@@ -45,8 +45,8 @@ export const services: ServiceDetailData[] = [
       id: "Kehadiran digital yang mengubah pengunjung menjadi klien.",
     },
     intro: {
-      pt: "Um site é a sua vitrine aberta 24 horas. Eu crio sites institucionais e landing pages sob medida — com design exclusivo, textos que explicam o seu negócio de forma simples e uma estrutura pensada para aparecer no Google e converter quem chega.",
-      en: "A website is your storefront open 24/7. I build tailor-made business sites and landing pages — with a unique design, copy that explains your business clearly, and a structure built to rank on Google and convert every visitor.",
+      pt: "Transformo design em interface de verdade: componentes reutilizáveis, performance medida (Core Web Vitals), acessibilidade e SEO técnico. Construo com React e Next.js, em TypeScript, com foco em código limpo e fácil de manter.",
+      en: "I turn design into real interfaces: reusable components, measured performance (Core Web Vitals), accessibility and technical SEO. Built with React and Next.js in TypeScript, focused on clean, maintainable code.",
       es: "Un sitio web es tu escaparate abierto 24/7. Creo sitios empresariales y páginas de destino personalizadas — con diseño exclusivo, texto que explica tu negocio de forma clara y una estructura diseñada para posicionarse en Google y convertir cada visitante.",
       fr: "Un site Web est votre vitrine ouverte 24h/24, 7j/7. Je crée des sites commerciaux et des pages d'atterrissage personnalisés — avec un design unique, un texte qui explique clairement votre activité et une structure conçue pour vous classer sur Google et convertir chaque visiteur.",
       de: "Eine Website ist Ihr 24/7 geöffnetes Schaufenster. Ich erstelle maßgeschneiderte Unternehmenswebsites und Landingpages — mit exklusivem Design, Text, der Ihr Geschäft klar erklärt, und einer Struktur, die für Google-Rankings und Conversionen optimiert ist.",
@@ -60,8 +60,8 @@ export const services: ServiceDetailData[] = [
       id: "Situs web adalah etalase Anda yang buka 24/7. Saya membangun situs bisnis dan halaman landas yang disesuaikan — dengan desain eksklusif, salinan yang menjelaskan bisnis Anda dengan jelas, dan struktur yang dirancang untuk peringkat Google dan konversi setiap pengunjung.",
     },
     forWho: {
-      pt: "Ideal para profissionais, pequenas empresas e lançamentos que precisam de uma presença online profissional, rápida e fácil de encontrar.",
-      en: "Ideal for professionals, small businesses and launches that need a professional, fast and easy-to-find online presence.",
+      pt: "Onde eu mais agrego: times de produto que precisam de um front-end sólido, rápido e fácil de manter — do MVP ao site em escala.",
+      en: "Where I add the most value: product teams that need a solid, fast and maintainable front-end — from MVP to production-scale sites.",
       es: "Ideal para profesionales, pequeñas empresas y lanzamientos que necesitan una presencia en línea profesional, rápida y fácil de encontrar.",
       fr: "Idéal pour les professionnels, les petites entreprises et les lancements qui ont besoin d'une présence en ligne professionnelle, rapide et facile à trouver.",
       de: "Ideal für Fachleute, kleine Unternehmen und Launches, die eine professionelle, schnelle und leicht zu findende Online-Präsenz benötigen.",
@@ -112,14 +112,14 @@ export const services: ServiceDetailData[] = [
       { pt: "Formulário de contato integrado", en: "Integrated contact form" },
       { pt: "Publicação e configuração de domínio", en: "Deployment and domain setup" },
     ],
-    tags: ["Design exclusivo", "Carrega rápido", "SEO", "Responsivo"],
+    tags: ["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion"],
     metaTitle: {
-      pt: "Criação de Sites & Landing Pages",
-      en: "Website & Landing Page Development",
+      pt: "Front-end & Interfaces — React e Next.js",
+      en: "Front-end & Interfaces — React and Next.js",
     },
     metaDescription: {
-      pt: "Sites institucionais e landing pages sob medida com design exclusivo, SEO e alta performance em Next.js e React. Veja como funciona.",
-      en: "Tailor-made business websites and landing pages with exclusive design, SEO and high performance in Next.js and React. See how it works.",
+      pt: "Desenvolvimento front-end com React, Next.js e TypeScript: componentes reutilizáveis, performance (Core Web Vitals), acessibilidade e SEO técnico.",
+      en: "Front-end development with React, Next.js and TypeScript: reusable components, performance (Core Web Vitals), accessibility and technical SEO.",
     },
   },
   {
@@ -127,10 +127,10 @@ export const services: ServiceDetailData[] = [
     n: "02",
     image: "/services/sistemas.webp",
     accent: "#34D399",
-    title: { pt: "Sistemas & Painéis", en: "Systems & Dashboards", es: "Sistemas y Paneles", fr: "Systèmes et Tableaux de Bord", de: "Systeme und Dashboards", it: "Sistemi e Dashboard", zh: "系统和仪表板", ja: "システムとダッシュボード", ru: "Системы и панели управления", ar: "الأنظمة والمجالس", hi: "सिस्टम और डैशबोर्ड", ko: "시스템 및 대시보드", id: "Sistem dan Dasbor" },
+    title: { pt: "Sistemas & APIs", en: "Systems & APIs", es: "Sistemas y Paneles", fr: "Systèmes et Tableaux de Bord", de: "Systeme und Dashboards", it: "Sistemi e Dashboard", zh: "系统和仪表板", ja: "システムとダッシュボード", ru: "Системы и панели управления", ar: "الأنظمة والمجالس", hi: "सिस्टम और डैशबोर्ड", ko: "시스템 및 대시보드", id: "Sistem dan Dasbor" },
     tagline: {
-      pt: "Automatize processos e centralize a gestão do seu negócio.",
-      en: "Automate processes and centralize your business management.",
+      pt: "Back-end, painéis e APIs REST — da modelagem do banco ao deploy.",
+      en: "Back-end, dashboards and REST APIs — from database modeling to deploy.",
       es: "Automatiza procesos y centraliza la gestión de tu negocio.",
       fr: "Automatisez les processus et centralisez la gestion de votre entreprise.",
       de: "Automatisieren Sie Prozesse und zentralisieren Sie Ihr Geschäftsmanagement.",
@@ -144,8 +144,8 @@ export const services: ServiceDetailData[] = [
       id: "Otomatisasi proses dan sentralisasi manajemen bisnis Anda.",
     },
     intro: {
-      pt: "Sistemas sob medida tiram o seu negócio das planilhas e do trabalho manual. Eu desenvolvo painéis de gestão, cadastros, relatórios e integrações que organizam a operação e te dão controle e visão clara dos dados.",
-      en: "Tailor-made systems take your business out of spreadsheets and manual work. I build management dashboards, records, reports and integrations that organize operations and give you control and a clear view of your data.",
+      pt: "Construo aplicações completas: autenticação, CRUD, dashboards, relatórios e APIs REST sobre banco relacional. Modelo os dados, escrevo a lógica de negócio e exponho endpoints seguros e bem documentados.",
+      en: "I build complete applications: authentication, CRUD, dashboards, reports and REST APIs over a relational database. I model the data, write the business logic and expose secure, well-documented endpoints.",
       es: "Los sistemas personalizados sacan tu negocio de hojas de cálculo y trabajo manual. Construyo paneles de gestión, registros, informes e integraciones que organizan operaciones y te dan control y una vista clara de tus datos.",
       fr: "Les systèmes sur mesure retirent votre entreprise des feuilles de calcul et du travail manuel. Je crée des tableaux de bord de gestion, des enregistrements, des rapports et des intégrations qui organisent les opérations et vous donnent le contrôle et une vue claire de vos données.",
       de: "Maßgeschneiderte Systeme befreien Ihr Geschäft von Tabellen und manueller Arbeit. Ich erstelle Management-Dashboards, Datensätze, Berichte und Integrationen, die Operationen organisieren und Ihnen Kontrolle und eine klare Sicht auf Ihre Daten geben.",
@@ -159,8 +159,8 @@ export const services: ServiceDetailData[] = [
       id: "Sistem yang dirancang khusus mengeluarkan bisnis Anda dari spreadsheet dan pekerjaan manual. Saya membangun dashboard manajemen, catatan, laporan, dan integrasi yang mengorganisir operasi dan memberi Anda kontrol dan tampilan data yang jelas.",
     },
     forWho: {
-      pt: "Ideal para empresas e equipes que ainda dependem de processos manuais e precisam de uma ferramenta própria para crescer com organização.",
-      en: "Ideal for companies and teams still relying on manual processes that need a custom tool to grow in an organized way.",
+      pt: "Onde eu mais agrego: produtos que precisam de um back-end confiável e um painel de administração sob medida, integrados ao front-end.",
+      en: "Where I add the most value: products that need a reliable back-end and a custom admin panel, integrated with the front-end.",
       es: "Ideal para empresas y equipos que aún dependen de procesos manuales y necesitan una herramienta personalizada para crecer de manera organizada.",
       fr: "Idéal pour les entreprises et les équipes qui dépendent encore de processus manuels et qui ont besoin d'un outil personnalisé pour se développer de manière organisée.",
       de: "Ideal für Unternehmen und Teams, die noch auf manuelle Prozesse angewiesen sind und ein benutzerdefiniertes Tool für ein organisiertes Wachstum benötigen.",
@@ -211,14 +211,14 @@ export const services: ServiceDetailData[] = [
       { pt: "Integrações via API", en: "API integrations" },
       { pt: "Banco de dados estruturado", en: "Structured database" },
     ],
-    tags: ["Painel admin", "Gestão de dados", "APIs"],
+    tags: ["Node.js", "PHP", "MySQL", "REST APIs"],
     metaTitle: {
-      pt: "Desenvolvimento de Sistemas & Painéis Web",
-      en: "Custom Systems & Web Dashboards Development",
+      pt: "Sistemas & APIs — back-end e painéis",
+      en: "Systems & APIs — back-end and dashboards",
     },
     metaDescription: {
-      pt: "Sistemas sob medida com painel administrativo, CRUD, relatórios e integrações via API para automatizar a gestão do seu negócio.",
-      en: "Tailor-made systems with admin panel, CRUD, reports and API integrations to automate your business management.",
+      pt: "Desenvolvimento de sistemas, painéis administrativos e APIs REST com autenticação, CRUD e banco de dados relacional.",
+      en: "Development of systems, admin dashboards and REST APIs with authentication, CRUD and a relational database.",
     },
   },
   {
@@ -226,10 +226,10 @@ export const services: ServiceDetailData[] = [
     n: "03",
     image: "/services/lojas.webp",
     accent: "#F59E0B",
-    title: { pt: "Lojas Virtuais", en: "Online Stores", es: "Tiendas Virtuales", fr: "Magasins En Ligne", de: "Online-Shops", it: "Negozi Online", zh: "在线商店", ja: "オンラインストア", ru: "Интернет-магазины", ar: "المتاجر الإلكترونية", hi: "ऑनलाइन स्टोर", ko: "온라인 스토어", id: "Toko Online" },
+    title: { pt: "E-commerce & Integrações", en: "E-commerce & Integrations", es: "Tiendas Virtuales", fr: "Magasins En Ligne", de: "Online-Shops", it: "Negozi Online", zh: "在线商店", ja: "オンラインストア", ru: "Интернет-магазины", ar: "المتاجر الإلكترونية", hi: "ऑनलाइन स्टोर", ko: "온라인 스토어", id: "Toko Online" },
     tagline: {
-      pt: "Venda online com uma loja rápida, segura e pronta para escalar.",
-      en: "Sell online with a fast, secure store ready to scale.",
+      pt: "Checkout, pagamentos e integrações — performance e segurança em primeiro lugar.",
+      en: "Checkout, payments and integrations — performance and security first.",
       es: "Vende en línea con una tienda rápida, segura y lista para escalar.",
       fr: "Vendez en ligne avec un magasin rapide, sécurisé et prêt à être mis à l'échelle.",
       de: "Verkaufen Sie online mit einem schnellen, sicheren und skalierbaren Shop.",
@@ -243,8 +243,8 @@ export const services: ServiceDetailData[] = [
       id: "Jual online dengan toko yang cepat, aman, dan siap untuk diskalakan.",
     },
     intro: {
-      pt: "Uma loja virtual bem feita vende enquanto você dorme. Eu desenvolvo e-commerces com catálogo, carrinho, pagamento seguro e controle de estoque — tudo focado em uma experiência fluida que aumenta a conversão.",
-      en: "A well-built online store sells while you sleep. I develop e-commerce with catalog, cart, secure payment and stock control — all focused on a smooth experience that boosts conversion.",
+      pt: "Construo fluxos de e-commerce com catálogo, carrinho, checkout e integração de pagamentos (gateways e webhooks), além de controle de estoque. Foco em performance, segurança e uma experiência de compra que converte.",
+      en: "I build e-commerce flows with catalog, cart, checkout and payment integrations (gateways and webhooks), plus stock control. Focused on performance, security and a buying experience that converts.",
       es: "Una tienda virtual bien hecha vende mientras duermes. Desarrollo comercio electrónico con catálogo, carrito, pago seguro y control de inventario — todo enfocado en una experiencia fluida que aumenta la conversión.",
       fr: "Un bien construit magasin en ligne vend pendant que vous dormez. Je développe le commerce électronique avec un catalogue, un panier, un paiement sécurisé et un contrôle des stocks — le tout axé sur une expérience fluide qui augmente la conversion.",
       de: "Ein gut gebauter Online-Shop verkauft, während Sie schlafen. Ich entwickle E-Commerce mit Katalog, Warenkorb, sicherer Zahlung und Bestandskontrolle — alles auf ein nahtloses Erlebnis ausgerichtet, das die Konvertierung erhöht.",
@@ -258,8 +258,8 @@ export const services: ServiceDetailData[] = [
       id: "Toko online yang dibangun dengan baik menjual saat Anda tidur. Saya mengembangkan e-commerce dengan katalog, keranjang, pembayaran aman dan kontrol inventaris — semuanya berfokus pada pengalaman yang lancar yang meningkatkan konversi.",
     },
     forWho: {
-      pt: "Ideal para lojistas e marcas que querem vender online com uma loja própria, profissional e otimizada para conversão.",
-      en: "Ideal for retailers and brands that want to sell online with their own professional, conversion-optimized store.",
+      pt: "Onde eu mais agrego: projetos que precisam conectar front-end, pagamentos e serviços externos num fluxo de compra confiável e rápido.",
+      en: "Where I add the most value: projects that need to connect front-end, payments and external services into a reliable, fast checkout flow.",
       es: "Ideal para minoristas y marcas que desean vender en línea con su propia tienda profesional y optimizada para conversión.",
       fr: "Idéal pour les détaillants et les marques qui souhaitent vendre en ligne avec leur propre magasin professionnel et optimisé pour la conversion.",
       de: "Ideal für Einzelhändler und Marken, die online mit ihrem eigenen professionellen, konversionsoptimierten Shop verkaufen möchten.",
@@ -310,17 +310,41 @@ export const services: ServiceDetailData[] = [
       { pt: "Painel de pedidos e vendas", en: "Orders and sales dashboard" },
       { pt: "Otimização de conversão", en: "Conversion optimization" },
     ],
-    tags: ["Pagamentos", "Estoque", "Alta conversão"],
+    tags: ["E-commerce", "Pagamentos", "Webhooks", "Integrações"],
     metaTitle: {
-      pt: "Criação de Lojas Virtuais & E-commerce",
-      en: "Online Store & E-commerce Development",
+      pt: "E-commerce & Integrações — checkout e pagamentos",
+      en: "E-commerce & Integrations — checkout and payments",
     },
     metaDescription: {
-      pt: "Lojas virtuais sob medida com catálogo, pagamento seguro, controle de estoque e foco em conversão. Veja como funciona.",
-      en: "Tailor-made online stores with catalog, secure payment, stock control and a focus on conversion. See how it works.",
+      pt: "Desenvolvimento de e-commerce e integrações: catálogo, checkout, pagamentos (gateways e webhooks) e controle de estoque, com foco em performance e conversão.",
+      en: "E-commerce and integrations development: catalog, checkout, payments (gateways and webhooks) and stock control, focused on performance and conversion.",
     },
   },
 ];
+
+/** Copy da página índice de serviços (/services). Bilíngue pt/en (fallback via pickText). */
+export const servicesIndexCopy = {
+  eyebrow: { pt: "Serviços", en: "Services" } as LocalizedText,
+  heading: {
+    pt: "Soluções sob medida para o seu negócio crescer",
+    en: "Tailored solutions to grow your business",
+  } as LocalizedText,
+  text: {
+    pt: "Do site que vende à loja que fatura e ao sistema que organiza a operação — cada projeto é construído do zero, com foco em performance, conversão e código que dura.",
+    en: "From the site that sells to the store that earns and the system that runs your operation — every project is built from scratch, focused on performance, conversion and code that lasts.",
+  } as LocalizedText,
+  metaTitle: {
+    pt: "Serviços — Sites, Sistemas e E-commerce | Luiz Souza",
+    en: "Services — Websites, Systems and E-commerce | Luiz Souza",
+  } as LocalizedText,
+  metaDescription: {
+    pt: "Desenvolvimento de sites, landing pages, sistemas de gestão e lojas virtuais com React, Next.js e PHP. Design exclusivo, performance e foco em conversão.",
+    en: "Development of websites, landing pages, management systems and online stores with React, Next.js and PHP. Exclusive design, performance and conversion focus.",
+  } as LocalizedText,
+  forWhoLabel: { pt: "Ideal para", en: "Ideal for" } as LocalizedText,
+  includesLabel: { pt: "O que entrego", en: "What I deliver" } as LocalizedText,
+  cta: { pt: "Ver detalhes", en: "See details" } as LocalizedText,
+};
 
 export const serviceSlugs = services.map((s) => s.slug);
 

@@ -49,6 +49,9 @@ export function Services() {
           <Text tone="muted" size="lg" measure>
             {t.services.text}
           </Text>
+          <ArrowButton href="/services" variant="outline" className="mt-2 self-start">
+            {t.services.seeAll}
+          </ArrowButton>
         </Reveal>
 
         {/* Serviços Interativos */}
@@ -99,7 +102,7 @@ export function Services() {
           <Text size="lg" className="max-w-[28ch]">
             {t.services.ctaText}
           </Text>
-          <ArrowButton href="/contact" variant="solid">
+          <ArrowButton href="/work" variant="solid">
             {t.services.ctaButton}
           </ArrowButton>
         </Reveal>

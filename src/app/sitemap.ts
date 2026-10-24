@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/seo";
-import { projetos } from "@/data/projects";
+import { projetos, caseStudySlugs } from "@/data/projects";
 import { slugify } from "@/lib/slug";
 import { serviceSlugs } from "@/data/services";
 import { certificateSlugs } from "@/data/certificates";
@@ -19,7 +19,9 @@ const ROUTES: RouteDef[] = [
   { path: "/work", changeFrequency: "monthly", priority: 0.9 },
   { path: "/about", changeFrequency: "yearly", priority: 0.8 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.7 },
+  { path: "/services", changeFrequency: "monthly", priority: 0.9 },
   ...serviceSlugs.map((slug) => ({ path: `/services/${slug}`, changeFrequency: "monthly" as const, priority: 0.85 })),
+  ...caseStudySlugs.map((slug) => ({ path: `/work/case/${slug}`, changeFrequency: "yearly" as const, priority: 0.7 })),
   ...certificateSlugs.map((slug) => ({ path: `/certificates/${slug}`, changeFrequency: "yearly" as const, priority: 0.5 })),
   ...projetos.map((p) => ({ path: `/project?id=${slugify(p.nome)}`, changeFrequency: "yearly" as const, priority: 0.6 })),
 ];

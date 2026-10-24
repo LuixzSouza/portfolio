@@ -15,6 +15,7 @@ import { Eyebrow } from "@/components/ds/Eyebrow";
 import { Reveal } from "@/components/ds/Reveal";
 import { projetos, type Projeto } from "@/data/projects";
 import { listProjects } from "@/lib/api";
+import { withLocalProjects } from "@/lib/mergeProjects";
 import { useGithubRepos } from "@/hooks/useGithubRepos";
 import { slugify } from "@/lib/slug";
 import { screenshotUrl } from "@/lib/screenshot";
@@ -53,7 +54,11 @@ export function WorkGrid() {
   const [query, setQuery] = useState("");
   const [visible, setVisible] = useState(PAGE);
   // Fallback estático (dados de @/data); substituído pela API quando ela responder.
-  const items = useCmsList(listProjects, (data) => data as unknown as Projeto[], projetos);
+  const items = useCmsList(
+    listProjects,
+    (data) => withLocalProjects(data as unknown as Projeto[], projetos),
+    projetos,
+  );
   const githubRepos = useGithubRepos();
   const { x, y, follow } = useCursorFollow();
   const [hovering, setHovering] = useState(false);
@@ -192,7 +197,7 @@ export function WorkGrid() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.6 }}
                   onClick={() => setQuery("")}
-                  aria-label="Limpar busca"
+                  aria-label={t.a11y.clearSearch}
                   className="absolute right-3 flex h-6 w-6 items-center justify-center rounded-full text-muted transition-colors hover:bg-foreground/10 hover:text-foreground"
                 >
                   <X className="h-3.5 w-3.5" />
@@ -204,7 +209,7 @@ export function WorkGrid() {
           {/* Segmented control de origem (Sliding Pill) */}
           <div
             role="group"
-            aria-label="Origem"
+            aria-label={t.a11y.source}
             className="inline-flex shrink-0 items-center self-start rounded-full border border-foreground/15 p-1 text-sm font-medium md:self-auto"
           >
             {SOURCES.map((s) => {

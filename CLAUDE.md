@@ -11,7 +11,7 @@ Recriação do portfólio pessoal de **Luiz Antônio de Souza** (dev Front-End).
 - GitHub: https://github.com/LuixzSouza
 - LinkedIn: https://www.linkedin.com/in/luiz-antonio-souza-5000a226b/
 - CodeWars: https://www.codewars.com/users/LuixzSouza
-- E-mail de contato: ola@luixzsouza.com.br ou luiz.antoniodesouza004@gmail.com
+- E-mail de contato: luiz.antoniodesouza004@gmail.com (ola@luixzsouza.com.br foi aposentado)
 
 > Idioma de trabalho: **responder em português (PT-BR)**. Termos técnicos em inglês são bem-vindos.
 
@@ -217,9 +217,10 @@ public/                # imagens, backgrounds, ícones
     export estático não faz fetch em build. Só os componentes client refrescam.
     - A seção "O que eu faço" (Services/ServicesInteractive) é curada/tradução
     própria de propósito — não vem do banco.
-    - FeaturedWork (Home) mostra um subconjunto ALEATÓRIO de @/data/projects (só os
-    com verProjeto) — random no cliente após mount (SSR mostra os 4 primeiros p/ não
-    quebrar hidratação).
+    - FeaturedWork (Home) mostra os projetos CURADOS (destaque:true, só os com
+    verProjeto) SEMPRE primeiro; as vagas restantes (COUNT=4) são preenchidas
+    aleatoriamente no cliente após mount p/ dar variedade (SSR mostra destaques +
+    início do resto p/ não quebrar hidratação).
   - [x] Trabalhos com cursor + screenshot ao vivo + GitHub:
     - WorkCursor.tsx: disco "Visualizar" (blur, translúcido) que segue o cursor sobre
     os cards (desktop/lg; no toque fica o badge central). Reaproveita o padrão de
@@ -298,3 +299,18 @@ public/                # imagens, backgrounds, ícones
   (conteúdo da nova página sobe/aparece) e indicador ativo no header que desliza
   lateralmente (motion layoutId). Marca compartilhada em components/layout/BrandMark.
   SiteHeader fecha o menu mobile no change de pathname (a navegação é interceptada).
+  - [x] (2026-10-21) /services no menu (header + footer); modularização: admin/managers/,
+  admin/EntityManager/ e sections/ProjectDetail/ viraram pastas com barrel.
+  - [x] Imagens de TODOS os projetos: prints reais com Playwright em public/mockup
+  (sites no ar, projetos locais rodando em dev, app Expo em viewport mobile, repos no
+  GitHub) + galerias com legendas PT/EN. Única sem galeria: "SI - Faculdade" (sem site/repo).
+  - [x] E-mail de contato → luiz.antoniodesouza004@gmail.com; CV 2026 (base da Área de
+  Trabalho) em public/cv + versão EN traduzida (1 página).
+  - [x] Segurança: next 15.5.28, sharp 0.35.5, overrides (postcss/nanoid/source-map-js) →
+  `npm audit --omit=dev` = 0. Restam vulns só em ferramentas de dev (vite/vitest): o
+  `npm install` delas esbarra num bug do npm 11 (edgesOut em #loadPeerSet).
+  - [x] i18n: descrições do menu mobile, rótulos abrir/fechar menu e CTAs inline foram
+  para o dicionário (13 idiomas). ContactMascot sem d="undefined" (initial={false}).
+  - [ ] Publicar na Hostinger: o deploy do plugin Hostinger APAGA public_html inteiro
+  (perderia php/config.php e uploads do admin) → preferir FTP/Gerenciador de Arquivos
+  enviando só o conteúdo de out/. No servidor, trocar `mail_to` do php/config.php.

@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown, Check } from "lucide-react";
 import { LOCALES, localeFromPath } from "@/lib/locales";
+import { useTranslations } from "@/content/useTranslations";
 
 // Config dos idiomas derivada de LOCALES (fonte única). Adicionar idioma lá
 // reflete aqui automaticamente.
@@ -18,6 +19,7 @@ const OPTIONS: Lang[] = LOCALES.map((l) => l.code);
 
 export function LanguageToggle({ className = "" }: { className?: string }) {
   const { lang, setLang } = useLanguage();
+  const t = useTranslations();
   const pathname = usePathname();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
@@ -93,7 +95,7 @@ export function LanguageToggle({ className = "" }: { className?: string }) {
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup="true"
-        aria-label="Selecionar idioma"
+        aria-label={t.a11y.selectLanguage}
         className="flex cursor-pointer items-center gap-2 rounded-lg border border-foreground/15 bg-background px-3 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:border-foreground/30 hover:bg-surface/50 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-foreground/20"
         whileTap={!reduceMotion ? { scale: 0.98 } : undefined}
       >

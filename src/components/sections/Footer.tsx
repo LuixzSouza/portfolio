@@ -17,6 +17,7 @@ import { localeFromPath, localizeHref } from "@/lib/locales";
 
 const NAV = [
   { key: "work", href: "/work" },
+  { key: "services", href: "/services" },
   { key: "about", href: "/about" },
   { key: "contact", href: "/contact" },
 ] as const;
@@ -27,7 +28,7 @@ const SOCIAL = [
   { label: "CodeWars", href: "https://www.codewars.com/users/LuixzSouza" },
 ];
 
-const EMAIL = "ola@luixzsouza.com.br";
+const EMAIL = "luiz.antoniodesouza004@gmail.com";
 
 export function SectionFooter({ className = "" }: { className?: string }) {
   const t = useTranslations();
@@ -182,7 +183,7 @@ export function SectionFooter({ className = "" }: { className?: string }) {
             className="group relative aspect-square w-[clamp(72px,12vw,168px)] shrink-0 overflow-hidden rounded-full border border-foreground/15 bg-surface"
           >
             <Image
-              src="/image/fotoformal.webp"
+              src="/image/foto-perfil-2026.webp"
               alt="Luiz Souza"
               fill
               sizes="168px"

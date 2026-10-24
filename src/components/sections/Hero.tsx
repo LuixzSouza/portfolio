@@ -12,6 +12,8 @@ import { ArrowButton } from "@/components/ds/ArrowButton";
 import { AnimatedLink } from "@/components/ds/AnimatedLink";
 import { TypingText } from "@/components/ds/TypingText";
 import { useTranslations } from "@/content/useTranslations";
+import { useLanguage } from "@/components/ds/LanguageProvider";
+import { cvHref } from "@/lib/cv";
 
 // Variáveis da animação em cascata dos textos
 const textRevealVariants: Variants = {
@@ -26,6 +28,7 @@ const textRevealVariants: Variants = {
 
 export function Hero() {
   const t = useTranslations();
+  const { lang } = useLanguage();
 
   // Conteúdo nasce visível no SSR; a animação de entrada só dispara após montar
   // (evita ficar preso invisível se o JS demorar/falhar na hidratação).
@@ -122,13 +125,21 @@ export function Hero() {
             </motion.div>
 
             <motion.div variants={textRevealVariants} className="mt-10 flex flex-wrap items-center gap-5">
-              <MagneticButton href="/contact">{t.hero.ctaPrimary}</MagneticButton>
-              <ArrowButton href="/work" variant="outline">
-                {t.hero.ctaSecondary}
+              <MagneticButton href="/work">{t.hero.ctaSecondary}</MagneticButton>
+              <ArrowButton
+                href={cvHref(lang)}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+              >
+                {t.contact.cv}
               </ArrowButton>
             </motion.div>
 
             <motion.div variants={textRevealVariants} className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
+              <AnimatedLink href="/contact" withArrow>
+                {t.hero.ctaPrimary}
+              </AnimatedLink>
               <AnimatedLink
                 href="https://github.com/LuixzSouza"
                 target="_blank"
@@ -169,8 +180,8 @@ export function Hero() {
               className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-surface shadow-2xl transition-shadow duration-500 hover:shadow-foreground/5 lg:max-w-none pointer-events-none"
             >
               <Image
-                src="/image/fotoformal.webp"
-                alt="Retrato de Luiz Souza"
+                src="/image/foto-perfil-2026.webp"
+                alt="Luiz Antônio de Souza"
                 fill
                 priority
                 sizes="(max-width: 1024px) 80vw, 40vw"

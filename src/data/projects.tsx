@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { LocalizedText, LocalizedList } from "@/lib/i18n";
 
 /** Imagem extra da galeria do projeto, com legenda opcional bilíngue. */
@@ -93,6 +93,621 @@ function completeProject(project: unknown): Projeto {
 
 const rawProjects = [
     {
+        id: "sistema-up",
+        nome: "Sistema UP",
+        imagem: "/mockup/sistema-up.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "expert",
+        destaque: true,
+        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Zustand", "Zod", "Tailwind CSS", "PWA", "Service Worker", "Web Push", "Leaflet", "TanStack Table"],
+        tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
+        duracao: "3 meses",
+        tamanhoEquipe: 1,
+        links: {
+            verProjeto: "https://upinconfidentes.com.br"
+        },
+        descricao: {
+            pt: "Plataforma completa de uma sorveteria: landing com SEO, cardápio digital com pedido e acompanhamento em tempo real, e frente de caixa (PDV) que continua vendendo sem internet.",
+            en: "Full platform for an ice-cream shop: SEO landing page, digital menu with real-time order tracking, and a point-of-sale that keeps selling offline."
+        },
+        data: { pt: "2026", en: "2026" },
+        galeria: [
+            { src: "/mockup/sistema-up-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/sistema-up-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/sistema-up-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } },
+            { src: "/mockup/sistema-up-home-3.webp", legenda: { pt: "Página inicial — seção 3", en: "Home page — section 3" } }
+        ],
+        resumo: {
+            pt: "Três produtos, um banco só: site público, cardápio/pedidos do cliente e o sistema de caixa da equipe — offline-first.",
+            en: "Three products, one database: public site, customer menu/ordering and the staff POS — offline-first."
+        },
+        conteudo: {
+            pt: [
+                "A Sorveteria UP, em Inconfidentes/MG, anotava pedidos no papel e no WhatsApp. O objetivo era unificar tudo: o cliente pede pelo celular, o pedido cai no caixa, a equipe acompanha a produção e o dono enxerga vendas e estoque.",
+                "Construí três produtos sobre um único banco (Supabase/PostgreSQL): a landing pública com SEO, o cardápio digital mobile-first com página por produto e acompanhamento do pedido em tempo real por link, e o Sistema UP — PDV da equipe com venda no balcão, clientes, histórico, estoque e fechamento de caixa.",
+                "O requisito mais duro foi a internet do interior: o caixa não pode parar quando o provedor cai. Um Service Worker pré-carrega as telas do caixa, as vendas vão para uma fila local e sincronizam sozinhas quando a rede volta, e as senhas saem de um bloco reservado enquanto havia conexão.",
+                "Há ainda modo demonstração sem banco (o app inteiro roda em memória), notificações push, mapa de entrega com Leaflet e exportação para Excel. Está em produção, com mais de 450 commits."
+            ],
+            en: [
+                "UP, an ice-cream shop in Inconfidentes/MG, took orders on paper and WhatsApp. The goal was to unify everything: customers order from their phone, the order lands at the register, staff follow production and the owner sees sales and stock.",
+                "I built three products on a single database (Supabase/PostgreSQL): the public SEO landing page, a mobile-first digital menu with per-product pages and real-time order tracking via link, and Sistema UP — the staff POS with counter sales, customers, history, stock and cash closing.",
+                "The hardest requirement was rural internet: the register can't stop when the provider goes down. A Service Worker pre-caches the POS screens, sales go to a local queue and sync automatically when the connection returns, and order numbers come from a block reserved while online.",
+                "There is also a database-free demo mode (the whole app runs in memory), push notifications, a Leaflet delivery map and Excel export. It's in production, with 450+ commits."
+            ]
+        },
+        objetivos: {
+            pt: [
+                "Tirar os pedidos do papel e do WhatsApp para um fluxo único",
+                "Dar ao cliente pedido e acompanhamento em tempo real pelo celular",
+                "Garantir que o caixa venda mesmo sem internet"
+            ],
+            en: [
+                "Move orders from paper and WhatsApp into a single flow",
+                "Give customers real-time ordering and tracking on their phone",
+                "Make sure the register sells even without internet"
+            ]
+        },
+        desafios: {
+            pt: [
+                "Arquitetura offline-first: fila local de vendas com sincronização posterior",
+                "Tempo real entre cardápio do cliente e caixa da equipe",
+                "Três produtos com permissões diferentes sobre o mesmo banco (RLS)"
+            ],
+            en: [
+                "Offline-first architecture: local sales queue with later sync",
+                "Real time between the customer menu and the staff register",
+                "Three products with different permissions over one database (RLS)"
+            ]
+        },
+        aprendizados: {
+            pt: [
+                "Offline não é um detalhe: muda a modelagem (ids, senhas e conflitos) desde o início.",
+                "Um modo demonstração em memória acelera o desenvolvimento e as apresentações ao cliente.",
+                "Desenhar a tela a partir da operação real (balcão, uma mão, fila) vale mais que qualquer template."
+            ],
+            en: [
+                "Offline isn't a detail: it changes the data model (ids, numbering, conflicts) from day one.",
+                "An in-memory demo mode speeds up development and client presentations.",
+                "Designing screens from the real operation (counter, one hand, queue) beats any template."
+            ]
+        },
+        tags: ["pdv", "pwa", "offline", "supabase", "next.js", "tempo real"]
+    },
+    {
+        id: "silver-ocean",
+        nome: "Silver Ocean",
+        imagem: "/mockup/silver-ocean.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "advanced",
+        destaque: true,
+        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "PHP", "Mercado Pago", "Melhor Envio", "Zod", "React Hook Form", "Tailwind CSS", "Playwright", "SEO"],
+        tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
+        tamanhoEquipe: 1,
+        links: {
+            github: "https://github.com/LuixzSouza",
+            verProjeto: "https://silverocean925.com.br"
+        },
+        descricao: {
+            pt: "E-commerce completo de joias em prata 925: catálogo por categorias, carrinho, contas de cliente, rastreio de pedidos e checkout com Pix e cartões.",
+            en: "Full silver 925 jewelry e-commerce: category catalog, cart, customer accounts, order tracking and checkout with Pix and cards."
+        },
+        data: { pt: "2026", en: "2026" },
+        galeria: [
+            { src: "/mockup/silver-ocean-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/silver-ocean-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/silver-ocean-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } },
+            { src: "/mockup/silver-ocean-home-3.webp", legenda: { pt: "Página inicial — seção 3", en: "Home page — section 3" } },
+            { src: "/mockup/silver-ocean-home-4.webp", legenda: { pt: "Página inicial — seção 4", en: "Home page — section 4" } },
+            { src: "/mockup/silver-ocean-institucional-garantia.webp", legenda: { pt: "Página de garantia vitalícia", en: "Lifetime warranty page" } }
+        ],
+        resumo: {
+            pt: "Loja virtual de joias em prata 925 com design elegante, jornada de compra completa e foco em conversão.",
+            en: "Silver 925 jewelry online store with elegant design, a complete purchase journey and a focus on conversion."
+        },
+        conteudo: {
+            pt: [
+                "A Silver Ocean é uma marca de joias em prata 925 que precisava de uma loja própria à altura do produto — elegante, rápida e confiável. O desafio era cobrir toda a jornada de compra, do catálogo ao pagamento, sem abrir mão de uma estética minimalista e premium.",
+                "Construí um e-commerce completo: navegação por categorias (anéis, colares, brincos, pulseiras, linha masculina e personalizados), carrinho, contas de cliente com lista de favoritos e rastreamento de pedidos. O checkout aceita Pix e os principais cartões, com parcelamento.",
+                "No técnico, priorizei performance e SEO: imagens em WebP, carregamento otimizado e estrutura pensada para ranquear no Google. A interface é totalmente responsiva e usa animações sutis para dar sofisticação sem pesar.",
+                "O resultado é uma loja que transmite confiança — reforçada por garantia vitalícia, troca facilitada e prova social (mais de 850 avaliações com média 4.9). Hoje está no ar atendendo clientes em todo o Brasil."
+            ],
+            en: [
+                "Silver Ocean is a silver 925 jewelry brand that needed a store worthy of the product — elegant, fast and trustworthy. The challenge was to cover the entire purchase journey, from catalog to payment, without giving up a minimalist, premium aesthetic.",
+                "I built a complete e-commerce: category navigation (rings, necklaces, earrings, bracelets, men's line and personalized pieces), cart, customer accounts with a wishlist and order tracking. Checkout accepts Pix and the main credit cards, with installments.",
+                "On the technical side, I prioritized performance and SEO: WebP images, optimized loading and a structure built to rank on Google. The interface is fully responsive and uses subtle animations for sophistication without weight.",
+                "The result is a store that conveys trust — reinforced by a lifetime warranty, easy returns and social proof (850+ reviews averaging 4.9). It is live today, serving customers across Brazil."
+            ]
+        },
+        objetivos: {
+            pt: [
+                "Entregar uma experiência de compra premium, do catálogo ao checkout",
+                "Suportar pagamento com Pix e cartões com parcelamento",
+                "Garantir performance e SEO para ranquear e converter"
+            ],
+            en: [
+                "Deliver a premium shopping experience, from catalog to checkout",
+                "Support payment via Pix and credit cards with installments",
+                "Ensure performance and SEO to rank and convert"
+            ]
+        },
+        desafios: {
+            pt: [
+                "Estruturar carrinho, contas de cliente e rastreio de pedidos",
+                "Integrar gateway de pagamento (Pix + cartões) de forma segura",
+                "Manter a loja rápida mesmo com muitas imagens de produto (WebP)"
+            ],
+            en: [
+                "Structure cart, customer accounts and order tracking",
+                "Securely integrate the payment gateway (Pix + cards)",
+                "Keep the store fast even with many product images (WebP)"
+            ]
+        },
+        aprendizados: {
+            pt: [
+                "Integrar pagamentos reais (Pix + cartões) exige cuidado com estados de erro e confirmação assíncrona.",
+                "Em e-commerce, performance é conversão: cada imagem otimizada conta.",
+                "Uma navegação por categorias bem pensada reduz a fricção até o checkout."
+            ],
+            en: [
+                "Integrating real payments (Pix + cards) requires care with error states and asynchronous confirmation.",
+                "In e-commerce, performance is conversion: every optimized image counts.",
+                "Well-thought-out category navigation reduces friction all the way to checkout."
+            ]
+        },
+        tags: ["e-commerce", "joias", "loja virtual", "next.js", "react"]
+    },
+    {
+        id: "thai-cross",
+        nome: "Thai Cross — Gestão de Academia",
+        imagem: "/mockup/thai-cross.webp",
+        galeria: [
+            { src: "/mockup/thai-cross-chamada.webp", legenda: { pt: "Chamada do dia, feita no celular", en: "Daily attendance, taken on a phone" } },
+            { src: "/mockup/thai-cross-mensalidades.webp", legenda: { pt: "Mensalidades e cobrança", en: "Monthly fees and billing" } },
+            { src: "/mockup/thai-cross-alunos-lista.webp", legenda: { pt: "Alunos com busca e matrículas", en: "Students with search and enrollments" } }
+        ],
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "advanced",
+        destaque: true,
+        tecnologias: ["Next.js", "TypeScript", "Prisma", "MySQL", "NextAuth", "Tailwind CSS", "Vitest", "GitHub Actions", "PM2", "Zod"],
+        tecnologiasPrincipais: ["Next.js", "Prisma", "MySQL"],
+        duracao: "2 meses",
+        tamanhoEquipe: 1,
+        links: {},
+        descricao: {
+            pt: "Sistema de gestão para uma academia de Muaythai e Cross Training: alunos, presença, mensalidades e inadimplência, com papéis de acesso e deploy automatizado.",
+            en: "Management system for a Muay Thai and Cross Training gym: students, attendance, monthly fees and overdue tracking, with role-based access and automated deploys."
+        },
+        data: { pt: "2026", en: "2026" },
+        resumo: {
+            pt: "Dois módulos, um sistema só — feito para a rotina real da academia, com a chamada marcada em pé, no celular.",
+            en: "Two modules, one system — built around the gym's real routine, with attendance taken standing up, on a phone."
+        },
+        conteudo: {
+            pt: [
+                "Uma academia de Muaythai que também administra uma equipe de Cross Training controlava alunos e cobranças em planilhas. Construí um sistema sob medida com painel (caixa do mês, atrasos, presença do dia, quem parou de aparecer), alunos, presença, mensalidades e configurações.",
+                "O modelo separa Aluno de Matrícula: quem treina as duas modalidades tem um cadastro e duas matrículas, cada uma com valor e vencimento próprios. Inadimplência não é um status gravado, e sim calculada (pendente e vencida) — assim nunca fica desatualizada na virada do dia. Cada mensalidade guarda o próprio valor, então reajustes não reescrevem o histórico.",
+                "Acesso por papel (admin, professor de Muaythai, professora de Cross), cada um com a identidade visual da sua casa. Testes com Vitest nas quatro camadas e deploy contínuo por GitHub Actions para um VPS com PM2."
+            ],
+            en: [
+                "A Muay Thai gym that also runs a Cross Training team managed students and payments in spreadsheets. I built a tailored system with a dashboard (monthly revenue, overdue, today's attendance, who stopped showing up), students, attendance, monthly fees and settings.",
+                "The model separates Student from Enrollment: someone training both modalities has one record and two enrollments, each with its own price and due date. Overdue isn't a stored status but computed (pending and past due), so it never goes stale overnight. Each fee stores its own amount, so price changes don't rewrite history.",
+                "Role-based access (admin, Muay Thai coach, Cross coach), each with its own branding. Tested with Vitest across four layers and continuously deployed via GitHub Actions to a VPS running PM2."
+            ]
+        },
+        desafios: {
+            pt: [
+                "Modelagem de dados que suporte aluno em duas modalidades",
+                "Geração idempotente de mensalidades e cobrança via WhatsApp",
+                "Controle de acesso derivado sempre do papel, nunca da pessoa"
+            ],
+            en: [
+                "A data model supporting one student across two modalities",
+                "Idempotent monthly fee generation and WhatsApp billing",
+                "Access control always derived from role, never from the person"
+            ]
+        },
+        aprendizados: {
+            pt: [
+                "Estado derivado é mais confiável que estado gravado quando depende do tempo.",
+                "CI/CD com testes desde o início dá segurança para entregar toda semana.",
+                "Sistema sob medida ganha de genérico quando parte de como o cliente trabalha."
+            ],
+            en: [
+                "Derived state beats stored state when it depends on time.",
+                "CI/CD with tests from the start makes weekly delivery safe.",
+                "Tailored beats generic when it starts from how the client actually works."
+            ]
+        },
+        tags: ["gestão", "academia", "prisma", "mysql", "next.js", "ci/cd"]
+    },
+    {
+        id: "turn-io",
+        nome: "Turn.io — Webflow → Next.js",
+        imagem: "/mockup/turn-io.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "expert",
+        destaque: true,
+        tecnologias: ["Next.js", "TypeScript", "GSAP", "Rive", "PurgeCSS", "Lightning CSS", "esbuild", "Playwright", "Lighthouse", "axe", "Vercel"],
+        tecnologiasPrincipais: ["Next.js", "TypeScript", "Playwright"],
+        tamanhoEquipe: 1,
+        links: {
+            verProjeto: "https://turn-io.vercel.app"
+        },
+        descricao: {
+            pt: "Migração do site da Turn.io (healthtech de WhatsApp) do Webflow para código: visual idêntico, PageSpeed mobile de 35 para 98.",
+            en: "Migration of Turn.io's website (WhatsApp healthtech) from Webflow to code: pixel-identical, mobile PageSpeed from 35 to 98."
+        },
+        data: { pt: "2026", en: "2026" },
+        galeria: [
+            { src: "/mockup/turn-io-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/turn-io-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/turn-io-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } },
+            { src: "/mockup/turn-io-home-3.webp", legenda: { pt: "Página inicial — seção 3", en: "Home page — section 3" } }
+        ],
+        resumo: {
+            pt: "Pipeline que converte o site publicado no Webflow em páginas Next.js estáticas, com QA visual e de performance automatizado.",
+            en: "A pipeline that converts the published Webflow site into static Next.js pages, with automated visual and performance QA."
+        },
+        conteudo: {
+            pt: [
+                "O site da Turn.io rodava no Webflow com PageSpeed mobile de 35 e vários erros de console. A proposta era sair da plataforma mantendo o site idêntico — layout, conteúdo, imagens e animações — e ganhar controle total de código, performance e hospedagem.",
+                "Em vez de reescrever à mão, criei um pipeline que converte o HTML publicado em páginas Next.js: HTML estático sem React no navegador, CSS reduzido e embutido por página, imagens no tamanho exibido e scripts carregados só na primeira interação. Coleções do CMS viram templates.",
+                "A qualidade é garantida por ferramentas: comparação visual original × local em 1440 e 375 px com Playwright, Lighthouse, axe para acessibilidade e uma auditoria que varre links quebrados e rolagem horizontal.",
+                "Resultado: PageSpeed mobile de 35 para 98 na home (média 95 em 15 páginas), desktop 98–100, SEO e boas práticas 100 e zero erros de console. Entreguei também um relatório em PDF para a diretoria."
+            ],
+            en: [
+                "Turn.io's website ran on Webflow with a mobile PageSpeed of 35 and several console errors. The goal was to leave the platform while keeping the site identical — layout, content, images and animations — and gain full control over code, performance and hosting.",
+                "Instead of rewriting by hand, I built a pipeline that converts the published HTML into Next.js pages: static HTML with no React in the browser, per-page purged and inlined CSS, images at display size and scripts loaded on first interaction. CMS collections become templates.",
+                "Quality is enforced by tooling: original vs. local visual diffs at 1440 and 375 px with Playwright, Lighthouse, axe for accessibility and an audit that scans for broken links and horizontal scroll.",
+                "Result: mobile PageSpeed from 35 to 98 on the home page (95 average across 15 pages), desktop 98–100, SEO and best practices 100 and zero console errors. I also delivered a PDF report for the leadership."
+            ]
+        },
+        aprendizados: {
+            pt: [
+                "Automatizar a conversão é mais seguro e repetível do que reescrever página a página.",
+                "QA visual automatizado transforma 'idêntico ao original' em algo verificável.",
+                "A maior parte do ganho de performance vem de enviar menos: CSS, JS e bytes de imagem."
+            ],
+            en: [
+                "Automating the conversion is safer and more repeatable than rewriting page by page.",
+                "Automated visual QA turns 'identical to the original' into something verifiable.",
+                "Most performance gains come from shipping less: CSS, JS and image bytes."
+            ]
+        },
+        tags: ["performance", "webflow", "migração", "next.js", "core web vitals"]
+    },
+    {
+        id: "berilo-cafe",
+        nome: "Berilo Café",
+        imagem: "/mockup/berilo-cafe.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "advanced",
+        destaque: true,
+        tecnologias: ["Next.js", "React", "TypeScript", "Supabase", "PHP", "Mercado Pago", "Melhor Envio", "Correios API", "Zustand", "Zod", "Tailwind CSS", "SEO"],
+        tecnologiasPrincipais: ["Next.js", "Supabase", "TypeScript"],
+        tamanhoEquipe: 1,
+        links: {
+            github: "https://github.com/LuixzSouza",
+            verProjeto: "https://berilocafe.com.br"
+        },
+        descricao: {
+            pt: "E-commerce de cafés especiais de uma torrefação artesanal de Minas Gerais: catálogo de cafés, contas de cliente, página institucional e FAQ.",
+            en: "Specialty coffee e-commerce for an artisanal roastery from Minas Gerais: coffee catalog, customer accounts, brand story and FAQ."
+        },
+        data: { pt: "2026", en: "2026" },
+        galeria: [
+            { src: "/mockup/berilo-cafe-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/berilo-cafe-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/berilo-cafe-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } },
+            { src: "/mockup/berilo-cafe-home-3.webp", legenda: { pt: "Página inicial — seção 3", en: "Home page — section 3" } }
+        ],
+        resumo: {
+            pt: "Loja de cafés especiais com narrativa de marca, catálogo de produtos e experiência de compra limpa e responsiva.",
+            en: "Specialty coffee store with brand storytelling, a product catalog and a clean, responsive buying experience."
+        },
+        conteudo: {
+            pt: [
+                "O Berilo é uma torrefação artesanal do Campo das Vertentes, em Minas Gerais, que queria levar seus cafés especiais para todo o Brasil. Mais do que vender, o site precisava contar a história do produto — origem rastreável e torra em micro-lotes — para sustentar o posicionamento premium.",
+                "Desenvolvi uma loja com forte narrativa de marca: home editorial, catálogo de cafés ('Nossos Cafés'), página 'Sobre Nós' com a história da torrefação, contato dedicado e um FAQ que antecipa as principais dúvidas. Há também autenticação de clientes.",
+                "A prioridade técnica foi equilibrar storytelling com a usabilidade de um e-commerce, mantendo tudo rápido (imagens em WebP) e responsivo, com SEO desde a base.",
+                "O projeto entrega uma experiência limpa e sofisticada, reforçada por prova social (4.9 no Google) e garantia de devolução incondicional — a confiança necessária para a compra online de um produto sensorial como café."
+            ],
+            en: [
+                "Berilo is an artisanal roastery from the Campo das Vertentes region in Minas Gerais that wanted to take its specialty coffees to all of Brazil. More than selling, the site had to tell the product's story — traceable origin and micro-batch roasting — to support the premium positioning.",
+                "I built a store with strong brand storytelling: an editorial home, a coffee catalog ('Nossos Cafés'), an 'About Us' page with the roastery's history, a dedicated contact page and a FAQ that anticipates the main questions. It also includes customer authentication.",
+                "The technical priority was to balance storytelling with e-commerce usability, keeping everything fast (WebP images) and responsive, with SEO from the ground up.",
+                "The project delivers a clean, sophisticated experience, reinforced by social proof (4.9 on Google) and an unconditional return guarantee — the trust needed to buy a sensory product like coffee online."
+            ]
+        },
+        objetivos: {
+            pt: [
+                "Contar a história da marca e da origem dos grãos (Campo das Vertentes)",
+                "Apresentar o catálogo de cafés e levar o cliente à compra",
+                "Transmitir confiança com prova social, FAQ e garantia"
+            ],
+            en: [
+                "Tell the brand and bean-origin story (Campo das Vertentes)",
+                "Showcase the coffee catalog and guide the customer to purchase",
+                "Build trust with social proof, FAQ and a guarantee"
+            ]
+        },
+        desafios: {
+            pt: [
+                "Equilibrar narrativa editorial com a usabilidade de uma loja",
+                "Implementar autenticação de clientes",
+                "Otimizar imagens (WebP) e SEO para performance"
+            ],
+            en: [
+                "Balance editorial storytelling with store usability",
+                "Implement customer authentication",
+                "Optimize images (WebP) and SEO for performance"
+            ]
+        },
+        aprendizados: {
+            pt: [
+                "Storytelling e usabilidade não competem — uma home editorial pode converter tanto quanto uma loja 'seca'.",
+                "Conteúdo bem estruturado (FAQ, 'Sobre Nós') reduz dúvidas e objeções de compra.",
+                "Otimização de imagens e SEO desde o início evita retrabalho depois."
+            ],
+            en: [
+                "Storytelling and usability don't compete — an editorial home can convert as well as a plain store.",
+                "Well-structured content (FAQ, 'About Us') reduces doubts and purchase objections.",
+                "Optimizing images and SEO from the start avoids rework later."
+            ]
+        },
+        tags: ["e-commerce", "café", "loja virtual", "next.js", "react"]
+    },
+    {
+        id: "estetica-ana-clara",
+        nome: "Estética Ana Clara",
+        imagem: "/mockup/estetica-ana-clara.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "advanced",
+        destaque: true,
+        tecnologias: ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Auth.js", "Tailwind CSS", "FullCalendar", "Resend", "Cloudinary", "Zod"],
+        tecnologiasPrincipais: ["Next.js", "Prisma", "PostgreSQL"],
+        tamanhoEquipe: 1,
+        links: {
+            verProjeto: "https://esteticaanaclara.com.br"
+        },
+        descricao: {
+            pt: "Site e painel de gestão de uma clínica de estética: landing com SEO local e blog, agenda de atendimentos, clientes e financeiro.",
+            en: "Website and management dashboard for an aesthetics clinic: local-SEO landing page and blog, appointment calendar, clients and finances."
+        },
+        data: { pt: "2025 — 2026", en: "2025 — 2026" },
+        galeria: [
+            { src: "/mockup/estetica-ana-clara-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/estetica-ana-clara-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/estetica-ana-clara-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } },
+            { src: "/mockup/estetica-ana-clara-home-3.webp", legenda: { pt: "Página inicial — seção 3", en: "Home page — section 3" } }
+        ],
+        resumo: {
+            pt: "Do site que traz a cliente ao painel que organiza a agenda e o caixa da clínica.",
+            en: "From the site that brings in clients to the dashboard that runs the clinic's schedule and finances."
+        },
+        conteudo: {
+            pt: [
+                "Uma esteticista e massoterapeuta de Inconfidentes/MG precisava ser encontrada no Google e parar de controlar a agenda no caderno. Desenvolvi o site público (serviços, sobre, blog e contato via WhatsApp) com SEO local, e um painel administrativo protegido por login.",
+                "No painel: agenda com FullCalendar, cadastro de clientes, controle financeiro com relatórios em PDF, upload de imagens via Cloudinary e e-mails transacionais com Resend. Dados em PostgreSQL com Prisma e autenticação com Auth.js."
+            ],
+            en: [
+                "An esthetician and massage therapist in Inconfidentes/MG needed to be found on Google and stop managing her schedule on paper. I built the public site (services, about, blog and WhatsApp contact) with local SEO, plus a login-protected admin dashboard.",
+                "The dashboard includes a FullCalendar schedule, client records, financial control with PDF reports, image uploads via Cloudinary and transactional e-mail with Resend. Data lives in PostgreSQL with Prisma, authentication with Auth.js."
+            ]
+        },
+        tags: ["clínica", "agenda", "painel", "prisma", "seo local"]
+    },
+    {
+        id: "prefeitura-inconfidentes",
+        nome: "Portal da Prefeitura de Inconfidentes",
+        imagem: "/mockup/prefeitura-inconfidentes-home.webp",
+        categoria: "real-projects",
+        status: "archived",
+        complexidade: "advanced",
+        destaque: false,
+        tecnologias: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "NextAuth", "Tailwind CSS", "Zod", "React Hook Form"],
+        tecnologiasPrincipais: ["Next.js", "Prisma", "PostgreSQL"],
+        duracao: "3 meses",
+        tamanhoEquipe: 1,
+        links: {},
+        descricao: {
+            pt: "Portal oficial do município com painel administrativo (CMS) para a equipe publicar notícias e conteúdo sem código. Desenvolvido no estágio (jun–ago/2025).",
+            en: "Official city portal with an admin panel (CMS) so staff can publish news and content without code. Built during my internship (Jun–Aug 2025)."
+        },
+        data: { pt: "2025", en: "2025" },
+        galeria: [
+            { src: "/mockup/prefeitura-inconfidentes-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/prefeitura-inconfidentes-departamentos.webp", legenda: { pt: "Departamentos municipais", en: "Municipal departments" } },
+            { src: "/mockup/prefeitura-inconfidentes-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/prefeitura-inconfidentes-municipio-turismo-e-lazer.webp", legenda: { pt: "Turismo e lazer", en: "Tourism and leisure" } },
+            { src: "/mockup/prefeitura-inconfidentes-ouvidoria.webp", legenda: { pt: "Ouvidoria municipal", en: "Ombudsman office" } }
+        ],
+        resumo: {
+            pt: "Site público informativo para o cidadão + CMS completo para a prefeitura.",
+            en: "Public information site for citizens + a full CMS for city hall."
+        },
+        tags: ["governo", "cms", "full-stack", "prisma", "next.js"]
+    },
+    {
+        id: "zapscribe",
+        nome: "Zapscribe",
+        imagem: "/mockup/zapscribe-home.webp",
+        categoria: "tools",
+        status: "active",
+        complexidade: "advanced",
+        tecnologias: ["Python", "faster-whisper", "SQLite", "IA local", "Text-to-Speech"],
+        tecnologiasPrincipais: ["Python", "faster-whisper", "SQLite"],
+        links: { github: "https://github.com/LuixzSouza/zapscribe" },
+        descricao: {
+            pt: "Transcreve áudios do WhatsApp 100% no computador (sem enviar nada à internet) e monta o prompt para a IA. Fila, histórico, clientes e texto→áudio.",
+            en: "Transcribes WhatsApp audio 100% locally (nothing leaves the machine) and builds the prompt for the AI. Queue, history, clients and text-to-speech."
+        },
+        data: { pt: "2026", en: "2026" },
+        galeria: [
+            { src: "/mockup/zapscribe-home.webp", legenda: { pt: "Página inicial", en: "Home page" } }
+        ],
+        tags: ["ia", "whisper", "python", "produtividade"]
+    },
+    {
+        id: "garimpo",
+        nome: "Garimpo — Oportunidades de Revenda",
+        imagem: "/mockup/garimpo-home.webp",
+        categoria: "tools",
+        status: "active",
+        complexidade: "advanced",
+        tecnologias: ["Python", "Web Scraping", "CLI", "Banco de dados", "Automação"],
+        tecnologiasPrincipais: ["Python", "Web Scraping", "Automação"],
+        links: {},
+        descricao: {
+            pt: "Varre promoções de ~16 lojas, cruza o mesmo código de barras entre elas e mostra só o que dá lucro de verdade na revenda, com painel no navegador.",
+            en: "Scans deals from ~16 stores, matches the same barcode across them and shows only what is actually profitable to resell, with a browser dashboard."
+        },
+        data: { pt: "2026", en: "2026" },
+        galeria: [
+            { src: "/mockup/garimpo-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/garimpo-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } }
+        ],
+        tags: ["python", "scraping", "automação", "dados"]
+    },
+    {
+        id: "agilify",
+        nome: "Agilify — Landing SaaS",
+        imagem: "/mockup/agilify-home.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "intermediate",
+        tecnologias: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion", "React Hook Form", "Zod", "Resend", "next-intl"],
+        tecnologiasPrincipais: ["Next.js", "shadcn/ui", "Resend"],
+        links: {},
+        descricao: {
+            pt: "Landing e funil de captura de uma plataforma de emissão fiscal: todo CTA abre um modal de lead que notifica por e-mail (Resend) e leva ao WhatsApp com a origem do clique.",
+            en: "Landing page and lead funnel for a tax-invoicing SaaS: every CTA opens a lead modal that notifies via e-mail (Resend) and hands off to WhatsApp with the click source."
+        },
+        data: { pt: "2026", en: "2026" },
+        galeria: [
+            { src: "/mockup/agilify-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/agilify-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/agilify-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } },
+            { src: "/mockup/agilify-home-3.webp", legenda: { pt: "Página inicial — seção 3", en: "Home page — section 3" } }
+        ],
+        tags: ["landing page", "saas", "conversão", "next.js"]
+    },
+    {
+        id: "prevencao-pep",
+        nome: "App Prevenção de PEP",
+        imagem: "/mockup/prevencao-pep.webp",
+        categoria: "mobile",
+        status: "active",
+        complexidade: "intermediate",
+        tecnologias: ["React Native", "Expo", "TypeScript", "Zustand", "React Navigation"],
+        tecnologiasPrincipais: ["React Native", "Expo", "Zustand"],
+        links: { github: "https://github.com/LuixzSouza/prevencao-pep-app" },
+        descricao: {
+            pt: "Aplicativo mobile de apoio clínico para estratificar o risco de pancreatite pós-CPRE e orientar a prevenção.",
+            en: "Clinical-support mobile app to stratify the risk of post-ERCP pancreatitis and guide prevention."
+        },
+        data: { pt: "2026", en: "2026" },
+        galeria: [
+            { src: "/mockup/prevencao-pep.webp", legenda: { pt: "Boas-vindas, login e avaliação", en: "Welcome, login and assessment" } },
+            { src: "/mockup/prevencao-pep-fluxo.webp", legenda: { pt: "Avaliação e resultado com conduta recomendada", en: "Assessment and result with recommended protocol" } }
+        ],
+        tags: ["mobile", "saúde", "react native", "expo"]
+    },
+    {
+        id: "h4rdgame-manager",
+        nome: "H4RD G4ME Manager",
+        imagem: "/mockup/h4rdgame-manager-home.webp",
+        categoria: "applications",
+        status: "in-development",
+        complexidade: "advanced",
+        tecnologias: ["Next.js", "TypeScript", "NextAuth", "Radix UI", "Tailwind CSS", "API Clash of Clans"],
+        tecnologiasPrincipais: ["Next.js", "NextAuth", "Radix UI"],
+        links: { github: "https://github.com/LuixzSouza/clash-of-clans-dashboard" },
+        descricao: {
+            pt: "Painel de gestão de um clã de Clash of Clans: sincronização com a API oficial, hierarquia de cargos, detector de inatividade e tesouraria com eventos.",
+            en: "Management dashboard for a Clash of Clans clan: sync with the official API, role hierarchy, inactivity detection and an events treasury."
+        },
+        data: { pt: "2025 — 2026", en: "2025 — 2026" },
+        galeria: [
+            { src: "/mockup/h4rdgame-manager-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/h4rdgame-manager-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/h4rdgame-manager-login.webp", legenda: { pt: "Tela de acesso", en: "Login screen" } }
+        ],
+        tags: ["dashboard", "api", "next.js", "games"]
+    },
+    {
+        id: "sistema-atendimento",
+        nome: "Sistema de Atendimento Inteligente",
+        imagem: "/mockup/sistema-atendimento-home.webp",
+        categoria: "applications",
+        status: "prototype",
+        complexidade: "intermediate",
+        tecnologias: ["Next.js", "TypeScript", "Supabase", "shadcn/ui", "React Hook Form", "Zod"],
+        tecnologiasPrincipais: ["Next.js", "Supabase", "shadcn/ui"],
+        links: {},
+        descricao: {
+            pt: "MVP que organiza o atendimento ao cliente: FAQs com palavras-chave, sugestão automática de respostas, histórico e métricas, com Supabase Auth.",
+            en: "MVP that organizes customer support: keyword FAQs, automatic reply suggestions, history and metrics, with Supabase Auth."
+        },
+        data: { pt: "2026", en: "2026" },
+        galeria: [
+            { src: "/mockup/sistema-atendimento-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/sistema-atendimento-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/sistema-atendimento-login.webp", legenda: { pt: "Tela de acesso", en: "Login screen" } }
+        ],
+        tags: ["atendimento", "supabase", "mvp"]
+    },
+    {
+        id: "aromas-noma",
+        nome: "Aromas Noma",
+        imagem: "/mockup/aromas-noma-home.webp",
+        categoria: "real-projects",
+        status: "active",
+        complexidade: "intermediate",
+        tecnologias: ["Next.js", "React", "PHP", "MySQL", "Recharts", "Framer Motion"],
+        tecnologiasPrincipais: ["Next.js", "PHP", "MySQL"],
+        links: {},
+        descricao: {
+            pt: "ERP minimalista mobile-first + vitrine digital para uma marca de velas aromáticas: estoque, fluxo de caixa e relatórios pelo celular, com API PHP na Hostinger.",
+            en: "Mobile-first minimalist ERP + digital storefront for a scented-candle brand: stock, cash flow and reports from a phone, with a PHP API on Hostinger."
+        },
+        data: { pt: "2026", en: "2026" },
+        galeria: [
+            { src: "/mockup/aromas-noma-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/aromas-noma-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } },
+            { src: "/mockup/aromas-noma-login.webp", legenda: { pt: "Tela de acesso", en: "Login screen" } }
+        ],
+        tags: ["erp", "vitrine", "php", "mobile-first"]
+    },
+    {
+        id: "eduardo-souza-portfolio",
+        nome: "Portfólio Eduardo Souza",
+        imagem: "/mockup/eduardo-souza-portfolio-pt.webp",
+        categoria: "websites",
+        status: "active",
+        complexidade: "intermediate",
+        tecnologias: ["Next.js", "GSAP", "Lenis", "next-intl"],
+        tecnologiasPrincipais: ["Next.js", "GSAP", "Lenis"],
+        links: { github: "https://github.com/LuixzSouza/eduardo-design-portfolio" },
+        descricao: {
+            pt: "Portfólio de um designer com 10+ anos de carreira, com animações de scroll em GSAP e rolagem suave — desenvolvido a partir do design dele.",
+            en: "Portfolio for a designer with 10+ years of experience, with GSAP scroll animations and smooth scrolling — built from his design."
+        },
+        data: { pt: "2025", en: "2025" },
+        galeria: [
+            { src: "/mockup/eduardo-souza-portfolio-pt.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/eduardo-souza-portfolio-pt-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } },
+            { src: "/mockup/eduardo-souza-portfolio-pt-3.webp", legenda: { pt: "Página inicial — seção 3", en: "Home page — section 3" } }
+        ],
+        tags: ["portfólio", "gsap", "animação", "next.js"]
+    },
+    {
         id: "formula-idiomas",
         nome: "Formula Idiomas",
         imagem: "/mockup/m-banconeon.webp",
@@ -125,6 +740,12 @@ const rawProjects = [
             id: "Situs institusional lengkap untuk sekolah bahasa dengan sistem kontak terintegrasi"
         },
         data: { pt: "16 de Setembro 2024", en: "September 16, 2024" },
+        galeria: [
+            { src: "/mockup/formula-idiomas-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/formula-idiomas-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/formula-idiomas-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } },
+            { src: "/mockup/formula-idiomas-home-3.webp", legenda: { pt: "Página inicial — seção 3", en: "Home page — section 3" } }
+        ],
         resumo: {
             pt: "Website profissional para escola de idiomas focado em conversão e experiência do usuário",
             en: "Professional website for language school focused on conversion and user experience",
@@ -462,7 +1083,10 @@ const rawProjects = [
         },
         galeria: [
             { src: "/mockup/m-barberweb.webp", legenda: { pt: "Página inicial", en: "Home page" } },
-            { src: "/mockup/m-blizzard.webp", legenda: { pt: "Seção de serviços", en: "Services section" } },
+            { src: "/mockup/m-blizzard.webp", legenda: { pt: "Seção de serviços", en: "Services section" } },,
+            { src: "/mockup/casa-pronta-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/casa-pronta-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/casa-pronta-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
         ],
     },
     {
@@ -498,6 +1122,11 @@ const rawProjects = [
             id: "Halaman interaktif untuk menavigasi antara wireframe berbeda dengan menu dinamis dan praktik terbaik pengembangan web."
         },
         data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/wireframes-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/wireframes-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/wireframes-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
         resumo: {
             pt: "Projeto de estudo focado na conversão de wireframes para interfaces funcionais",
             en: "Study project focused on converting wireframes to functional interfaces",
@@ -672,6 +1301,9 @@ const rawProjects = [
             en: "Tool to look up Brazilian postal codes with detailed address information",
         },
         data: { pt: "20 de Maio 2024", en: "May 20, 2024" },
+        galeria: [
+            { src: "/mockup/api-cep-home.webp", legenda: { pt: "Página inicial", en: "Home page" } }
+        ],
         tags: ["api", "cep", "javascript", "brasil"],
     },
     {
@@ -687,7 +1319,12 @@ const rawProjects = [
             pt: "Este site foi desenvolvido para oferecer um guia completo de Pokémons, ideal para fãs que querem explorar e caçar Pokémons pelo mundo, integrando dados de uma API para exibir informações detalhadas sobre cada Pokémon.",
             en: "This site was built to offer a complete Pokémon guide, ideal for fans who want to explore and hunt Pokémon around the world, integrating data from an API to display detailed information about each Pokémon.",
         },
-        data: { pt: "20 de Maio 2024", en: "May 20, 2024" }
+        data: { pt: "20 de Maio 2024", en: "May 20, 2024" },
+        galeria: [
+            { src: "/mockup/api-pokemon-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/api-pokemon-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/api-pokemon-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "BarberWeb",
@@ -702,7 +1339,12 @@ const rawProjects = [
             pt: "Este projeto foi desenvolvido com o objetivo de criar um site funcional e atraente para um salão de barbearia, oferecendo serviços de corte de cabelo e barba. Além de ser um projeto acadêmico integrador, que uniu estudantes do 4º e 2º período da faculdade, foi também uma oportunidade de praticar e aprimorar habilidades individuais em design e codificação, após a necessidade de reconstruir o projeto sem dados pessoais de terceiros, OBS: essas imagem foram criada com Inteligência Artificial.",
             en: "This project aimed to create a functional and appealing website for a barbershop, offering haircut and beard services. Besides being an integrative academic project that brought together 4th- and 2nd-semester college students, it was also a chance to practice and improve individual design and coding skills, after the need to rebuild it without third parties' personal data. NOTE: these images were created with Artificial Intelligence.",
         },
-        data: { pt: "14 de Outubro 2024", en: "October 14, 2024" }
+        data: { pt: "14 de Outubro 2024", en: "October 14, 2024" },
+        galeria: [
+            { src: "/mockup/barberweb-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/barberweb-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/barberweb-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "Blizzard",
@@ -717,7 +1359,12 @@ const rawProjects = [
             pt: "Este site foi desenvolvido para exibir uma série de jogos populares da Blizzard.",
             en: "This site was built to showcase a series of popular Blizzard games.",
         },
-        data: { pt: "20 de Maio 2024", en: "May 20, 2024" }
+        data: { pt: "20 de Maio 2024", en: "May 20, 2024" },
+        galeria: [
+            { src: "/mockup/blizzard-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/blizzard-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/blizzard-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "Calculadora",
@@ -732,7 +1379,10 @@ const rawProjects = [
             pt: "Calculadora Front-End Desenvolvida para apresentação de trabalho",
             en: "A front-end calculator built for a class presentation.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/calculadora-home.webp", legenda: { pt: "Página inicial", en: "Home page" } }
+        ],
     },
     {
         nome: "CloudBoost",
@@ -747,7 +1397,12 @@ const rawProjects = [
             pt: "CloudBoost é uma ferramenta de e-mail marketing projetada para ajudar empresas a aumentar suas vendas e fortalecer o relacionamento com clientes, focando em uma interface intuitiva e responsiva.",
             en: "CloudBoost is an email marketing tool designed to help companies boost sales and strengthen customer relationships, focusing on an intuitive and responsive interface.",
         },
-        data: { pt: "20 de Maio 2024", en: "May 20, 2024" }
+        data: { pt: "20 de Maio 2024", en: "May 20, 2024" },
+        galeria: [
+            { src: "/mockup/cloudboost-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/cloudboost-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/cloudboost-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "Primeiro Site",
@@ -762,7 +1417,12 @@ const rawProjects = [
             pt: "Este site foi criado para demonstrar meus conhecimentos essenciais de desenvolvimento Front-End básico.",
             en: "This site was created to showcase my essential basic front-end development skills.",
         },
-        data: { pt: "01 de janeiro 2024", en: "January 1, 2024" }
+        data: { pt: "01 de janeiro 2024", en: "January 1, 2024" },
+        galeria: [
+            { src: "/mockup/primeiro-site-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/primeiro-site-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/primeiro-site-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "Primeiro Site - Reform",
@@ -777,7 +1437,12 @@ const rawProjects = [
             pt: "Desenvolvi este site com intuito de aumentar o que foi criado no meu primeiro.",
             en: "I built this site to expand on what I created in my first one.",
         },
-        data: { pt: "01 de janeiro 2024", en: "January 1, 2024" }
+        data: { pt: "01 de janeiro 2024", en: "January 1, 2024" },
+        galeria: [
+            { src: "/mockup/primeiro-site-reform-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/primeiro-site-reform-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/primeiro-site-reform-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "God of War Ragnarok",
@@ -792,7 +1457,12 @@ const rawProjects = [
             pt: "Desenvolvi um site promocional para o lançamento do jogo God of War Ragnarök.",
             en: "I built a promotional site for the launch of the game God of War Ragnarök.",
         },
-        data: { pt: "20 de Maio 2024", en: "May 20, 2024" }
+        data: { pt: "20 de Maio 2024", en: "May 20, 2024" },
+        galeria: [
+            { src: "/mockup/god-of-war-ragnarok-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/god-of-war-ragnarok-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/god-of-war-ragnarok-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "KingHost",
@@ -807,7 +1477,12 @@ const rawProjects = [
             pt: "KingHost é uma ferramenta de e-mail marketing projetada para ajudar empresas a aumentar vendas e fortalecer o relacionamento com clientes, focando em uma interface intuitiva e responsiva.",
             en: "KingHost is an email marketing tool designed to help companies increase sales and strengthen customer relationships, focusing on an intuitive and responsive interface.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/kinghost-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/kinghost-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/kinghost-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "Banco Neon",
@@ -822,7 +1497,12 @@ const rawProjects = [
             pt: "Desenvolvi este redesign de página inicial para um banco digital.",
             en: "I built this homepage redesign for a digital bank.",
         },
-        data: { pt: "20 de Maio 2024", en: "May 20, 2024" }
+        data: { pt: "20 de Maio 2024", en: "May 20, 2024" },
+        galeria: [
+            { src: "/mockup/banco-neon-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/banco-neon-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/banco-neon-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "SI - Faculdade",
@@ -852,7 +1532,11 @@ const rawProjects = [
             pt: "Este projeto foi desenvolvido como parte de um desafio de design Desenvolvimento web, ele destaca inovações em interfaces de usuário.",
             en: "This project was built as part of a web design and development challenge; it highlights innovations in user interfaces.",
         },
-        data: { pt: "22 de janeiro 2024", en: "January 22, 2024" }
+        data: { pt: "22 de janeiro 2024", en: "January 22, 2024" },
+        galeria: [
+            { src: "/mockup/uiboost-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/uiboost-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "SuperGet",
@@ -867,7 +1551,10 @@ const rawProjects = [
             pt: "Este projeto foi desenvolvido como parte de um exercício pessoal em React para aprimorar minhas habilidades de codificação e entender melhor os padrões de desenvolvimento web em React. Ele apresenta uma interface do produto SuperGet.",
             en: "This project was built as a personal React exercise to sharpen my coding skills and better understand React web development patterns. It presents an interface for the SuperGet product.",
         },
-        data: { pt: "14 de Outubro 2024", en: "October 14, 2024" }
+        data: { pt: "14 de Outubro 2024", en: "October 14, 2024" },
+        galeria: [
+            { src: "/mockup/superget-home.webp", legenda: { pt: "Página inicial", en: "Home page" } }
+        ],
     },
     {
         nome: "Rede",
@@ -882,7 +1569,12 @@ const rawProjects = [
             pt: "Este projeto é uma interface moderna e funcional, inspirada em plataformas de redes e serviços financeiros, com foco na performance e experiência do usuário. Desenvolvido com Next.js, Tailwind CSS, e Swiper, ele oferece navegação fluida e design responsivo.",
             en: "This project is a modern, functional interface inspired by network and financial service platforms, focused on performance and user experience. Built with Next.js, Tailwind CSS and Swiper, it offers smooth navigation and a responsive design.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/rede-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/rede-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/rede-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "Itau",
@@ -897,7 +1589,11 @@ const rawProjects = [
             pt: "Este projeto foi inspirado no site de uma instituição financeira, buscando recriar uma interface moderna e responsiva, com foco na experiência do usuário e na performance. Ele foi desenvolvido com Next.js e Tailwind CSS, aproveitando o melhor dessas tecnologias para entregar um design elegante e funcional",
             en: "This project was inspired by a financial institution's website, aiming to recreate a modern, responsive interface focused on user experience and performance. It was built with Next.js and Tailwind CSS, leveraging the best of these technologies to deliver an elegant, functional design.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/itau-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/itau-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } }
+        ],
     },
     {
         nome: "More | Talent",
@@ -912,7 +1608,11 @@ const rawProjects = [
             pt: "Este projeto, desenvolvido com Next.js e Tailwind CSS, foi criado com o objetivo de aprimorar minhas habilidades no desenvolvimento web. Ele simula uma página inicial de um curso completo em design de produto digital, focado no processo de Design Centrado no Usuário. A página inclui uma seção de pré-cadastro, destaca parcerias com grandes empresas e apresenta um layout moderno e responsivo",
             en: "This project, built with Next.js and Tailwind CSS, was created to improve my web development skills. It simulates a homepage for a complete digital product design course, focused on the User-Centered Design process. The page includes a pre-registration section, highlights partnerships with major companies, and features a modern, responsive layout.",
         },
-        data: { pt: "08 de Outubro 2024", en: "October 8, 2024" }
+        data: { pt: "08 de Outubro 2024", en: "October 8, 2024" },
+        galeria: [
+            { src: "/mockup/more-talent-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/more-talent-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } }
+        ],
     },
     {
         nome: "Lanistar",
@@ -927,7 +1627,12 @@ const rawProjects = [
             pt: "Este projeto foi desenvolvido para simular a interface de uma plataforma financeira moderna e inovadora. Ele combina design minimalista e responsividade para oferecer uma experiência de usuário intuitiva e envolvente.",
             en: "This project was built to simulate the interface of a modern, innovative financial platform. It combines minimalist design and responsiveness to deliver an intuitive, engaging user experience.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/lanistar-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/lanistar-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/lanistar-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "Tecsany",
@@ -942,7 +1647,11 @@ const rawProjects = [
             pt: "Este projeto foi desenvolvido para apresentar uma plataforma focada em tecnologia, com design moderno e responsivo. O objetivo foi criar uma interface amigável que combina funcionalidade com uma navegação intuitiva e eficiente.",
             en: "This project was built to present a technology-focused platform with a modern, responsive design. The goal was to create a friendly interface that combines functionality with intuitive, efficient navigation.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/tecsany-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/tecsany-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } }
+        ],
     },
     {
         nome: "Latam Airlines",
@@ -957,7 +1666,11 @@ const rawProjects = [
             pt: "Este projeto foi desenvolvido para simular a interface de uma plataforma de reservas de voo, inspirada na identidade visual da Latam Airlines. A ideia foi criar uma aplicação moderna e intuitiva, com foco em usabilidade e design responsivo, proporcionando uma experiência agradável aos usuários.",
             en: "This project was built to simulate a flight booking platform interface, inspired by Latam Airlines' visual identity. The idea was to create a modern, intuitive application focused on usability and responsive design, providing a pleasant user experience.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/latam-airlines-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/latam-airlines-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } }
+        ],
     },
     {
         nome: "Spider Man 2",
@@ -972,7 +1685,12 @@ const rawProjects = [
             pt: "Este projeto foi desenvolvido para criar uma landing page dinâmica e envolvente, inspirada no universo do Spider Man. O foco foi na criação de uma experiência visual impactante e interativa, utilizando técnicas modernas de desenvolvimento web.",
             en: "This project was built to create a dynamic, engaging landing page inspired by the Spider-Man universe. The focus was on crafting a striking, interactive visual experience using modern web development techniques.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/spider-man-2-home.webp", legenda: { pt: "Página inicial", en: "Home page" } },
+            { src: "/mockup/spider-man-2-home-1.webp", legenda: { pt: "Página inicial — seção 1", en: "Home page — section 1" } },
+            { src: "/mockup/spider-man-2-home-2.webp", legenda: { pt: "Página inicial — seção 2", en: "Home page — section 2" } }
+        ],
     },
     {
         nome: "JAVA | SQL",
@@ -987,7 +1705,11 @@ const rawProjects = [
             pt: "Este projeto desenvolve uma aplicação Java com Maven, Hibernate e MySQL, estruturando a classe Veículo e implementando operações de CRUD (inserção, consulta, remoção e atualização). Ele permite armazenar e gerenciar dados de veículos de forma eficiente em um banco de dados relacional.",
             en: "This project builds a Java application with Maven, Hibernate and MySQL, structuring the Vehicle class and implementing CRUD operations (insert, query, delete and update). It allows storing and managing vehicle data efficiently in a relational database.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/java-sql-github-1.webp", legenda: { pt: "README e estrutura do código", en: "README and code structure" } },
+            { src: "/mockup/java-sql-github.webp", legenda: { pt: "Repositório no GitHub", en: "GitHub repository" } }
+        ],
     },
     {
         nome: "Python BotNotepad Test",
@@ -1002,7 +1724,11 @@ const rawProjects = [
             pt: "Este projeto contém um bot simples em Python que utiliza a biblioteca PyAutoGUI para automatizar tarefas no computador. Especificamente, este bot abre o Bloco de Notas (Notepad) no Windows, escreve uma mensagem predefinida e simula a digitação no programa. O bot é útil para demonstração de automação de interface gráfica e interação com aplicativos desktop.",
             en: "This project contains a simple Python bot that uses the PyAutoGUI library to automate tasks on the computer. Specifically, the bot opens Notepad on Windows, writes a predefined message and simulates typing in the program. It's useful for demonstrating GUI automation and interaction with desktop applications.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/python-botnotepad-test-github-1.webp", legenda: { pt: "README e estrutura do código", en: "README and code structure" } },
+            { src: "/mockup/python-botnotepad-test-github.webp", legenda: { pt: "Repositório no GitHub", en: "GitHub repository" } }
+        ],
     },
     {
         nome: "Exercicios JavaScript",
@@ -1017,7 +1743,11 @@ const rawProjects = [
             pt: "Varios exercicos para treinar o desenvolvimento em JavaScript e Node.js",
             en: "Several exercises to practice development in JavaScript and Node.js.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/exercicios-javascript-github-1.webp", legenda: { pt: "README e estrutura do código", en: "README and code structure" } },
+            { src: "/mockup/exercicios-javascript-github.webp", legenda: { pt: "Repositório no GitHub", en: "GitHub repository" } }
+        ],
     },
     {
         nome: "JAVA | ONG | Trabalho Facul",
@@ -1032,7 +1762,11 @@ const rawProjects = [
             pt: "Este sistema foi desenvolvido para facilitar o processo de agendamento de doações para Organizações Não Governamentais (ONGs). O objetivo é permitir que os doadores registrem suas informações, cadastrem itens que irão doar (como roupas, alimentos, etc.), e agendem a data para a entrega ou retirada das doações. O sistema também valida as entradas de dados, como CPF e data, garantindo maior precisão nas informações fornecidas.",
             en: "This system was built to streamline the donation scheduling process for Non-Governmental Organizations (NGOs). The goal is to let donors register their information, list the items they'll donate (such as clothing, food, etc.), and schedule a date for delivery or pickup. The system also validates data entries, such as CPF and date, ensuring greater accuracy in the information provided.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/java-ong-trabalho-facul-github-1.webp", legenda: { pt: "README e estrutura do código", en: "README and code structure" } },
+            { src: "/mockup/java-ong-trabalho-facul-github.webp", legenda: { pt: "Repositório no GitHub", en: "GitHub repository" } }
+        ],
     },
     {
         nome: "JAVA | POO | Trabalho Facul",
@@ -1047,7 +1781,10 @@ const rawProjects = [
             pt: "Atividades feita para entregar ao professor",
             en: "Assignments made to submit to the professor.",
         },
-        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" }
+        data: { pt: "12 de janeiro 2024", en: "January 12, 2024" },
+        galeria: [
+            { src: "/mockup/java-poo-trabalho-facul-github.webp", legenda: { pt: "Repositório no GitHub", en: "GitHub repository" } }
+        ],
     },
     {
         nome: "Modulo JavaScript",
@@ -1062,9 +1799,31 @@ const rawProjects = [
             pt: "Criei um repositório com módulos dedicados a diferentes tópicos de JavaScript, começando com uma introdução simples e avançando para manipulações complexas do DOM e armazenamento local. ",
             en: "I created a repository with modules dedicated to different JavaScript topics, starting with a simple introduction and advancing to complex DOM manipulation and local storage.",
         },
-        data: { pt: "24 de Maio 2024", en: "May 24, 2024" }
+        data: { pt: "24 de Maio 2024", en: "May 24, 2024" },
+        galeria: [
+            { src: "/mockup/modulo-javascript-github-1.webp", legenda: { pt: "README e estrutura do código", en: "README and code structure" } },
+            { src: "/mockup/modulo-javascript-github.webp", legenda: { pt: "Repositório no GitHub", en: "GitHub repository" } }
+        ],
     },
 ];
 
 // Aplicar campos padrão a todos os projetos
 export const projetos: Projeto[] = rawProjects.map(completeProject);
+
+/** Busca um projeto pelo id. */
+export function getProjeto(id: string): Projeto | undefined {
+    return projetos.find((p) => p.id === id);
+}
+
+/**
+ * Projetos com narrativa profunda o suficiente para virarem estudo de caso
+ * dedicado (têm "desafios" descritos). Usado pela rota /work/case/[slug].
+ */
+export const caseStudySlugs: string[] = projetos
+    .filter((p) => Array.isArray(p.desafios) || (p.desafios && typeof p.desafios === "object"))
+    .map((p) => p.id);
+
+export function getCaseStudy(slug: string): Projeto | undefined {
+    const p = getProjeto(slug);
+    return p && p.desafios ? p : undefined;
+}

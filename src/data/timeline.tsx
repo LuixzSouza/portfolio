@@ -29,7 +29,7 @@ export const milestones: Milestone[] = [
       id: "Logika pemrograman berhenti menjadi teori dan menjadi gairah. Kontak pertama dengan HTML, CSS, dan JavaScript membuka pintu web.",
     },
     techs: ["HTML5", "CSS3", "JavaScript"],
-    image: "/image/timeline-01.png",
+    image: "/image/timeline-01.webp",
   },
   {
     year: { pt: "2022", en: "2022", es: "2022", fr: "2022", de: "2022", it: "2022", zh: "2022", ja: "2022", ru: "2022", ar: "2022", hi: "2022", ko: "2022", id: "2022" },
@@ -50,7 +50,7 @@ export const milestones: Milestone[] = [
       id: "Fokus penuh pada antarmuka modern berbasis komponen, dengan aplikasi nyata pertama yang hidup.",
     },
     techs: ["React", "Next.js", "Tailwind"],
-    image: "/image/timeline-02.png",
+    image: "/image/timeline-02.webp",
   },
   {
     year: { pt: "2023", en: "2023", es: "2023", fr: "2023", de: "2023", it: "2023", zh: "2023", ja: "2023", ru: "2023", ar: "2023", hi: "2023", ko: "2023", id: "2023" },
@@ -71,7 +71,7 @@ export const milestones: Milestone[] = [
       id: "Memulai Sistem Informasi (UNIVÁS). Kode bertemu dengan UI/UX, prototyping, dan dasar-dasar arsitektur perangkat lunak.",
     },
     techs: ["Figma", "Webflow", "Python", "Linux"],
-    image: "/image/timeline-03.png",
+    image: "/image/timeline-03.webp",
   },
   {
     year: { pt: "2024", en: "2024", es: "2024", fr: "2024", de: "2024", it: "2024", zh: "2024", ja: "2024", ru: "2024", ar: "2024", hi: "2024", ko: "2024", id: "2024" },
@@ -92,7 +92,7 @@ export const milestones: Milestone[] = [
       id: "Proyek dalam produksi: platform lengkap dan dinamis dengan database terstruktur dan langkah pertama ke cloud.",
     },
     techs: ["PHP", "MySQL", "AWS"],
-    image: "/image/timeline-04.png",
+    image: "/image/timeline-04.webp",
   },
   {
     year: { pt: "2025", en: "2025", es: "2025", fr: "2025", de: "2025", it: "2025", zh: "2025", ja: "2025", ru: "2025", ar: "2025", hi: "2025", ko: "2025", id: "2025" },
@@ -113,7 +113,7 @@ export const milestones: Milestone[] = [
       id: "Pengiriman produk digital yang dapat diskalakan, integrasi kompleks, dan optimasi kinerja end-to-end.",
     },
     techs: ["Arquitetura web", "APIs", "Performance"],
-    image: "/image/timeline-05.png",
+    image: "/image/timeline-05.webp",
   },
   {
     year: { pt: "Hoje", en: "Today", es: "Hoy", fr: "Aujourd'hui", de: "Heute", it: "Oggi", zh: "今天", ja: "今日", ru: "Сегодня", ar: "اليوم", hi: "आज", ko: "오늘", id: "Hari Ini" },
@@ -134,6 +134,6 @@ export const milestones: Milestone[] = [
       id: "Pertumbuhan berkelanjutan: praktik terbaik, pola desain, dan rekayasa perangkat lunak untuk membangun sistem yang kuat.",
     },
     techs: ["Clean Code", "TDD", "Design Patterns"],
-    image: "/image/timeline-06.png",
+    image: "/image/timeline-06.webp",
   },
 ];
